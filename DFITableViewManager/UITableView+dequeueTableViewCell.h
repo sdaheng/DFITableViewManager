@@ -1,0 +1,29 @@
+//
+//  UITableView+generateCustomCell.h
+//  DFITableViewConfigration
+//
+//  Created by SDH on 11/2/15.
+//  Copyright © 2015 sdaheng. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@class DFITableViewCellViewModel;
+
+@interface UITableView (dequeueTableViewCell)
+
+- (UITableViewCell *)dequeueTableViewCellAtIndexPath:(NSIndexPath *)indexPath
+                                 withReuseIdentifier:(NSString *)identifier;
+
+- (UITableViewCell *)dequeueTableViewCellAtIndexPath:(NSIndexPath *)indexPath
+                                 withReuseIdentifier:(NSString *)identifier
+                                                info:(
+#if __has_include(<DFITableViewCells/DFITableViewCells.h>)
+                                                      __kindof DFITableViewCellViewModel *
+#else
+                                                        id
+#endif
+                                                      )info
+                                              option:(id)option;
+
+@end

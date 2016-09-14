@@ -1,0 +1,6 @@
+framework module Pods_DFITableViewManagerDemo {
+  umbrella header "Pods-DFITableViewManagerDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

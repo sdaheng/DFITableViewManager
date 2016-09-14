@@ -7,14 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A22A9FB1D83DF4000B5738E /* DFIButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22A9F21D83DF4000B5738E /* DFIButtonTableViewCell.m */; };
+		2A22A9FC1D83DF4000B5738E /* DFIButtonTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22A9F41D83DF4000B5738E /* DFIButtonTableViewCellViewModel.m */; };
+		2A22A9FD1D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22A9F61D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m */; };
+		2A22A9FE1D83DF4000B5738E /* DFITextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22A9F81D83DF4000B5738E /* DFITextFieldTableViewCell.m */; };
+		2A22A9FF1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22A9FA1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m */; };
+		2A22AA031D83E4D400B5738E /* CodeTableViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22AA021D83E4D400B5738E /* CodeTableViewControllerViewModel.m */; };
+		2A22AA061D84108300B5738E /* NSArray+funtional.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22AA051D84108300B5738E /* NSArray+funtional.m */; };
+		2A22AA0B1D84110600B5738E /* DemoCustomCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22AA081D84110600B5738E /* DemoCustomCellViewModel.m */; };
+		2A22AA0C1D84110600B5738E /* DemoCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22AA0A1D84110600B5738E /* DemoCustomCell.m */; };
 		2A63C7FA1D8143A3001A7530 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C7F91D8143A3001A7530 /* main.m */; };
 		2A63C7FD1D8143A3001A7530 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C7FC1D8143A3001A7530 /* AppDelegate.m */; };
-		2A63C8001D8143A3001A7530 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C7FF1D8143A3001A7530 /* ViewController.m */; };
+		2A63C8001D8143A3001A7530 /* CodeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C7FF1D8143A3001A7530 /* CodeTableViewController.m */; };
 		2A63C8031D8143A3001A7530 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A63C8011D8143A3001A7530 /* Main.storyboard */; };
 		2A63C8051D8143A3001A7530 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A63C8041D8143A3001A7530 /* Assets.xcassets */; };
 		2A63C8081D8143A3001A7530 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A63C8061D8143A3001A7530 /* LaunchScreen.storyboard */; };
 		2A63C8131D8143A3001A7530 /* DFITableViewManagerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8121D8143A3001A7530 /* DFITableViewManagerDemoTests.m */; };
 		2A63C81E1D8143A3001A7530 /* DFITableViewManagerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C81D1D8143A3001A7530 /* DFITableViewManagerDemoUITests.m */; };
+		2A63C85D1D8143D2001A7530 /* DFITableViewCellConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8311D8143D2001A7530 /* DFITableViewCellConfigure.m */; };
+		2A63C85F1D8143D2001A7530 /* DFITableViewCellOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8361D8143D2001A7530 /* DFITableViewCellOption.m */; };
+		2A63C8601D8143D2001A7530 /* DFITableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8391D8143D2001A7530 /* DFITableViewCellViewModel.m */; };
+		2A63C8641D8143D2001A7530 /* UITableViewCell+configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8401D8143D2001A7530 /* UITableViewCell+configure.m */; };
+		2A63C8681D8143D2001A7530 /* DFITableViewConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C84B1D8143D2001A7530 /* DFITableViewConfiguration.m */; };
+		2A63C8691D8143D2001A7530 /* DFITableViewDataSourceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C84D1D8143D2001A7530 /* DFITableViewDataSourceProxy.m */; };
+		2A63C86A1D8143D2001A7530 /* DFITableViewDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C84F1D8143D2001A7530 /* DFITableViewDelegateProxy.m */; };
+		2A63C86B1D8143D2001A7530 /* DFITableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8521D8143D2001A7530 /* DFITableViewModel.m */; };
+		2A63C86C1D8143D2001A7530 /* DFIUITableViewDataSourceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8551D8143D2001A7530 /* DFIUITableViewDataSourceProxy.m */; };
+		2A63C86D1D8143D2001A7530 /* DFIUITableViewDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8571D8143D2001A7530 /* DFIUITableViewDelegateProxy.m */; };
+		2A63C86F1D8143D2001A7530 /* UITableView+dequeueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C85A1D8143D2001A7530 /* UITableView+dequeueTableViewCell.m */; };
+		2A6882031D894AAC0036B5CB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6882021D894AAC0036B5CB /* HomeViewController.m */; };
+		2A6882061D894B690036B5CB /* HomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6882051D894B690036B5CB /* HomeViewControllerViewModel.m */; };
+		2A6882091D89514C0036B5CB /* DataFormatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6882081D89514C0036B5CB /* DataFormatTableViewController.m */; };
+		2A68820C1D89515C0036B5CB /* PlistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A68820B1D89515C0036B5CB /* PlistTableViewController.m */; };
+		2A68820F1D89522E0036B5CB /* DataFormatTableViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A68820E1D89522E0036B5CB /* DataFormatTableViewControllerViewModel.m */; };
+		2A6882121D89523E0036B5CB /* PlistTableViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6882111D89523E0036B5CB /* PlistTableViewControllerViewModel.m */; };
+		2A6882141D8958020036B5CB /* PlistDemo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A6882131D8958020036B5CB /* PlistDemo.plist */; };
+		2AD223FC1D84135A00FB0B7A /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EB1D83B8E700B5738E /* ReactiveCocoa.framework */; };
+		2AD223FD1D84135A00FB0B7A /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EB1D83B8E700B5738E /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2AD223FE1D84135A00FB0B7A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EC1D83B8E700B5738E /* Result.framework */; };
+		2AD223FF1D84135A00FB0B7A /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EC1D83B8E700B5738E /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		34A64BC73CC14D4ED32D6D04 /* Pods_DFITableViewManagerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,13 +66,50 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2AD224001D84135A00FB0B7A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2AD223FD1D84135A00FB0B7A /* ReactiveCocoa.framework in Embed Frameworks */,
+				2AD223FF1D84135A00FB0B7A /* Result.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		24F7BC59D6CEE35CCAD80064 /* Pods-DFITableViewManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFITableViewManagerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2A22A9EB1D83B8E700B5738E /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		2A22A9EC1D83B8E700B5738E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		2A22A9F11D83DF4000B5738E /* DFIButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIButtonTableViewCell.h; sourceTree = "<group>"; };
+		2A22A9F21D83DF4000B5738E /* DFIButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIButtonTableViewCell.m; sourceTree = "<group>"; };
+		2A22A9F31D83DF4000B5738E /* DFIButtonTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIButtonTableViewCellViewModel.h; sourceTree = "<group>"; };
+		2A22A9F41D83DF4000B5738E /* DFIButtonTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIButtonTableViewCellViewModel.m; sourceTree = "<group>"; };
+		2A22A9F51D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.h"; sourceTree = "<group>"; };
+		2A22A9F61D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m"; sourceTree = "<group>"; };
+		2A22A9F71D83DF4000B5738E /* DFITextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITextFieldTableViewCell.h; sourceTree = "<group>"; };
+		2A22A9F81D83DF4000B5738E /* DFITextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITextFieldTableViewCell.m; sourceTree = "<group>"; };
+		2A22A9F91D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITextFieldTableViewCellViewModel.h; sourceTree = "<group>"; };
+		2A22A9FA1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITextFieldTableViewCellViewModel.m; sourceTree = "<group>"; };
+		2A22AA001D83E00F00B5738E /* DFIConcreteTableViewCells.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFIConcreteTableViewCells.h; sourceTree = "<group>"; };
+		2A22AA011D83E4D400B5738E /* CodeTableViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeTableViewControllerViewModel.h; sourceTree = "<group>"; };
+		2A22AA021D83E4D400B5738E /* CodeTableViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeTableViewControllerViewModel.m; sourceTree = "<group>"; };
+		2A22AA041D84108300B5738E /* NSArray+funtional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+funtional.h"; sourceTree = "<group>"; };
+		2A22AA051D84108300B5738E /* NSArray+funtional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+funtional.m"; sourceTree = "<group>"; };
+		2A22AA071D84110600B5738E /* DemoCustomCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCustomCellViewModel.h; sourceTree = "<group>"; };
+		2A22AA081D84110600B5738E /* DemoCustomCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCustomCellViewModel.m; sourceTree = "<group>"; };
+		2A22AA091D84110600B5738E /* DemoCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCustomCell.h; sourceTree = "<group>"; };
+		2A22AA0A1D84110600B5738E /* DemoCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCustomCell.m; sourceTree = "<group>"; };
 		2A63C7F51D8143A3001A7530 /* DFITableViewManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DFITableViewManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A63C7F91D8143A3001A7530 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A63C7FB1D8143A3001A7530 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2A63C7FC1D8143A3001A7530 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2A63C7FE1D8143A3001A7530 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2A63C7FF1D8143A3001A7530 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2A63C7FE1D8143A3001A7530 /* CodeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeTableViewController.h; sourceTree = "<group>"; };
+		2A63C7FF1D8143A3001A7530 /* CodeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeTableViewController.m; sourceTree = "<group>"; };
 		2A63C8021D8143A3001A7530 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A63C8041D8143A3001A7530 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A63C8071D8143A3001A7530 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +120,49 @@
 		2A63C8191D8143A3001A7530 /* DFITableViewManagerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DFITableViewManagerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A63C81D1D8143A3001A7530 /* DFITableViewManagerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFITableViewManagerDemoUITests.m; sourceTree = "<group>"; };
 		2A63C81F1D8143A3001A7530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A63C8301D8143D2001A7530 /* DFITableViewCellConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewCellConfigure.h; sourceTree = "<group>"; };
+		2A63C8311D8143D2001A7530 /* DFITableViewCellConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewCellConfigure.m; sourceTree = "<group>"; };
+		2A63C8321D8143D2001A7530 /* DFITableViewCellDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewCellDefines.h; sourceTree = "<group>"; };
+		2A63C8351D8143D2001A7530 /* DFITableViewCellOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewCellOption.h; sourceTree = "<group>"; };
+		2A63C8361D8143D2001A7530 /* DFITableViewCellOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewCellOption.m; sourceTree = "<group>"; };
+		2A63C8371D8143D2001A7530 /* DFITableViewCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewCells.h; sourceTree = "<group>"; };
+		2A63C8381D8143D2001A7530 /* DFITableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewCellViewModel.h; sourceTree = "<group>"; };
+		2A63C8391D8143D2001A7530 /* DFITableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewCellViewModel.m; sourceTree = "<group>"; };
+		2A63C83F1D8143D2001A7530 /* UITableViewCell+configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+configure.h"; sourceTree = "<group>"; };
+		2A63C8401D8143D2001A7530 /* UITableViewCell+configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+configure.m"; sourceTree = "<group>"; };
+		2A63C8411D8143D2001A7530 /* UITableViewCellActionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewCellActionDelegate.h; sourceTree = "<group>"; };
+		2A63C8421D8143D2001A7530 /* UITableViewCellConfigureProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewCellConfigureProtocol.h; sourceTree = "<group>"; };
+		2A63C84A1D8143D2001A7530 /* DFITableViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewConfiguration.h; sourceTree = "<group>"; };
+		2A63C84B1D8143D2001A7530 /* DFITableViewConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewConfiguration.m; sourceTree = "<group>"; };
+		2A63C84C1D8143D2001A7530 /* DFITableViewDataSourceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewDataSourceProxy.h; sourceTree = "<group>"; };
+		2A63C84D1D8143D2001A7530 /* DFITableViewDataSourceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewDataSourceProxy.m; sourceTree = "<group>"; };
+		2A63C84E1D8143D2001A7530 /* DFITableViewDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewDelegateProxy.h; sourceTree = "<group>"; };
+		2A63C84F1D8143D2001A7530 /* DFITableViewDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewDelegateProxy.m; sourceTree = "<group>"; };
+		2A63C8501D8143D2001A7530 /* DFITableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewManager.h; sourceTree = "<group>"; };
+		2A63C8511D8143D2001A7530 /* DFITableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewModel.h; sourceTree = "<group>"; };
+		2A63C8521D8143D2001A7530 /* DFITableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewModel.m; sourceTree = "<group>"; };
+		2A63C8531D8143D2001A7530 /* DFITableViewPaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewPaging.h; sourceTree = "<group>"; };
+		2A63C8541D8143D2001A7530 /* DFIUITableViewDataSourceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIUITableViewDataSourceProxy.h; sourceTree = "<group>"; };
+		2A63C8551D8143D2001A7530 /* DFIUITableViewDataSourceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIUITableViewDataSourceProxy.m; sourceTree = "<group>"; };
+		2A63C8561D8143D2001A7530 /* DFIUITableViewDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIUITableViewDelegateProxy.h; sourceTree = "<group>"; };
+		2A63C8571D8143D2001A7530 /* DFIUITableViewDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIUITableViewDelegateProxy.m; sourceTree = "<group>"; };
+		2A63C8591D8143D2001A7530 /* UITableView+dequeueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+dequeueTableViewCell.h"; sourceTree = "<group>"; };
+		2A63C85A1D8143D2001A7530 /* UITableView+dequeueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+dequeueTableViewCell.m"; sourceTree = "<group>"; };
+		2A6882011D894AAC0036B5CB /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		2A6882021D894AAC0036B5CB /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		2A6882041D894B690036B5CB /* HomeViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewControllerViewModel.h; sourceTree = "<group>"; };
+		2A6882051D894B690036B5CB /* HomeViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewControllerViewModel.m; sourceTree = "<group>"; };
+		2A6882071D89514C0036B5CB /* DataFormatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormatTableViewController.h; sourceTree = "<group>"; };
+		2A6882081D89514C0036B5CB /* DataFormatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormatTableViewController.m; sourceTree = "<group>"; };
+		2A68820A1D89515C0036B5CB /* PlistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistTableViewController.h; sourceTree = "<group>"; };
+		2A68820B1D89515C0036B5CB /* PlistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistTableViewController.m; sourceTree = "<group>"; };
+		2A68820D1D89522E0036B5CB /* DataFormatTableViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormatTableViewControllerViewModel.h; sourceTree = "<group>"; };
+		2A68820E1D89522E0036B5CB /* DataFormatTableViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormatTableViewControllerViewModel.m; sourceTree = "<group>"; };
+		2A6882101D89523E0036B5CB /* PlistTableViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistTableViewControllerViewModel.h; sourceTree = "<group>"; };
+		2A6882111D89523E0036B5CB /* PlistTableViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistTableViewControllerViewModel.m; sourceTree = "<group>"; };
+		2A6882131D8958020036B5CB /* PlistDemo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlistDemo.plist; sourceTree = "<group>"; };
+		4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DFITableViewManagerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8067B5009AA1BAE55BE2CFBF /* Pods-DFITableViewManagerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFITableViewManagerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +170,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD223FE1D84135A00FB0B7A /* Result.framework in Frameworks */,
+				34A64BC73CC14D4ED32D6D04 /* Pods_DFITableViewManagerDemo.framework in Frameworks */,
+				2AD223FC1D84135A00FB0B7A /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +193,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DB8767F2FCB3F94C9BA52F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24F7BC59D6CEE35CCAD80064 /* Pods-DFITableViewManagerDemo.debug.xcconfig */,
+				8067B5009AA1BAE55BE2CFBF /* Pods-DFITableViewManagerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2A22A9F01D83DF4000B5738E /* ConcreteCells */ = {
+			isa = PBXGroup;
+			children = (
+				2A22AA001D83E00F00B5738E /* DFIConcreteTableViewCells.h */,
+				2A22A9F11D83DF4000B5738E /* DFIButtonTableViewCell.h */,
+				2A22A9F21D83DF4000B5738E /* DFIButtonTableViewCell.m */,
+				2A22A9F31D83DF4000B5738E /* DFIButtonTableViewCellViewModel.h */,
+				2A22A9F41D83DF4000B5738E /* DFIButtonTableViewCellViewModel.m */,
+				2A22A9F51D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.h */,
+				2A22A9F61D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m */,
+				2A22A9F71D83DF4000B5738E /* DFITextFieldTableViewCell.h */,
+				2A22A9F81D83DF4000B5738E /* DFITextFieldTableViewCell.m */,
+				2A22A9F91D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.h */,
+				2A22A9FA1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m */,
+			);
+			path = ConcreteCells;
+			sourceTree = "<group>";
+		};
 		2A63C7EC1D8143A3001A7530 = {
 			isa = PBXGroup;
 			children = (
+				2A63C82B1D8143D2001A7530 /* DFITableViewCells */,
+				2A63C8431D8143D2001A7530 /* DFITableViewManager */,
 				2A63C7F71D8143A3001A7530 /* DFITableViewManagerDemo */,
 				2A63C8111D8143A3001A7530 /* DFITableViewManagerDemoTests */,
 				2A63C81C1D8143A3001A7530 /* DFITableViewManagerDemoUITests */,
 				2A63C7F61D8143A3001A7530 /* Products */,
+				1DB8767F2FCB3F94C9BA52F5 /* Pods */,
+				F2D2B6F81BE19868CDC51243 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,8 +249,29 @@
 			children = (
 				2A63C7FB1D8143A3001A7530 /* AppDelegate.h */,
 				2A63C7FC1D8143A3001A7530 /* AppDelegate.m */,
-				2A63C7FE1D8143A3001A7530 /* ViewController.h */,
-				2A63C7FF1D8143A3001A7530 /* ViewController.m */,
+				2A6882011D894AAC0036B5CB /* HomeViewController.h */,
+				2A6882021D894AAC0036B5CB /* HomeViewController.m */,
+				2A6882041D894B690036B5CB /* HomeViewControllerViewModel.h */,
+				2A6882051D894B690036B5CB /* HomeViewControllerViewModel.m */,
+				2A63C7FE1D8143A3001A7530 /* CodeTableViewController.h */,
+				2A63C7FF1D8143A3001A7530 /* CodeTableViewController.m */,
+				2A22AA011D83E4D400B5738E /* CodeTableViewControllerViewModel.h */,
+				2A22AA021D83E4D400B5738E /* CodeTableViewControllerViewModel.m */,
+				2A6882071D89514C0036B5CB /* DataFormatTableViewController.h */,
+				2A6882081D89514C0036B5CB /* DataFormatTableViewController.m */,
+				2A68820D1D89522E0036B5CB /* DataFormatTableViewControllerViewModel.h */,
+				2A68820E1D89522E0036B5CB /* DataFormatTableViewControllerViewModel.m */,
+				2A68820A1D89515C0036B5CB /* PlistTableViewController.h */,
+				2A68820B1D89515C0036B5CB /* PlistTableViewController.m */,
+				2A6882101D89523E0036B5CB /* PlistTableViewControllerViewModel.h */,
+				2A6882111D89523E0036B5CB /* PlistTableViewControllerViewModel.m */,
+				2A22AA041D84108300B5738E /* NSArray+funtional.h */,
+				2A22AA051D84108300B5738E /* NSArray+funtional.m */,
+				2A22AA071D84110600B5738E /* DemoCustomCellViewModel.h */,
+				2A22AA081D84110600B5738E /* DemoCustomCellViewModel.m */,
+				2A22AA091D84110600B5738E /* DemoCustomCell.h */,
+				2A22AA0A1D84110600B5738E /* DemoCustomCell.m */,
+				2A6882131D8958020036B5CB /* PlistDemo.plist */,
 				2A63C8011D8143A3001A7530 /* Main.storyboard */,
 				2A63C8041D8143A3001A7530 /* Assets.xcassets */,
 				2A63C8061D8143A3001A7530 /* LaunchScreen.storyboard */,
@@ -140,6 +307,59 @@
 			path = DFITableViewManagerDemoUITests;
 			sourceTree = "<group>";
 		};
+		2A63C82B1D8143D2001A7530 /* DFITableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2A63C8371D8143D2001A7530 /* DFITableViewCells.h */,
+				2A63C8381D8143D2001A7530 /* DFITableViewCellViewModel.h */,
+				2A63C8391D8143D2001A7530 /* DFITableViewCellViewModel.m */,
+				2A63C8301D8143D2001A7530 /* DFITableViewCellConfigure.h */,
+				2A63C8311D8143D2001A7530 /* DFITableViewCellConfigure.m */,
+				2A63C8321D8143D2001A7530 /* DFITableViewCellDefines.h */,
+				2A63C8351D8143D2001A7530 /* DFITableViewCellOption.h */,
+				2A63C8361D8143D2001A7530 /* DFITableViewCellOption.m */,
+				2A63C83F1D8143D2001A7530 /* UITableViewCell+configure.h */,
+				2A63C8401D8143D2001A7530 /* UITableViewCell+configure.m */,
+				2A63C8411D8143D2001A7530 /* UITableViewCellActionDelegate.h */,
+				2A63C8421D8143D2001A7530 /* UITableViewCellConfigureProtocol.h */,
+				2A22A9F01D83DF4000B5738E /* ConcreteCells */,
+			);
+			path = DFITableViewCells;
+			sourceTree = "<group>";
+		};
+		2A63C8431D8143D2001A7530 /* DFITableViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				2A63C8501D8143D2001A7530 /* DFITableViewManager.h */,
+				2A63C84A1D8143D2001A7530 /* DFITableViewConfiguration.h */,
+				2A63C84B1D8143D2001A7530 /* DFITableViewConfiguration.m */,
+				2A63C84C1D8143D2001A7530 /* DFITableViewDataSourceProxy.h */,
+				2A63C84D1D8143D2001A7530 /* DFITableViewDataSourceProxy.m */,
+				2A63C84E1D8143D2001A7530 /* DFITableViewDelegateProxy.h */,
+				2A63C84F1D8143D2001A7530 /* DFITableViewDelegateProxy.m */,
+				2A63C8511D8143D2001A7530 /* DFITableViewModel.h */,
+				2A63C8521D8143D2001A7530 /* DFITableViewModel.m */,
+				2A63C8531D8143D2001A7530 /* DFITableViewPaging.h */,
+				2A63C8541D8143D2001A7530 /* DFIUITableViewDataSourceProxy.h */,
+				2A63C8551D8143D2001A7530 /* DFIUITableViewDataSourceProxy.m */,
+				2A63C8561D8143D2001A7530 /* DFIUITableViewDelegateProxy.h */,
+				2A63C8571D8143D2001A7530 /* DFIUITableViewDelegateProxy.m */,
+				2A63C8591D8143D2001A7530 /* UITableView+dequeueTableViewCell.h */,
+				2A63C85A1D8143D2001A7530 /* UITableView+dequeueTableViewCell.m */,
+			);
+			path = DFITableViewManager;
+			sourceTree = "<group>";
+		};
+		F2D2B6F81BE19868CDC51243 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A22A9EB1D83B8E700B5738E /* ReactiveCocoa.framework */,
+				2A22A9EC1D83B8E700B5738E /* Result.framework */,
+				4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +367,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A63C8221D8143A3001A7530 /* Build configuration list for PBXNativeTarget "DFITableViewManagerDemo" */;
 			buildPhases = (
+				23E0E36148D392F07E460416 /* [CP] Check Pods Manifest.lock */,
 				2A63C7F11D8143A3001A7530 /* Sources */,
 				2A63C7F21D8143A3001A7530 /* Frameworks */,
 				2A63C7F31D8143A3001A7530 /* Resources */,
+				808CEB9676E6818779E8C7E0 /* [CP] Embed Pods Frameworks */,
+				A0F567F8491483ED012BAF69 /* [CP] Copy Pods Resources */,
+				2AD224001D84135A00FB0B7A /* Embed Frameworks */,
+				2AD224011D8413DE00FB0B7A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,6 +432,7 @@
 				TargetAttributes = {
 					2A63C7F41D8143A3001A7530 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					2A63C80D1D8143A3001A7530 = {
@@ -248,6 +474,7 @@
 			files = (
 				2A63C8081D8143A3001A7530 /* LaunchScreen.storyboard in Resources */,
 				2A63C8051D8143A3001A7530 /* Assets.xcassets in Resources */,
+				2A6882141D8958020036B5CB /* PlistDemo.plist in Resources */,
 				2A63C8031D8143A3001A7530 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,14 +495,103 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23E0E36148D392F07E460416 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2AD224011D8413DE00FB0B7A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		808CEB9676E6818779E8C7E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0F567F8491483ED012BAF69 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2A63C7F11D8143A3001A7530 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A63C8001D8143A3001A7530 /* ViewController.m in Sources */,
+				2A22AA0B1D84110600B5738E /* DemoCustomCellViewModel.m in Sources */,
+				2A63C8691D8143D2001A7530 /* DFITableViewDataSourceProxy.m in Sources */,
+				2A63C86D1D8143D2001A7530 /* DFIUITableViewDelegateProxy.m in Sources */,
+				2A22A9FB1D83DF4000B5738E /* DFIButtonTableViewCell.m in Sources */,
+				2A63C8641D8143D2001A7530 /* UITableViewCell+configure.m in Sources */,
+				2A68820F1D89522E0036B5CB /* DataFormatTableViewControllerViewModel.m in Sources */,
+				2A63C86A1D8143D2001A7530 /* DFITableViewDelegateProxy.m in Sources */,
+				2A63C85D1D8143D2001A7530 /* DFITableViewCellConfigure.m in Sources */,
+				2A22AA061D84108300B5738E /* NSArray+funtional.m in Sources */,
+				2A68820C1D89515C0036B5CB /* PlistTableViewController.m in Sources */,
+				2A63C8681D8143D2001A7530 /* DFITableViewConfiguration.m in Sources */,
+				2A22AA0C1D84110600B5738E /* DemoCustomCell.m in Sources */,
+				2A22A9FD1D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m in Sources */,
+				2A63C8001D8143A3001A7530 /* CodeTableViewController.m in Sources */,
+				2A63C85F1D8143D2001A7530 /* DFITableViewCellOption.m in Sources */,
+				2A63C8601D8143D2001A7530 /* DFITableViewCellViewModel.m in Sources */,
+				2A63C86F1D8143D2001A7530 /* UITableView+dequeueTableViewCell.m in Sources */,
 				2A63C7FD1D8143A3001A7530 /* AppDelegate.m in Sources */,
+				2A6882121D89523E0036B5CB /* PlistTableViewControllerViewModel.m in Sources */,
+				2A63C86B1D8143D2001A7530 /* DFITableViewModel.m in Sources */,
+				2A6882091D89514C0036B5CB /* DataFormatTableViewController.m in Sources */,
+				2A22A9FF1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m in Sources */,
+				2A6882061D894B690036B5CB /* HomeViewControllerViewModel.m in Sources */,
+				2A22AA031D83E4D400B5738E /* CodeTableViewControllerViewModel.m in Sources */,
 				2A63C7FA1D8143A3001A7530 /* main.m in Sources */,
+				2A22A9FE1D83DF4000B5738E /* DFITextFieldTableViewCell.m in Sources */,
+				2A22A9FC1D83DF4000B5738E /* DFIButtonTableViewCellViewModel.m in Sources */,
+				2A63C86C1D8143D2001A7530 /* DFIUITableViewDataSourceProxy.m in Sources */,
+				2A6882031D894AAC0036B5CB /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,23 +738,37 @@
 		};
 		2A63C8231D8143A3001A7530 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F7BC59D6CEE35CCAD80064 /* Pods-DFITableViewManagerDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DFITableViewManagerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kibey.TestKBAD.DFITableViewManagerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
 		2A63C8241D8143A3001A7530 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8067B5009AA1BAE55BE2CFBF /* Pods-DFITableViewManagerDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DFITableViewManagerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kibey.TestKBAD.DFITableViewManagerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -507,6 +837,7 @@
 				2A63C8241D8143A3001A7530 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A63C8251D8143A3001A7530 /* Build configuration list for PBXNativeTarget "DFITableViewManagerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +846,7 @@
 				2A63C8271D8143A3001A7530 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A63C8281D8143A3001A7530 /* Build configuration list for PBXNativeTarget "DFITableViewManagerDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +855,7 @@
 				2A63C82A1D8143A3001A7530 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
