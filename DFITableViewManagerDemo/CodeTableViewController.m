@@ -28,12 +28,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+#define BLOCK
+#ifdef BLOCK
     @weakify(self);
     self.viewModel.confirmButtonCellViewModel.buttonClickBlock = ^(UITableViewCell *cell,
                                                                    UIButton *button) {
         @strongify(self);
         [self showAlert];
     };
+#endif
+    
+//#define TARGET_SELECTOR
+#ifdef TARGET_SELECTOR
+    [self.viewModel.confirmButtonCellViewModel addTarget:self action:@selector(showAlert)];
+#endif
+    
+//#define RACCOMMAND
+#ifdef RACCOMMAND
+    @weakify(self)
+    RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        @strongify(self)
+        [self showAlert];
+        return nil;
+    }];
+    
+    self.viewModel.confirmButtonCellViewModel.buttonCommand =
+    [[RACCommand alloc] initWithEnabled:[RACSignal return:@(YES)]
+                            signalBlock:^RACSignal *(id input) {
+        return signal;
+    }];
+#endif
     // Do any additional setup after loading the view, typically from a nib.
 }
 

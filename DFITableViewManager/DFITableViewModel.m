@@ -32,12 +32,10 @@
 }
 
 - (instancetype)initWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration {
-    self = [super init];
+    self = [self init];
     
     if (self) {
         _tableViewConfiguration = tableViewConfiguration;
-        
-        _dataSource = [NSArray array];
     }
     
     return self;

@@ -68,10 +68,6 @@
     if (!_confirmButtonCellViewModel) {
         _confirmButtonCellViewModel =
         [[DFIButtonTableViewCellViewModel alloc] initWithButtonTitleString:@"Login"];
-
-        _confirmButtonCellViewModel.buttonClickBlock = ^(UITableViewCell *cell, UIButton *button) {
-            
-        };
     }
     
     return _confirmButtonCellViewModel;

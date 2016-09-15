@@ -8,6 +8,13 @@
 
 #import "DFIButtonTableViewCellViewModel.h"
 
+@interface DFIButtonTableViewCellViewModel ()
+
+@property (nonatomic, strong) id target;
+@property (nonatomic, assign) SEL selector;
+
+@end
+
 @implementation DFIButtonTableViewCellViewModel
 
 - (instancetype)initWithButtonTitleString:(NSString *)buttonTitleString {
@@ -17,6 +24,11 @@
     }
     
     return self;
+}
+
+- (void)addTarget:(id)target action:(SEL)selector {
+    self.target = target;
+    self.selector = selector;
 }
 
 @end

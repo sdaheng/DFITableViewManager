@@ -12,6 +12,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #endif
 
+NS_ASSUME_NONNULL_BEGIN
 @interface DFIButtonTableViewCellViewModel : DFITableViewCellViewModel
 
 @property (nonatomic, copy) NSString *buttonTitleString;
@@ -22,9 +23,12 @@
 @property (nonatomic, strong) RACCommand *buttonCommand;
 #endif
 
-@property (nonatomic, strong) id target;
-@property (nonatomic, assign) SEL selector;
+@property (nonatomic, strong, readonly) id target;
+@property (nonatomic, assign, readonly) SEL selector;
 
 - (instancetype)initWithButtonTitleString:(NSString *)buttonTitleString;
 
+- (void)addTarget:(id)target action:(SEL)selector;
+
 @end
+NS_ASSUME_NONNULL_END

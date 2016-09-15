@@ -21,12 +21,9 @@
 - (instancetype)initWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration{
     
     if (self = [super initWithTableViewConfiguration:tableViewConfiguration]) {
-        self.dataSource = @[ [@[ @"CodeDemo",
-                                 @"DataFormatDemo",
-                                 @"PlistDemo" ] map:^id(id value) {
-                                    DemoCustomCellViewModel *cellViewModel = [[DemoCustomCellViewModel alloc] initWithText:value];
-                                    return cellViewModel;
-                                }] ];
+        self.dataSource = @[ [@[ @"CodeDemo", @"DataFormatDemo", @"PlistDemo" ] map:^id(id value) {
+            return [[DemoCustomCellViewModel alloc] initWithText:value];
+        }] ];
     }
     
     return self;

@@ -15,14 +15,10 @@
 
 - (instancetype)initWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration {
     if (self = [super initWithTableViewConfiguration:tableViewConfiguration]) {
-        self.dataSource = @[ [@[ @"1",
-                                 @"2",
-                                 @"3",
-                                 @"4",
-                                 @"5" ] map:^id(id value) {
-                                     DemoCustomCellViewModel *cellViewModel = [[DemoCustomCellViewModel alloc] initWithText:value];
-                                     return cellViewModel;
-                                 }] ];
+        self.dataSource =
+        @[ [@[ @"1", @"2", @"3", @"4", @"5" ] map:^id(id value) {
+            return [[DemoCustomCellViewModel alloc] initWithText:value];
+        }] ];
     }
     
     return self;

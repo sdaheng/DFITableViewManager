@@ -93,7 +93,7 @@
             
             return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
                                                         cellForRowAtIndexPath:indexPath];
-        }else {
+        } else {
             return [self.tableViewConfiguration cellForConfigurationAtIndexPath:indexPath];
         }
     
@@ -107,7 +107,7 @@
             
             return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
                                                         canEditRowAtIndexPath:indexPath];
-        }else {
+        } else {
             return NO;
         }
 }
@@ -119,7 +119,7 @@
             
             return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
                                                         canMoveRowAtIndexPath:indexPath];
-        }else {
+        } else {
             return NO;
         }
 }

@@ -68,19 +68,27 @@
 }
 
 - (instancetype)initWithTableView:(UITableView *)tableView
-           withRowIsSameInSection:(DFITableViewRowIsSameInSection) rowIsSameInSection {
+           withRowIsSameInSection:(DFITableViewRowIsSameInSection)rowIsSameInSection {
     
     self = [self initWithTableView:tableView
                   dataSourceFormat:nil];
     
     if (self) {
-        _rowIsSameInSection = rowIsSameInSection ?: [self defaultRowIsSameInSection];
+        _rowIsSameInSection = rowIsSameInSection ?: defaultRowIsSameInSection();
     }
     
     return self;
 }
 
-- (DFITableViewRowIsSameInSection)defaultRowIsSameInSection {
+- (instancetype)init {
+    return nil;
+}
+
++ (instancetype)new {
+    return nil;
+}
+
+static DFITableViewRowIsSameInSection defaultRowIsSameInSection() {
     return ^(NSInteger sectionIndex){
         return YES;
     };

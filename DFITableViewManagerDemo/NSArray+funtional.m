@@ -14,12 +14,10 @@
     NSParameterAssert(block);
     NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:self.count];
     
-    [self enumerateObjectsUsingBlock:^(id  _Nonnull obj,
-                                       NSUInteger idx,
-                                       BOOL * _Nonnull stop) {
-        [tempArray addObject:block(obj)];
-    }];
-    
+    for (id value in self) {
+        [tempArray addObject:block(value)];
+    }
+
     return [tempArray copy];
 }
 
