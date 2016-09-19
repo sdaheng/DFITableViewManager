@@ -14,6 +14,9 @@
 
 @interface CodeTableViewControllerViewModel ()
 
+@property (nonatomic, strong) DFIPlainTableViewCellViewModel *textCellViewModel;
+@property (nonatomic, strong) DFISegmentedTableViewCellViewModel *segmentedCellViewModel;
+
 @property (nonatomic, strong) DFITextFieldTableViewCellViewModel *nameTextFieldCellViewModel;
 @property (nonatomic, strong) DFITextFieldTableViewCellViewModel *passwordTextFieldCellViewModel;
 
@@ -26,12 +29,34 @@
 - (instancetype)initWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration {
     self = [super initWithTableViewConfiguration:tableViewConfiguration];
     if (self) {
-        self.dataSource = @[ @[ self.nameTextFieldCellViewModel,
+        self.dataSource = @[ @[ self.textCellViewModel,
+                                self.segmentedCellViewModel ],
+                             @[ self.nameTextFieldCellViewModel,
                                 self.passwordTextFieldCellViewModel ],
                              @[ self.confirmButtonCellViewModel ] ];
     }
     
     return self;
+}
+
+- (DFIPlainTableViewCellViewModel *)textCellViewModel {
+    if (!_textCellViewModel) {
+        _textCellViewModel = [[DFIPlainTableViewCellViewModel alloc] initWithTitleTextString:@"Title"
+                                                                            detailTextString:@"detail"
+                                                                             imageNameString:nil];
+    }
+    
+    return _textCellViewModel;
+}
+
+- (DFISegmentedTableViewCellViewModel *)segmentedCellViewModel {
+    if (!_segmentedCellViewModel) {
+        _segmentedCellViewModel = [[DFISegmentedTableViewCellViewModel alloc] initWithTitle:@"Gender"
+                                                                  titlesForSegmentedControl:@[@"Male",
+                                                                                              @"Female"]
+                                                                          defaulSelectIndex:0];
+    }
+    return _segmentedCellViewModel;
 }
 
 - (DFITextFieldTableViewCellViewModel *)nameTextFieldCellViewModel {

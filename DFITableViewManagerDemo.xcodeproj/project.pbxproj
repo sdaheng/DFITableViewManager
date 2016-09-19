@@ -46,6 +46,13 @@
 		2AD223FD1D84135A00FB0B7A /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EB1D83B8E700B5738E /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AD223FE1D84135A00FB0B7A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EC1D83B8E700B5738E /* Result.framework */; };
 		2AD223FF1D84135A00FB0B7A /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EC1D83B8E700B5738E /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2AF10B2D1D8F82C000CB97CA /* DFIPlainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B201D8F82C000CB97CA /* DFIPlainTableViewCell.m */; };
+		2AF10B2E1D8F82C000CB97CA /* DFIPlainTableViewCellOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B221D8F82C000CB97CA /* DFIPlainTableViewCellOption.m */; };
+		2AF10B2F1D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B241D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.m */; };
+		2AF10B301D8F82C000CB97CA /* DFISegmentedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B261D8F82C000CB97CA /* DFISegmentedTableViewCell.m */; };
+		2AF10B311D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B281D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.m */; };
+		2AF10B321D8F82C000CB97CA /* DFITextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B2A1D8F82C000CB97CA /* DFITextViewTableViewCell.m */; };
+		2AF10B331D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B2C1D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.m */; };
 		34A64BC73CC14D4ED32D6D04 /* Pods_DFITableViewManagerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +168,20 @@
 		2A6882101D89523E0036B5CB /* PlistTableViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistTableViewControllerViewModel.h; sourceTree = "<group>"; };
 		2A6882111D89523E0036B5CB /* PlistTableViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistTableViewControllerViewModel.m; sourceTree = "<group>"; };
 		2A6882131D8958020036B5CB /* PlistDemo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlistDemo.plist; sourceTree = "<group>"; };
+		2AF10B1F1D8F82C000CB97CA /* DFIPlainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIPlainTableViewCell.h; sourceTree = "<group>"; };
+		2AF10B201D8F82C000CB97CA /* DFIPlainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIPlainTableViewCell.m; sourceTree = "<group>"; };
+		2AF10B211D8F82C000CB97CA /* DFIPlainTableViewCellOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIPlainTableViewCellOption.h; sourceTree = "<group>"; };
+		2AF10B221D8F82C000CB97CA /* DFIPlainTableViewCellOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIPlainTableViewCellOption.m; sourceTree = "<group>"; };
+		2AF10B231D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIPlainTableViewCellViewModel.h; sourceTree = "<group>"; };
+		2AF10B241D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIPlainTableViewCellViewModel.m; sourceTree = "<group>"; };
+		2AF10B251D8F82C000CB97CA /* DFISegmentedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFISegmentedTableViewCell.h; sourceTree = "<group>"; };
+		2AF10B261D8F82C000CB97CA /* DFISegmentedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFISegmentedTableViewCell.m; sourceTree = "<group>"; };
+		2AF10B271D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFISegmentedTableViewCellViewModel.h; sourceTree = "<group>"; };
+		2AF10B281D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFISegmentedTableViewCellViewModel.m; sourceTree = "<group>"; };
+		2AF10B291D8F82C000CB97CA /* DFITextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITextViewTableViewCell.h; sourceTree = "<group>"; };
+		2AF10B2A1D8F82C000CB97CA /* DFITextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITextViewTableViewCell.m; sourceTree = "<group>"; };
+		2AF10B2B1D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITextViewTableViewCellViewModel.h; sourceTree = "<group>"; };
+		2AF10B2C1D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITextViewTableViewCellViewModel.m; sourceTree = "<group>"; };
 		4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DFITableViewManagerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8067B5009AA1BAE55BE2CFBF /* Pods-DFITableViewManagerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFITableViewManagerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +237,20 @@
 				2A22A9F81D83DF4000B5738E /* DFITextFieldTableViewCell.m */,
 				2A22A9F91D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.h */,
 				2A22A9FA1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m */,
+				2AF10B1F1D8F82C000CB97CA /* DFIPlainTableViewCell.h */,
+				2AF10B201D8F82C000CB97CA /* DFIPlainTableViewCell.m */,
+				2AF10B211D8F82C000CB97CA /* DFIPlainTableViewCellOption.h */,
+				2AF10B221D8F82C000CB97CA /* DFIPlainTableViewCellOption.m */,
+				2AF10B231D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.h */,
+				2AF10B241D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.m */,
+				2AF10B251D8F82C000CB97CA /* DFISegmentedTableViewCell.h */,
+				2AF10B261D8F82C000CB97CA /* DFISegmentedTableViewCell.m */,
+				2AF10B271D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.h */,
+				2AF10B281D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.m */,
+				2AF10B291D8F82C000CB97CA /* DFITextViewTableViewCell.h */,
+				2AF10B2A1D8F82C000CB97CA /* DFITextViewTableViewCell.m */,
+				2AF10B2B1D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.h */,
+				2AF10B2C1D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.m */,
 			);
 			path = ConcreteCells;
 			sourceTree = "<group>";
@@ -265,12 +300,8 @@
 				2A68820B1D89515C0036B5CB /* PlistTableViewController.m */,
 				2A6882101D89523E0036B5CB /* PlistTableViewControllerViewModel.h */,
 				2A6882111D89523E0036B5CB /* PlistTableViewControllerViewModel.m */,
-				2A22AA041D84108300B5738E /* NSArray+funtional.h */,
-				2A22AA051D84108300B5738E /* NSArray+funtional.m */,
-				2A22AA071D84110600B5738E /* DemoCustomCellViewModel.h */,
-				2A22AA081D84110600B5738E /* DemoCustomCellViewModel.m */,
-				2A22AA091D84110600B5738E /* DemoCustomCell.h */,
-				2A22AA0A1D84110600B5738E /* DemoCustomCell.m */,
+				2A7F8BEE1D8FC76500208766 /* HelperCategory */,
+				2A7F8BED1D8FC74400208766 /* CustomCells */,
 				2A6882131D8958020036B5CB /* PlistDemo.plist */,
 				2A63C8011D8143A3001A7530 /* Main.storyboard */,
 				2A63C8041D8143A3001A7530 /* Assets.xcassets */,
@@ -348,6 +379,26 @@
 				2A63C85A1D8143D2001A7530 /* UITableView+dequeueTableViewCell.m */,
 			);
 			path = DFITableViewManager;
+			sourceTree = "<group>";
+		};
+		2A7F8BED1D8FC74400208766 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				2A22AA071D84110600B5738E /* DemoCustomCellViewModel.h */,
+				2A22AA081D84110600B5738E /* DemoCustomCellViewModel.m */,
+				2A22AA091D84110600B5738E /* DemoCustomCell.h */,
+				2A22AA0A1D84110600B5738E /* DemoCustomCell.m */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		2A7F8BEE1D8FC76500208766 /* HelperCategory */ = {
+			isa = PBXGroup;
+			children = (
+				2A22AA041D84108300B5738E /* NSArray+funtional.h */,
+				2A22AA051D84108300B5738E /* NSArray+funtional.m */,
+			);
+			name = HelperCategory;
 			sourceTree = "<group>";
 		};
 		F2D2B6F81BE19868CDC51243 /* Frameworks */ = {
@@ -565,10 +616,12 @@
 			files = (
 				2A22AA0B1D84110600B5738E /* DemoCustomCellViewModel.m in Sources */,
 				2A63C8691D8143D2001A7530 /* DFITableViewDataSourceProxy.m in Sources */,
+				2AF10B2F1D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.m in Sources */,
 				2A63C86D1D8143D2001A7530 /* DFIUITableViewDelegateProxy.m in Sources */,
 				2A22A9FB1D83DF4000B5738E /* DFIButtonTableViewCell.m in Sources */,
 				2A63C8641D8143D2001A7530 /* UITableViewCell+configure.m in Sources */,
 				2A68820F1D89522E0036B5CB /* DataFormatTableViewControllerViewModel.m in Sources */,
+				2AF10B2D1D8F82C000CB97CA /* DFIPlainTableViewCell.m in Sources */,
 				2A63C86A1D8143D2001A7530 /* DFITableViewDelegateProxy.m in Sources */,
 				2A63C85D1D8143D2001A7530 /* DFITableViewCellConfigure.m in Sources */,
 				2A22AA061D84108300B5738E /* NSArray+funtional.m in Sources */,
@@ -586,11 +639,16 @@
 				2A6882091D89514C0036B5CB /* DataFormatTableViewController.m in Sources */,
 				2A22A9FF1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m in Sources */,
 				2A6882061D894B690036B5CB /* HomeViewControllerViewModel.m in Sources */,
+				2AF10B301D8F82C000CB97CA /* DFISegmentedTableViewCell.m in Sources */,
 				2A22AA031D83E4D400B5738E /* CodeTableViewControllerViewModel.m in Sources */,
+				2AF10B311D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.m in Sources */,
+				2AF10B331D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.m in Sources */,
 				2A63C7FA1D8143A3001A7530 /* main.m in Sources */,
 				2A22A9FE1D83DF4000B5738E /* DFITextFieldTableViewCell.m in Sources */,
+				2AF10B321D8F82C000CB97CA /* DFITextViewTableViewCell.m in Sources */,
 				2A22A9FC1D83DF4000B5738E /* DFIButtonTableViewCellViewModel.m in Sources */,
 				2A63C86C1D8143D2001A7530 /* DFIUITableViewDataSourceProxy.m in Sources */,
+				2AF10B2E1D8F82C000CB97CA /* DFIPlainTableViewCellOption.m in Sources */,
 				2A6882031D894AAC0036B5CB /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,6 +722,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -712,6 +771,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -747,6 +807,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DFITableViewManagerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kibey.TestKBAD.DFITableViewManagerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -765,6 +826,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DFITableViewManagerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kibey.TestKBAD.DFITableViewManagerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

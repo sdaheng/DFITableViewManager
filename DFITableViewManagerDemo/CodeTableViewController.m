@@ -99,7 +99,9 @@
         _viewModel = [[CodeTableViewControllerViewModel alloc] initWithTableViewConfiguration:tableViewConfiguration];
         _viewModel.tableViewConfiguration.registerClassCells =
         @{NSStringFromClass([DFITextFieldTableViewCellViewModel class]) : [DFITextFieldTableViewCell class],
-          NSStringFromClass([DFIButtonTableViewCellViewModel class]) : [DFIButtonTableViewCell class]};
+          NSStringFromClass([DFIButtonTableViewCellViewModel class]) : [DFIButtonTableViewCell class],
+          NSStringFromClass([DFIPlainTableViewCellViewModel class]) : [DFIPlainTableViewCell class],
+          NSStringFromClass([DFISegmentedTableViewCellViewModel class]) : [DFISegmentedTableViewCell class]};
     }
     
     return _viewModel;

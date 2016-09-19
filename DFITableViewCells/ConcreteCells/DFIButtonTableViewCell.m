@@ -10,10 +10,6 @@
 
 #import <Masonry/Masonry.h>
 
-#if __has_include(<DFIUIKit/DFIUIKit.h>)
-#import <DFIUIKit/DFIUIKit.h>
-#endif
-
 #import "UITableViewCellConfigureProtocol.h"
 
 #import "DFIButtonTableViewCellViewModel.h"
@@ -29,11 +25,7 @@ NSString * const kButtonHideCellBackgroundColorKey = @"kButtonHideCellBackground
 
 NSString * const kButtonEnableKey = @"kButtonEnableKey";
 
-@interface DFIButtonTableViewCell () <
-#if __has_include(<DFIUIKit/DFIUIKit.h>)
-                                      UIViewInitializationInterface,
-#endif
-                                      UITableViewCellConfigureProtocol>
+@interface DFIButtonTableViewCell () <UITableViewCellConfigureProtocol>
 
 @property (nonatomic, strong) UIButton *button;
 
@@ -136,9 +128,13 @@ NSString * const kButtonEnableKey = @"kButtonEnableKey";
         [self.button addTarget:self.cellViewModel.target
                         action:self.cellViewModel.selector
               forControlEvents:UIControlEventTouchUpInside];
-    } else if (self.cellViewModel.buttonCommand) {
+    }
+#if __has_include(<ReactiveCocoa/ReactiveCocoa.h>)
+    else if (self.cellViewModel.buttonCommand) {
         self.button.rac_command = self.cellViewModel.buttonCommand;
-    } else {
+    }
+#endif
+    else {
         [_button addTarget:self
                     action:@selector(handleTapButton:)
           forControlEvents:UIControlEventTouchUpInside];

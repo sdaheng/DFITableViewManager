@@ -62,6 +62,8 @@
         
         _delegateProxy =
         [DFITableViewDelegateProxy tableViewDelegateProxyWithTableViewConfiguration:self];
+        
+        
     }
     
     return self;

@@ -10,23 +10,13 @@
 
 #import <Masonry/Masonry.h>
 
-#if __has_include(<DFIUIKit/DFIUIKit.h>)
-#import <DFIUIKit/DFIUIKit.h>
-#endif
-
 #import "UITableViewCellConfigureProtocol.h"
 
 #import "DFITextFieldTableViewCellViewModel.h"
 #import "DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.h"
 #import "DFITableViewCellConfigure.h"
 
-#import <ReactiveCocoa/ReactiveCocoa.h>
-
-@interface DFITextFieldTableViewCell () <
-#if __has_include(<DFIUIKit/DFIUIKit.h>)
-                                         UIViewInitializationInterface,
-#endif
-                                         UITableViewCellConfigureProtocol,
+@interface DFITextFieldTableViewCell () <UITableViewCellConfigureProtocol,
                                          UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -57,43 +47,7 @@
 }
 
 - (void)commonInit {
-    [self initViews];
-    [self addViews];
-    [self setupViewConstraints];
     [self setupViews];
-    [self bindingViews];
-}
-
-- (void)initViews {
-    _titleLabel = [[UILabel alloc] init];
-    _textField  = [[UITextField alloc] init];
-}
-
-- (void)addViews {
-    [self.contentView addSubview:_titleLabel];
-    [self.contentView addSubview:_textField];
-}
-
-- (void)setupViewConstraints {
-    
-    [_titleLabel setContentHuggingPriority:500
-                                   forAxis:UILayoutConstraintAxisHorizontal];
-    
-    [_titleLabel setContentCompressionResistancePriority:1000
-                                                 forAxis:UILayoutConstraintAxisHorizontal];
-    
-    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.contentView.mas_leading).with.offset(15);
-        make.centerY.equalTo(self.contentView.mas_centerY);
-    }];
-    
-    [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_titleLabel.mas_centerY);
-        make.leading.equalTo(_titleLabel.mas_trailing).with.offset(8).with.priorityHigh();
-        make.trailing.equalTo(self.contentView.mas_trailing).with.offset(-8);
-        make.top.equalTo(self.contentView.mas_top).with.offset(8);
-        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-8);
-    }];
 }
 
 - (void)setupViews {
@@ -109,16 +63,12 @@
              forControlEvents:UIControlEventEditingChanged];
 }
 
-- (void)bindingViews {
-    
-    RAC(self, textField.placeholder) = RACObserve(self, cellViewModel.placeholderString);
-
-    RAC(self, titleLabel.text) = RACObserve(self, cellViewModel.titleString);
-}
-
 - (void)configureCellWithInfo:(id)info option:(id)option {
     self.cellViewModel = info;
     self.textField.text = self.cellViewModel.textValue;
+    self.textField.placeholder = self.cellViewModel.placeholderString;
+    self.textLabel.text = self.cellViewModel.titleString;
+    
     self.textField.keyboardType = self.cellViewModel.keyboardType;
     
     self.textField.leftView =
@@ -158,6 +108,41 @@
     if (self.cellViewModel.textDidEndEditing) {
         self.cellViewModel.textDidEndEditing(self.cellViewModel);
     }
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] init];
+        [self.contentView addSubview:_titleLabel];
+        
+        [_titleLabel setContentHuggingPriority:500
+                                       forAxis:UILayoutConstraintAxisHorizontal];
+        
+        [_titleLabel setContentCompressionResistancePriority:1000
+                                                     forAxis:UILayoutConstraintAxisHorizontal];
+        
+        [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(self.contentView.mas_leading).with.offset(15);
+            make.centerY.equalTo(self.contentView.mas_centerY);
+        }];
+    }
+    return _titleLabel;
+}
+
+- (UITextField *)textField {
+    if (!_textField) {
+        _textField = [[UITextField alloc] init];
+        [self.contentView addSubview:_textField];
+        
+        [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.titleLabel.mas_centerY);
+            make.leading.equalTo(self.titleLabel.mas_trailing).with.offset(8).with.priorityHigh();
+            make.trailing.equalTo(self.contentView.mas_trailing).with.offset(-8);
+            make.top.equalTo(self.contentView.mas_top).with.offset(8);
+            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-8);
+        }];
+    }
+    return _textField;
 }
 
 @end
