@@ -1,10 +1,12 @@
 Pod::Spec.new do |s|
   s.version      = "0.0.1"
-  s.summary      = "A short description of DFITableViewManager."
+  s.name         = "DFITableViewManager"
+  s.summary      = "DFITableViewManager is a part of DFInfrasturcture"
   s.description  = <<-DESC
+			DFITableViewManager is a library for simplify tableView delegate and dataSource code.
                    DESC
 
-  s.homepage     = "http://EXAMPLE/DFITableViewManager"
+  s.homepage     = "https://github.com/sdaheng/DFITableViewManager.git"
   
   s.license      = "MIT"
   s.license      = { :type => "MIT", :file => "LICENSE" }
