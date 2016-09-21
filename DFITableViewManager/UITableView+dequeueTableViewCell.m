@@ -7,12 +7,6 @@
 //
 
 #import "UITableView+dequeueTableViewCell.h"
-
-#if __has_include(<DFITableViewCells/DFITableViewCells.h>)
-#import <DFITableViewCells/DFITableViewCells.h>
-#endif
-
-#import "DFITableViewCells.h"
 #import "UITableViewCell+configure.h"
 
 @implementation UITableView (dequeueTableViewCell)
