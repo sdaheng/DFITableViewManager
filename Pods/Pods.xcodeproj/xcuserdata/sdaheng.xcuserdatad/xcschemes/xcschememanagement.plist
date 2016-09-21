@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DFITableViewCells.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A355D1EBCBF1EFB23765D4CB6ECAECE0</key>
+		<key>25C9EEC5FDD089AF429A339AB9EC88EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9A83F63385AA43314397B8DD375464B</key>
+		<key>3EB759ADFEF0106C86E49DFFA5CFAADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>56453C4347B820BE9CF8248DC6E92313</key>
 		<dict>
 			<key>primary</key>
 			<true/>

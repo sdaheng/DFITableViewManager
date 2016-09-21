@@ -7,8 +7,9 @@
 //
 
 #import "DemoCustomCell.h"
-#import "DFITableViewCells.h"
 #import "DemoCustomCellViewModel.h"
+
+#import <DFITableViewCells/DFITableViewCells.h>
 
 @interface DemoCustomCell () <UITableViewCellConfigureProtocol>
 

@@ -1,12 +1,16 @@
 PODS:
-  - Masonry (1.0.1)
+  - DFITableViewCells (0.0.1):
+    - Masonry
+  - Masonry (1.0.2)
 
 DEPENDENCIES:
+  - DFITableViewCells
   - Masonry
 
 SPEC CHECKSUMS:
-  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  DFITableViewCells: 215406b9b0b5dca47d11294e4b3367b077eada71
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
 
-PODFILE CHECKSUM: f34c370d270c40d810e8739c8c3471eedc83a545
+PODFILE CHECKSUM: 9483585cbff2d0e1f282f1866c5b49869dd91b79
 
-COCOAPODS: 1.1.0.beta.2
+COCOAPODS: 1.1.0.rc.2

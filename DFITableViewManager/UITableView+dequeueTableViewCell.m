@@ -28,13 +28,7 @@
 
 - (UITableViewCell *)dequeueTableViewCellAtIndexPath:(NSIndexPath *)indexPath
                                  withReuseIdentifier:(NSString *)identifier
-                                                info:(
-#if __has_include(<DFITableViewCells/DFITableViewCells.h>)
-                                                      __kindof DFITableViewCellViewModel *viewModel
-#else
-                                                      id
-#endif
-                                                      )info
+                                                info:(id)info
                                               option:(id)option {
     
     if (!identifier) return nil;

@@ -9,12 +9,12 @@
 #import "CodeTableViewController.h"
 
 #import "DFITableViewManager.h"
-#import "DFITableViewCells.h"
-#import "DFIConcreteTableViewCells.h"
+
 #import "CodeTableViewControllerViewModel.h"
 
 #import "DemoCustomCell.h"
-#import "DFIConcreteTableViewCells.h"
+#import <DFITableViewCells/DFITableViewCells.h>
+
 
 @interface CodeTableViewController ()
 

@@ -1,0 +1,6 @@
+framework module DFITableViewCells {
+  umbrella header "DFITableViewCells-umbrella.h"
+
+  export *
+  module * { export * }
+}

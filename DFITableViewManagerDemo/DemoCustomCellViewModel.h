@@ -6,7 +6,7 @@
 //  Copyright © 2016年 sdaheng. All rights reserved.
 //
 
-#import "DFITableViewCellViewModel.h"
+#import <DFITableViewCells/DFITableViewCells.h>
 
 @interface DemoCustomCellViewModel : DFITableViewCellViewModel
 

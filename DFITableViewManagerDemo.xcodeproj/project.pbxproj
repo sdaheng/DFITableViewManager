@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A22A9FB1D83DF4000B5738E /* DFIButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22A9F21D83DF4000B5738E /* DFIButtonTableViewCell.m */; };
-		2A22A9FC1D83DF4000B5738E /* DFIButtonTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22A9F41D83DF4000B5738E /* DFIButtonTableViewCellViewModel.m */; };
-		2A22A9FD1D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22A9F61D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m */; };
-		2A22A9FE1D83DF4000B5738E /* DFITextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22A9F81D83DF4000B5738E /* DFITextFieldTableViewCell.m */; };
-		2A22A9FF1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22A9FA1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m */; };
 		2A22AA031D83E4D400B5738E /* CodeTableViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22AA021D83E4D400B5738E /* CodeTableViewControllerViewModel.m */; };
 		2A22AA061D84108300B5738E /* NSArray+funtional.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22AA051D84108300B5738E /* NSArray+funtional.m */; };
 		2A22AA0B1D84110600B5738E /* DemoCustomCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A22AA081D84110600B5738E /* DemoCustomCellViewModel.m */; };
@@ -24,10 +19,6 @@
 		2A63C8081D8143A3001A7530 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A63C8061D8143A3001A7530 /* LaunchScreen.storyboard */; };
 		2A63C8131D8143A3001A7530 /* DFITableViewManagerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8121D8143A3001A7530 /* DFITableViewManagerDemoTests.m */; };
 		2A63C81E1D8143A3001A7530 /* DFITableViewManagerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C81D1D8143A3001A7530 /* DFITableViewManagerDemoUITests.m */; };
-		2A63C85D1D8143D2001A7530 /* DFITableViewCellConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8311D8143D2001A7530 /* DFITableViewCellConfigure.m */; };
-		2A63C85F1D8143D2001A7530 /* DFITableViewCellOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8361D8143D2001A7530 /* DFITableViewCellOption.m */; };
-		2A63C8601D8143D2001A7530 /* DFITableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8391D8143D2001A7530 /* DFITableViewCellViewModel.m */; };
-		2A63C8641D8143D2001A7530 /* UITableViewCell+configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C8401D8143D2001A7530 /* UITableViewCell+configure.m */; };
 		2A63C8681D8143D2001A7530 /* DFITableViewConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C84B1D8143D2001A7530 /* DFITableViewConfiguration.m */; };
 		2A63C8691D8143D2001A7530 /* DFITableViewDataSourceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C84D1D8143D2001A7530 /* DFITableViewDataSourceProxy.m */; };
 		2A63C86A1D8143D2001A7530 /* DFITableViewDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A63C84F1D8143D2001A7530 /* DFITableViewDelegateProxy.m */; };
@@ -46,13 +37,6 @@
 		2AD223FD1D84135A00FB0B7A /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EB1D83B8E700B5738E /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AD223FE1D84135A00FB0B7A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EC1D83B8E700B5738E /* Result.framework */; };
 		2AD223FF1D84135A00FB0B7A /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EC1D83B8E700B5738E /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2AF10B2D1D8F82C000CB97CA /* DFIPlainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B201D8F82C000CB97CA /* DFIPlainTableViewCell.m */; };
-		2AF10B2E1D8F82C000CB97CA /* DFIPlainTableViewCellOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B221D8F82C000CB97CA /* DFIPlainTableViewCellOption.m */; };
-		2AF10B2F1D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B241D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.m */; };
-		2AF10B301D8F82C000CB97CA /* DFISegmentedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B261D8F82C000CB97CA /* DFISegmentedTableViewCell.m */; };
-		2AF10B311D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B281D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.m */; };
-		2AF10B321D8F82C000CB97CA /* DFITextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B2A1D8F82C000CB97CA /* DFITextViewTableViewCell.m */; };
-		2AF10B331D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF10B2C1D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.m */; };
 		34A64BC73CC14D4ED32D6D04 /* Pods_DFITableViewManagerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,17 +76,6 @@
 		24F7BC59D6CEE35CCAD80064 /* Pods-DFITableViewManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFITableViewManagerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		2A22A9EB1D83B8E700B5738E /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		2A22A9EC1D83B8E700B5738E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		2A22A9F11D83DF4000B5738E /* DFIButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIButtonTableViewCell.h; sourceTree = "<group>"; };
-		2A22A9F21D83DF4000B5738E /* DFIButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIButtonTableViewCell.m; sourceTree = "<group>"; };
-		2A22A9F31D83DF4000B5738E /* DFIButtonTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIButtonTableViewCellViewModel.h; sourceTree = "<group>"; };
-		2A22A9F41D83DF4000B5738E /* DFIButtonTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIButtonTableViewCellViewModel.m; sourceTree = "<group>"; };
-		2A22A9F51D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.h"; sourceTree = "<group>"; };
-		2A22A9F61D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m"; sourceTree = "<group>"; };
-		2A22A9F71D83DF4000B5738E /* DFITextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITextFieldTableViewCell.h; sourceTree = "<group>"; };
-		2A22A9F81D83DF4000B5738E /* DFITextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITextFieldTableViewCell.m; sourceTree = "<group>"; };
-		2A22A9F91D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITextFieldTableViewCellViewModel.h; sourceTree = "<group>"; };
-		2A22A9FA1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITextFieldTableViewCellViewModel.m; sourceTree = "<group>"; };
-		2A22AA001D83E00F00B5738E /* DFIConcreteTableViewCells.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFIConcreteTableViewCells.h; sourceTree = "<group>"; };
 		2A22AA011D83E4D400B5738E /* CodeTableViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeTableViewControllerViewModel.h; sourceTree = "<group>"; };
 		2A22AA021D83E4D400B5738E /* CodeTableViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeTableViewControllerViewModel.m; sourceTree = "<group>"; };
 		2A22AA041D84108300B5738E /* NSArray+funtional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+funtional.h"; sourceTree = "<group>"; };
@@ -127,18 +100,6 @@
 		2A63C8191D8143A3001A7530 /* DFITableViewManagerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DFITableViewManagerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A63C81D1D8143A3001A7530 /* DFITableViewManagerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFITableViewManagerDemoUITests.m; sourceTree = "<group>"; };
 		2A63C81F1D8143A3001A7530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A63C8301D8143D2001A7530 /* DFITableViewCellConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewCellConfigure.h; sourceTree = "<group>"; };
-		2A63C8311D8143D2001A7530 /* DFITableViewCellConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewCellConfigure.m; sourceTree = "<group>"; };
-		2A63C8321D8143D2001A7530 /* DFITableViewCellDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewCellDefines.h; sourceTree = "<group>"; };
-		2A63C8351D8143D2001A7530 /* DFITableViewCellOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewCellOption.h; sourceTree = "<group>"; };
-		2A63C8361D8143D2001A7530 /* DFITableViewCellOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewCellOption.m; sourceTree = "<group>"; };
-		2A63C8371D8143D2001A7530 /* DFITableViewCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewCells.h; sourceTree = "<group>"; };
-		2A63C8381D8143D2001A7530 /* DFITableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewCellViewModel.h; sourceTree = "<group>"; };
-		2A63C8391D8143D2001A7530 /* DFITableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewCellViewModel.m; sourceTree = "<group>"; };
-		2A63C83F1D8143D2001A7530 /* UITableViewCell+configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+configure.h"; sourceTree = "<group>"; };
-		2A63C8401D8143D2001A7530 /* UITableViewCell+configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+configure.m"; sourceTree = "<group>"; };
-		2A63C8411D8143D2001A7530 /* UITableViewCellActionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewCellActionDelegate.h; sourceTree = "<group>"; };
-		2A63C8421D8143D2001A7530 /* UITableViewCellConfigureProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewCellConfigureProtocol.h; sourceTree = "<group>"; };
 		2A63C84A1D8143D2001A7530 /* DFITableViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewConfiguration.h; sourceTree = "<group>"; };
 		2A63C84B1D8143D2001A7530 /* DFITableViewConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewConfiguration.m; sourceTree = "<group>"; };
 		2A63C84C1D8143D2001A7530 /* DFITableViewDataSourceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewDataSourceProxy.h; sourceTree = "<group>"; };
@@ -168,20 +129,6 @@
 		2A6882101D89523E0036B5CB /* PlistTableViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistTableViewControllerViewModel.h; sourceTree = "<group>"; };
 		2A6882111D89523E0036B5CB /* PlistTableViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistTableViewControllerViewModel.m; sourceTree = "<group>"; };
 		2A6882131D8958020036B5CB /* PlistDemo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlistDemo.plist; sourceTree = "<group>"; };
-		2AF10B1F1D8F82C000CB97CA /* DFIPlainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIPlainTableViewCell.h; sourceTree = "<group>"; };
-		2AF10B201D8F82C000CB97CA /* DFIPlainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIPlainTableViewCell.m; sourceTree = "<group>"; };
-		2AF10B211D8F82C000CB97CA /* DFIPlainTableViewCellOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIPlainTableViewCellOption.h; sourceTree = "<group>"; };
-		2AF10B221D8F82C000CB97CA /* DFIPlainTableViewCellOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIPlainTableViewCellOption.m; sourceTree = "<group>"; };
-		2AF10B231D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFIPlainTableViewCellViewModel.h; sourceTree = "<group>"; };
-		2AF10B241D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFIPlainTableViewCellViewModel.m; sourceTree = "<group>"; };
-		2AF10B251D8F82C000CB97CA /* DFISegmentedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFISegmentedTableViewCell.h; sourceTree = "<group>"; };
-		2AF10B261D8F82C000CB97CA /* DFISegmentedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFISegmentedTableViewCell.m; sourceTree = "<group>"; };
-		2AF10B271D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFISegmentedTableViewCellViewModel.h; sourceTree = "<group>"; };
-		2AF10B281D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFISegmentedTableViewCellViewModel.m; sourceTree = "<group>"; };
-		2AF10B291D8F82C000CB97CA /* DFITextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITextViewTableViewCell.h; sourceTree = "<group>"; };
-		2AF10B2A1D8F82C000CB97CA /* DFITextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITextViewTableViewCell.m; sourceTree = "<group>"; };
-		2AF10B2B1D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITextViewTableViewCellViewModel.h; sourceTree = "<group>"; };
-		2AF10B2C1D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITextViewTableViewCellViewModel.m; sourceTree = "<group>"; };
 		4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DFITableViewManagerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8067B5009AA1BAE55BE2CFBF /* Pods-DFITableViewManagerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFITableViewManagerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,42 +170,9 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		2A22A9F01D83DF4000B5738E /* ConcreteCells */ = {
-			isa = PBXGroup;
-			children = (
-				2A22AA001D83E00F00B5738E /* DFIConcreteTableViewCells.h */,
-				2A22A9F11D83DF4000B5738E /* DFIButtonTableViewCell.h */,
-				2A22A9F21D83DF4000B5738E /* DFIButtonTableViewCell.m */,
-				2A22A9F31D83DF4000B5738E /* DFIButtonTableViewCellViewModel.h */,
-				2A22A9F41D83DF4000B5738E /* DFIButtonTableViewCellViewModel.m */,
-				2A22A9F51D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.h */,
-				2A22A9F61D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m */,
-				2A22A9F71D83DF4000B5738E /* DFITextFieldTableViewCell.h */,
-				2A22A9F81D83DF4000B5738E /* DFITextFieldTableViewCell.m */,
-				2A22A9F91D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.h */,
-				2A22A9FA1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m */,
-				2AF10B1F1D8F82C000CB97CA /* DFIPlainTableViewCell.h */,
-				2AF10B201D8F82C000CB97CA /* DFIPlainTableViewCell.m */,
-				2AF10B211D8F82C000CB97CA /* DFIPlainTableViewCellOption.h */,
-				2AF10B221D8F82C000CB97CA /* DFIPlainTableViewCellOption.m */,
-				2AF10B231D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.h */,
-				2AF10B241D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.m */,
-				2AF10B251D8F82C000CB97CA /* DFISegmentedTableViewCell.h */,
-				2AF10B261D8F82C000CB97CA /* DFISegmentedTableViewCell.m */,
-				2AF10B271D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.h */,
-				2AF10B281D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.m */,
-				2AF10B291D8F82C000CB97CA /* DFITextViewTableViewCell.h */,
-				2AF10B2A1D8F82C000CB97CA /* DFITextViewTableViewCell.m */,
-				2AF10B2B1D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.h */,
-				2AF10B2C1D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.m */,
-			);
-			path = ConcreteCells;
-			sourceTree = "<group>";
-		};
 		2A63C7EC1D8143A3001A7530 = {
 			isa = PBXGroup;
 			children = (
-				2A63C82B1D8143D2001A7530 /* DFITableViewCells */,
 				2A63C8431D8143D2001A7530 /* DFITableViewManager */,
 				2A63C7F71D8143A3001A7530 /* DFITableViewManagerDemo */,
 				2A63C8111D8143A3001A7530 /* DFITableViewManagerDemoTests */,
@@ -336,26 +250,6 @@
 				2A63C81F1D8143A3001A7530 /* Info.plist */,
 			);
 			path = DFITableViewManagerDemoUITests;
-			sourceTree = "<group>";
-		};
-		2A63C82B1D8143D2001A7530 /* DFITableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				2A63C8371D8143D2001A7530 /* DFITableViewCells.h */,
-				2A63C8381D8143D2001A7530 /* DFITableViewCellViewModel.h */,
-				2A63C8391D8143D2001A7530 /* DFITableViewCellViewModel.m */,
-				2A63C8301D8143D2001A7530 /* DFITableViewCellConfigure.h */,
-				2A63C8311D8143D2001A7530 /* DFITableViewCellConfigure.m */,
-				2A63C8321D8143D2001A7530 /* DFITableViewCellDefines.h */,
-				2A63C8351D8143D2001A7530 /* DFITableViewCellOption.h */,
-				2A63C8361D8143D2001A7530 /* DFITableViewCellOption.m */,
-				2A63C83F1D8143D2001A7530 /* UITableViewCell+configure.h */,
-				2A63C8401D8143D2001A7530 /* UITableViewCell+configure.m */,
-				2A63C8411D8143D2001A7530 /* UITableViewCellActionDelegate.h */,
-				2A63C8421D8143D2001A7530 /* UITableViewCellConfigureProtocol.h */,
-				2A22A9F01D83DF4000B5738E /* ConcreteCells */,
-			);
-			path = DFITableViewCells;
 			sourceTree = "<group>";
 		};
 		2A63C8431D8143D2001A7530 /* DFITableViewManager */ = {
@@ -616,39 +510,23 @@
 			files = (
 				2A22AA0B1D84110600B5738E /* DemoCustomCellViewModel.m in Sources */,
 				2A63C8691D8143D2001A7530 /* DFITableViewDataSourceProxy.m in Sources */,
-				2AF10B2F1D8F82C000CB97CA /* DFIPlainTableViewCellViewModel.m in Sources */,
 				2A63C86D1D8143D2001A7530 /* DFIUITableViewDelegateProxy.m in Sources */,
-				2A22A9FB1D83DF4000B5738E /* DFIButtonTableViewCell.m in Sources */,
-				2A63C8641D8143D2001A7530 /* UITableViewCell+configure.m in Sources */,
 				2A68820F1D89522E0036B5CB /* DataFormatTableViewControllerViewModel.m in Sources */,
-				2AF10B2D1D8F82C000CB97CA /* DFIPlainTableViewCell.m in Sources */,
 				2A63C86A1D8143D2001A7530 /* DFITableViewDelegateProxy.m in Sources */,
-				2A63C85D1D8143D2001A7530 /* DFITableViewCellConfigure.m in Sources */,
 				2A22AA061D84108300B5738E /* NSArray+funtional.m in Sources */,
 				2A68820C1D89515C0036B5CB /* PlistTableViewController.m in Sources */,
 				2A63C8681D8143D2001A7530 /* DFITableViewConfiguration.m in Sources */,
 				2A22AA0C1D84110600B5738E /* DemoCustomCell.m in Sources */,
-				2A22A9FD1D83DF4000B5738E /* DFITableViewCellOption+DFITextFieldTableViewCellOptionAddition.m in Sources */,
 				2A63C8001D8143A3001A7530 /* CodeTableViewController.m in Sources */,
-				2A63C85F1D8143D2001A7530 /* DFITableViewCellOption.m in Sources */,
-				2A63C8601D8143D2001A7530 /* DFITableViewCellViewModel.m in Sources */,
 				2A63C86F1D8143D2001A7530 /* UITableView+dequeueTableViewCell.m in Sources */,
 				2A63C7FD1D8143A3001A7530 /* AppDelegate.m in Sources */,
 				2A6882121D89523E0036B5CB /* PlistTableViewControllerViewModel.m in Sources */,
 				2A63C86B1D8143D2001A7530 /* DFITableViewModel.m in Sources */,
 				2A6882091D89514C0036B5CB /* DataFormatTableViewController.m in Sources */,
-				2A22A9FF1D83DF4000B5738E /* DFITextFieldTableViewCellViewModel.m in Sources */,
 				2A6882061D894B690036B5CB /* HomeViewControllerViewModel.m in Sources */,
-				2AF10B301D8F82C000CB97CA /* DFISegmentedTableViewCell.m in Sources */,
 				2A22AA031D83E4D400B5738E /* CodeTableViewControllerViewModel.m in Sources */,
-				2AF10B311D8F82C000CB97CA /* DFISegmentedTableViewCellViewModel.m in Sources */,
-				2AF10B331D8F82C000CB97CA /* DFITextViewTableViewCellViewModel.m in Sources */,
 				2A63C7FA1D8143A3001A7530 /* main.m in Sources */,
-				2A22A9FE1D83DF4000B5738E /* DFITextFieldTableViewCell.m in Sources */,
-				2AF10B321D8F82C000CB97CA /* DFITextViewTableViewCell.m in Sources */,
-				2A22A9FC1D83DF4000B5738E /* DFIButtonTableViewCellViewModel.m in Sources */,
 				2A63C86C1D8143D2001A7530 /* DFIUITableViewDataSourceProxy.m in Sources */,
-				2AF10B2E1D8F82C000CB97CA /* DFIPlainTableViewCellOption.m in Sources */,
 				2A6882031D894AAC0036B5CB /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
