@@ -29,5 +29,6 @@ Pod::Spec.new do |s|
 			   "DFITableViewManager/DFITableViewConfiguration.h"] 
 
   s.requires_arc = true
+  s.dependency 'DFITableViewCells'
 
 end

@@ -34,7 +34,7 @@ typedef BOOL (^DFITableViewRowIsSameInSection)(NSInteger sectionIndex);
 /**
  *  数据源 格式必须为@[ @[ (row) ] (section) ]
  */
-@property (readonly, nonatomic, copy) NSArray *dataSource;
+@property (nonatomic, copy) NSArray *dataSource;
 
 @property (nonatomic, copy, nullable) NSDictionary <NSString *, NSDictionary *> *dataSourceFormat;
 
