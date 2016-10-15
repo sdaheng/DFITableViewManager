@@ -45,7 +45,7 @@
     _dataSource = dataSource;
     
     if (!_tableViewConfiguration.dataSource) {
-        [_tableViewConfiguration setValue:dataSource forKey:@"dataSource"];
+        _tableViewConfiguration.dataSource = dataSource;
     }
 }
 
@@ -53,7 +53,7 @@
     _tableViewConfiguration = tableViewConfiguration;
     
     if (!_tableViewConfiguration.dataSource) {
-        [_tableViewConfiguration setValue:_dataSource forKey:@"dataSource"];
+        _tableViewConfiguration.dataSource = _dataSource;
     }
 }
 
