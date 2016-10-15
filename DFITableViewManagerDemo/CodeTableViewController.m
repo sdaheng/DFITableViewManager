@@ -94,8 +94,7 @@
 - (CodeTableViewControllerViewModel *)viewModel {
     if (!_viewModel) {
         DFITableViewConfiguration  *tableViewConfiguration =
-        [DFITableViewConfiguration configureTableView:self.tableView
-                               withRowIsSameInSection:nil];
+        [DFITableViewConfiguration configureTableView:self.tableView];
         _viewModel = [[CodeTableViewControllerViewModel alloc] initWithTableViewConfiguration:tableViewConfiguration];
         _viewModel.tableViewConfiguration.registerClassCells =
         @{NSStringFromClass([DFITextFieldTableViewCellViewModel class]) : [DFITextFieldTableViewCell class],

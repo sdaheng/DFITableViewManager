@@ -55,19 +55,14 @@
 
 - (void)selectCellAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        
-        NSString *storyboardIDString = nil;
-        if (indexPath.row == 0) {
-            storyboardIDString = @"Storyboard_ID_CodeTableViewController";
-        } else if (indexPath.row == 1) {
-            storyboardIDString = @"Storyboard_ID_DataFormatTableViewController";
-        } else if (indexPath.row == 2) {
-            storyboardIDString = @"Storyboard_ID_PlistTableViewController";
-        }
+
+        NSArray *array = @[ @"Storyboard_ID_CodeTableViewController",
+                            @"Storyboard_ID_DataFormatTableViewController",
+                            @"Storyboard_ID_PlistTableViewController" ];
         
         [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main"
                                                                                  bundle:nil]
-                                                       instantiateViewControllerWithIdentifier:storyboardIDString]
+                                                       instantiateViewControllerWithIdentifier:array[indexPath.row]]
                                              animated:YES];
     }
     
@@ -76,12 +71,19 @@
 
 - (HomeViewControllerViewModel *)viewModel {
     if (!_viewModel) {
-        DFITableViewConfiguration *tableViewConfiguration = [DFITableViewConfiguration configureTableView:self.tableView
-                                                                                   withRowIsSameInSection:nil];
+        DFITableViewConfiguration *tableViewConfiguration = [DFITableViewConfiguration configureTableView:self.tableView];
         
         _viewModel = [[HomeViewControllerViewModel alloc] initWithTableViewConfiguration:tableViewConfiguration];
         
         _viewModel.tableViewConfiguration.registerClassCells = @{@"cell" : [DemoCustomCell class]};
+        
+        _viewModel.tableViewConfiguration.cellOptionAtIndexPath = ^(NSIndexPath *indexPath) {
+            DFITableViewCellOption *option = [DFITableViewCellOption new];
+            
+            option.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            
+            return option;
+        };
     }
     
     return _viewModel;

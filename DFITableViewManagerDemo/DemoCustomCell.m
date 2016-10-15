@@ -20,6 +20,8 @@
 - (void)configureCellWithInfo:(id)info
                        option:(NSDictionary * _Nullable)option {
     self.textLabel.text = ((DemoCustomCellViewModel *)info).text;
+    
+    self.accessoryType = ((DemoCustomCellViewModel *)info).cellConfigure.cellOption.cellAccessoryType;
 }
 
 @end
