@@ -1,9 +1,11 @@
 # DFITableViewManager
 
-### 使用方法
+`DFITableViewManager` is data driven content manager for `UITableView`. It allows to manage content of `UITableView` with ease, both lists and forms.
+
+### Usage
 
 ```objective-c
-DFITableViewConfiguration *tableViewConfiguration = 
+DFITableViewConfiguration *tableViewConfiguration =
 [DFITableViewConfiguration configureTableView:self.tableView withRowIsSameInSection:nil];
 
 tableViewConfiguration.registerClassCells = @{@"cell" : [DemoCustomCell class]};
@@ -28,13 +30,13 @@ tableViewConfiguration.tableViewDelegate = self;
  }];
 ```
 
-对于自定义cell
+Custom Cell
 
 ```objective-c
 @interface DemoCustomCell : UITableViewCell
 
 @end
-  
+
 @interface DemoCustomCell () <UITableViewCellConfigureProtocol>
 
 @end
@@ -47,25 +49,50 @@ tableViewConfiguration.tableViewDelegate = self;
 }
 
 @end
-  
+
 // CellViewModel
-@interface DemoCustomCellViewModel ()
+@interface DemoCustomCellViewModel
+
+@property(nonatomic, copy) NSString *text;
 
 @end
 
 @implementation DemoCustomCellViewModel
 
 - (instancetype)initWithText:(NSString *)text {
-    DFITableViewCellConfigure *tableViewConfigure = 
+    DFITableViewCellConfigure *tableViewCellConfigure =
     [[DFITableViewCellConfigure alloc] initWithReuseIdentifier:@"cell"];
-    self = [super initWithCellConfigure:tableViewConfigure];
+    self = [super initWithCellConfigure:tableViewCellConfigure];
     if (self) {
         _text = text;
     }
-    
+
     return self;
 }
 
 @end
 ```
 
+
+### Demo
+
+Build and run `DFITableViewManagerDemo.xcworkspace` in Xcode to see `DFITableViewManager` in action.
+
+
+### Installation
+
+#### CocoaPods
+
+In your Podfile
+
+```ruby
+target 'Your target' do
+  pod 'DFITableViewManager'
+end
+```
+
+then
+
+```shell
+$ pod install
+```
