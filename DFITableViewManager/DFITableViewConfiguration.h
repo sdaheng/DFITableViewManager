@@ -11,9 +11,6 @@
 @protocol UITableViewDelegate;
 @protocol UITableViewDataSource;
 
-@class DFITableViewDelegateProxy;
-@class DFITableViewDataSourceProxy;
-
 @class DFITableViewCellOption;
 
 @class UITableView;
@@ -25,7 +22,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef __kindof DFITableViewCellOption * _Nullable (^DFITableViewCellOptionBlock)(NSIndexPath * indexPath);
-typedef BOOL (^DFITableViewRowIsSameInSection)(NSInteger sectionIndex);
 
 @interface DFITableViewConfiguration : NSObject
 
@@ -52,16 +48,6 @@ typedef BOOL (^DFITableViewRowIsSameInSection)(NSInteger sectionIndex);
 @property (nonatomic, weak, nullable) id<UITableViewDataSource> tableViewDataSource;
 
 /**
- *  所有的section是否相同, 默认为NO
- */
-@property (nonatomic, assign) BOOL sectionIsSameInTableView;
-
-/**
- *  同一个section内的所有row是否相同, 默认为NO
- */
-@property (nonatomic, copy) DFITableViewRowIsSameInSection rowIsSameInSection;
-
-/**
  *  对应indexPath所在的Cell的配置选项
  */
 @property (nonatomic, copy, nullable) DFITableViewCellOptionBlock cellOptionAtIndexPath;
@@ -77,12 +63,10 @@ typedef BOOL (^DFITableViewRowIsSameInSection)(NSInteger sectionIndex);
  *  配置TableView
  *
  *  @param tableView          需要配置的tableView
- *  @param rowIsSameInSection 返回哪些section中的row的配置是一样的. If it is nil, default is YES.
  *
  *  @return DFITableViewConfiguration 的实例
  */
-+ (instancetype)configureTableView:(__kindof UITableView *)tableView
-            withRowIsSameInSection:(BOOL (^ _Nullable)(NSInteger sectionIndex))rowIsSameInSection;
++ (instancetype)configureTableView:(__kindof UITableView *)tableView;
 
 /**
  *  通过Dictionary配置TableView

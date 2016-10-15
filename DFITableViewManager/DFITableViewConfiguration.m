@@ -13,9 +13,7 @@
 #import "DFITableViewDataSourceProxy.h"
 #import "DFITableViewDelegateProxy.h"
 
-#import "DFITableViewCellViewModel.h"
-
-#import "DFITableViewCellConfigure.h"
+#import <DFITableViewCells/DFITableViewCells.h>
 
 @interface DFITableViewConfiguration ()
 
@@ -39,10 +37,9 @@
                           dataSourceFormat:dataSourceFormat];
 }
 
-+ (instancetype)configureTableView:(UITableView *)tableView
-            withRowIsSameInSection:(DFITableViewRowIsSameInSection)rowIsSameInSection {
++ (instancetype)configureTableView:(__kindof UITableView *)tableView {
     return [[self alloc] initWithTableView:tableView
-                    withRowIsSameInSection:rowIsSameInSection];
+                          dataSourceFormat:nil];
 }
 
 - (instancetype)initWithTableView:(UITableView *)tableView
@@ -62,21 +59,6 @@
         
         _delegateProxy =
         [DFITableViewDelegateProxy tableViewDelegateProxyWithTableViewConfiguration:self];
-        
-        
-    }
-    
-    return self;
-}
-
-- (instancetype)initWithTableView:(UITableView *)tableView
-           withRowIsSameInSection:(DFITableViewRowIsSameInSection)rowIsSameInSection {
-    
-    self = [self initWithTableView:tableView
-                  dataSourceFormat:nil];
-    
-    if (self) {
-        _rowIsSameInSection = rowIsSameInSection ?: defaultRowIsSameInSection();
     }
     
     return self;
@@ -88,12 +70,6 @@
 
 + (instancetype)new {
     return nil;
-}
-
-static DFITableViewRowIsSameInSection defaultRowIsSameInSection() {
-    return ^(NSInteger sectionIndex){
-        return YES;
-    };
 }
 
 #pragma mark - setup cells
@@ -119,6 +95,21 @@ static DFITableViewRowIsSameInSection defaultRowIsSameInSection() {
                                                     option:nil];
 }
 
+- (DFITableViewCellViewModel *)setupDataSourceCellViewModelAtIndexPath:(NSIndexPath *)indexPath {
+    DFITableViewCellViewModel *cellViewModel = self.dataSource[indexPath.section][indexPath.row];
+
+    DFITableViewCellOption *cellOption = nil;
+    
+    if (self.cellOptionAtIndexPath) {
+        cellOption = self.cellOptionAtIndexPath([NSIndexPath indexPathForRow:indexPath.row
+                                                                   inSection:indexPath.section]);
+    }
+    
+    cellViewModel.cellConfigure.cellOption = cellOption;
+    
+    return cellViewModel;
+}
+
 #define INDEX_KEY_IF_ROW_IS_SAME_IN_SECTION                        \
         [NSString stringWithFormat:@"%@-%@", @(indexPath.section), \
         @(self.rowIndexIfRowIsSameInSection)]
@@ -128,50 +119,6 @@ static DFITableViewRowIsSameInSection defaultRowIsSameInSection() {
          @(self.sectionIndexIfSectionIsSameInTableView != -1 ?              \
          self.sectionIndexIfSectionIsSameInTableView : indexPath.section),  \
          @(indexPath.row)]
-
-- (DFITableViewCellViewModel *)setupDataSourceCellViewModelAtIndexPath:(NSIndexPath *)indexPath {
-    DFITableViewCellViewModel *cellViewModel = self.dataSource[indexPath.section][indexPath.row];
-    
-    self.sectionIndexIfSectionIsSameInTableView = self.sectionIsSameInTableView ? 0 : -1;
-    
-    BOOL rowIsSameInSection = NO;
-    
-    if (self.rowIsSameInSection) {
-        rowIsSameInSection = self.rowIsSameInSection(indexPath.section);
-    }
-    
-    if (![self.configurationsIfRowIsSameInSection[[@(indexPath.section) stringValue]] boolValue] &&
-        rowIsSameInSection) {
-        NSMutableDictionary *tempMutableDictionary =
-        [self.configurationsIfRowIsSameInSection mutableCopy];
-        
-        [tempMutableDictionary setObject:@(YES)
-                                  forKey:@(indexPath.section).stringValue];
-        
-        self.configurationsIfRowIsSameInSection = [tempMutableDictionary copy];
-        
-        self.rowIndexIfRowIsSameInSection = indexPath.row;
-    }
-    
-    NSString *indexPathString = rowIsSameInSection ? INDEX_KEY_IF_ROW_IS_SAME_IN_SECTION : INDEX_KEY;
-    
-    NSInteger indexSection =
-    [[[indexPathString componentsSeparatedByString:@"-"] firstObject] integerValue];
-    
-    NSInteger indexRow =
-    [[[indexPathString componentsSeparatedByString:@"-"] lastObject] integerValue];
-    
-    DFITableViewCellOption *cellOption = nil;
-    
-    if (self.cellOptionAtIndexPath) {
-        cellOption = self.cellOptionAtIndexPath([NSIndexPath indexPathForRow:indexRow
-                                                                   inSection:indexSection]);
-    }
-    
-    cellViewModel.cellConfigure.cellOption = cellOption;
-    
-    return cellViewModel;
-}
 
 - (NSDictionary *)setupDataFormatCellOptionAtIndexPath:(NSIndexPath *)indexPath {
     NSString *indexPathKeyString = [NSString stringWithFormat:@"%@-%@", @(indexPath.section),
