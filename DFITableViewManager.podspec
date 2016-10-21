@@ -24,7 +24,8 @@ Pod::Spec.new do |s|
 
   s.source_files  = "DFITableViewManager/**/*.{h,m}"
 
-  s.public_header_files = ["DFITableViewManager/DFITableViewModel.h",
+  s.public_header_files = ["DFITableViewManager/DFITableViewManager.h",
+			   "DFITableViewManager/DFITableViewModel.h",
 			   "DFITableViewManager/DFITableViewPaging.h",
 			   "DFITableViewManager/DFITableViewConfiguration.h"] 
 
