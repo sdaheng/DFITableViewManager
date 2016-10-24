@@ -38,6 +38,7 @@
 		2AD223FE1D84135A00FB0B7A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EC1D83B8E700B5738E /* Result.framework */; };
 		2AD223FF1D84135A00FB0B7A /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EC1D83B8E700B5738E /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34A64BC73CC14D4ED32D6D04 /* Pods_DFITableViewManagerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */; };
+		6E77984A1DBE5E7300006993 /* DFITableViewConfiguartionInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7798491DBE5E7300006993 /* DFITableViewConfiguartionInternal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,8 @@
 		2A6882111D89523E0036B5CB /* PlistTableViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistTableViewControllerViewModel.m; sourceTree = "<group>"; };
 		2A6882131D8958020036B5CB /* PlistDemo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlistDemo.plist; sourceTree = "<group>"; };
 		4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DFITableViewManagerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E7798481DBE5E7300006993 /* DFITableViewConfiguartionInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewConfiguartionInternal.h; sourceTree = "<group>"; };
+		6E7798491DBE5E7300006993 /* DFITableViewConfiguartionInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewConfiguartionInternal.m; sourceTree = "<group>"; };
 		8067B5009AA1BAE55BE2CFBF /* Pods-DFITableViewManagerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFITableViewManagerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +261,8 @@
 				2A63C8501D8143D2001A7530 /* DFITableViewManager.h */,
 				2A63C84A1D8143D2001A7530 /* DFITableViewConfiguration.h */,
 				2A63C84B1D8143D2001A7530 /* DFITableViewConfiguration.m */,
+				6E7798481DBE5E7300006993 /* DFITableViewConfiguartionInternal.h */,
+				6E7798491DBE5E7300006993 /* DFITableViewConfiguartionInternal.m */,
 				2A63C84C1D8143D2001A7530 /* DFITableViewDataSourceProxy.h */,
 				2A63C84D1D8143D2001A7530 /* DFITableViewDataSourceProxy.m */,
 				2A63C84E1D8143D2001A7530 /* DFITableViewDelegateProxy.h */,
@@ -527,6 +532,7 @@
 				2A22AA031D83E4D400B5738E /* CodeTableViewControllerViewModel.m in Sources */,
 				2A63C7FA1D8143A3001A7530 /* main.m in Sources */,
 				2A63C86C1D8143D2001A7530 /* DFIUITableViewDataSourceProxy.m in Sources */,
+				6E77984A1DBE5E7300006993 /* DFITableViewConfiguartionInternal.m in Sources */,
 				2A6882031D894AAC0036B5CB /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
