@@ -14,7 +14,7 @@
 
 @interface DFIUITableViewDataSourceProxy () <UITableViewDataSource>
 
-@property (nonatomic, strong) DFITableViewConfiguration *tableViewConfiguration;
+@property (nonatomic, weak) DFITableViewConfiguration *tableViewConfiguration;
 
 @end
 
@@ -29,26 +29,16 @@
 
         _tableViewConfiguration.tableView.dataSource = self;
         
-        [self addObserver:self
-               forKeyPath:@"tableViewConfiguration.dataSource"
-                  options:NSKeyValueObservingOptionNew
-                  context:NULL];
+        [[NSNotificationCenter defaultCenter]
+         addObserver:self selector:@selector(handleDataSourceDidChangeNotification:)
+         name:DFITableViewDataSourceDidChangeNotification object:nil];
     }
     
     return self;
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary<NSString *,id> *)change
-                       context:(void *)context {
-    
-    if ([keyPath isEqualToString:@"tableViewConfiguration.dataSource"]) {
-        
-        if ([change[NSKeyValueChangeNewKey] count] > 0) {
-            [self.tableViewConfiguration.tableView reloadData];
-        }
-    }
+- (void)handleDataSourceDidChangeNotification:(NSNotification *)notification {
+    [self.tableViewConfiguration.tableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -57,13 +47,9 @@
          respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
             
         return [self.tableViewConfiguration.tableViewDataSource numberOfSectionsInTableView:tableView];
-    }
-    
-    if (self.tableViewConfiguration) {
+    } else {
         return self.tableViewConfiguration.dataSource.count;
     }
-    
-    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -73,15 +59,11 @@
         [self.tableViewConfiguration.tableViewDataSource
          respondsToSelector:@selector(tableView:numberOfRowsInSection:)]) {
             
-            [self.tableViewConfiguration.tableViewDataSource tableView:tableView
-                                                 numberOfRowsInSection:section];
-        }
-    
-    if (self.tableViewConfiguration) {
+        return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
+                                                    numberOfRowsInSection:section];
+    } else {
         return [self.tableViewConfiguration.dataSource[section] count];
     }
-    
-    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -91,13 +73,11 @@
         [self.tableViewConfiguration.tableViewDataSource
          respondsToSelector:@selector(tableView:cellForRowAtIndexPath:)]) {
             
-            return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
-                                                        cellForRowAtIndexPath:indexPath];
-        } else {
-            return [self.tableViewConfiguration cellForConfigurationAtIndexPath:indexPath];
-        }
-    
-    return nil;
+        return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
+                                                    cellForRowAtIndexPath:indexPath];
+    } else {
+        return [self.tableViewConfiguration cellForConfigurationAtIndexPath:indexPath];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -105,11 +85,11 @@
         [self.tableViewConfiguration.tableViewDataSource
          respondsToSelector:@selector(tableView:canEditRowAtIndexPath:)]) {
             
-            return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
-                                                        canEditRowAtIndexPath:indexPath];
-        } else {
-            return NO;
-        }
+        return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
+                                                    canEditRowAtIndexPath:indexPath];
+    } else {
+        return NO;
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -117,11 +97,11 @@
         [self.tableViewConfiguration.tableViewDataSource
          respondsToSelector:@selector(tableView:canMoveRowAtIndexPath:)]) {
             
-            return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
-                                                        canMoveRowAtIndexPath:indexPath];
-        } else {
-            return NO;
-        }
+        return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
+                                                    canMoveRowAtIndexPath:indexPath];
+    } else {
+        return NO;
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -129,9 +109,9 @@
         [self.tableViewConfiguration.tableViewDataSource
          respondsToSelector:@selector(tableView:titleForHeaderInSection:)]) {
             
-            return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
-                                                      titleForHeaderInSection:section];
-        }
+        return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
+                                                  titleForHeaderInSection:section];
+    }
     
     return nil;
 }
@@ -141,9 +121,9 @@
         [self.tableViewConfiguration.tableViewDataSource
          respondsToSelector:@selector(tableView:titleForFooterInSection:)]) {
             
-            return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
-                                                      titleForFooterInSection:section];
-        }
+        return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
+                                                  titleForFooterInSection:section];
+    }
     
     return nil;
 }
@@ -153,9 +133,9 @@
         [self.tableViewConfiguration.tableViewDataSource
          respondsToSelector:@selector(sectionIndexTitlesForTableView:)]) {
             
-            return [self.tableViewConfiguration.tableViewDataSource
-                    sectionIndexTitlesForTableView:tableView];
-        }
+        return [self.tableViewConfiguration.tableViewDataSource
+                sectionIndexTitlesForTableView:tableView];
+    }
     
     return nil;
 }
@@ -203,10 +183,8 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 }
 
 - (void)dealloc {
-    NSLog(@"dataSourceProxy dealloc");
-    
-    [self removeObserver:self
-              forKeyPath:@"tableViewConfiguration.dataSource"];
+    [[NSNotificationCenter defaultCenter]
+     removeObserver:self name:DFITableViewDataSourceDidChangeNotification object:nil];
 }
 
 @end

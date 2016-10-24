@@ -37,7 +37,8 @@
                           dataSourceFormat:dataSourceFormat];
 }
 
-+ (instancetype)configureTableView:(__kindof UITableView *)tableView {
++ (instancetype)configureTableView:(UITableView *)tableView {
+
     return [[self alloc] initWithTableView:tableView
                           dataSourceFormat:nil];
 }
@@ -87,17 +88,14 @@
     
     DFITableViewCellViewModel *cellViewModel = [self setupDataSourceCellViewModelAtIndexPath:indexPath];
     
-    NSString *cellReuseIdentifierString = cellViewModel.cellConfigure.reuseIdentifierString;
-    
     return [self.tableView dequeueTableViewCellAtIndexPath:indexPath
-                                       withReuseIdentifier:cellReuseIdentifierString
+                                       withReuseIdentifier:cellViewModel.cellConfigure.reuseIdentifierString
                                                       info:cellViewModel
                                                     option:nil];
 }
 
 - (DFITableViewCellViewModel *)setupDataSourceCellViewModelAtIndexPath:(NSIndexPath *)indexPath {
     DFITableViewCellViewModel *cellViewModel = self.dataSource[indexPath.section][indexPath.row];
-
     DFITableViewCellOption *cellOption = nil;
     
     if (self.cellOptionAtIndexPath) {
@@ -188,6 +186,13 @@
      postNotificationName:kTableViewDataSourceFormatDidChangedNotification object:self];
 }
 
+- (void)setDataSource:(NSArray *)dataSource {
+    _dataSource = dataSource;
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:DFITableViewDataSourceDidChangeNotification object:nil];
+}
+
 - (void)setRegisterClassCells:(NSDictionary<NSString *, Class> *)registerCells {
     [registerCells
      enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key,
@@ -215,6 +220,7 @@
 #pragma mark - const
 
 NSString * const kTableViewDataSourceFormatDidChangedNotification = @"kTableViewDataSourceFormatDidChangedNotification";
+NSString * const DFITableViewDataSourceDidChangeNotification = @"DFITableViewDataSourceDidChangeNotification";
 
 NSString * const kTableViewCellReuseIdentifierStringKey = @"reuseIdentifier";
 

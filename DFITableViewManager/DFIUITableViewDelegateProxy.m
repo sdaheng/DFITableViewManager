@@ -18,7 +18,7 @@
 
 @interface DFIUITableViewDelegateProxy () <UITableViewDelegate>
 
-@property (nonatomic, strong) DFITableViewConfiguration *tableViewConfiguration;
+@property (nonatomic, weak) DFITableViewConfiguration *tableViewConfiguration;
 
 @end
 
@@ -103,9 +103,8 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView
-  willDisplayCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
+                                         forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (self.tableViewConfiguration.tableViewDelegate &&
         [self.tableViewConfiguration.tableViewDelegate
