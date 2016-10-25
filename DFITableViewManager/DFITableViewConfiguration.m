@@ -48,7 +48,7 @@
 - (instancetype)initWithTableView:(UITableView *)tableView
                  dataSourceFormat:(NSDictionary *)dataSourceFormat {
     self = [super init];
-    
+
     if (self) {
         _tableView = tableView;
         _dataSourceFormat = dataSourceFormat;
@@ -110,19 +110,9 @@
     return cellViewModel;
 }
 
-#define INDEX_KEY_IF_ROW_IS_SAME_IN_SECTION                        \
-        [NSString stringWithFormat:@"%@-%@", @(indexPath.section), \
-        @(self.rowIndexIfRowIsSameInSection)]
-
-#define INDEX_KEY                                                           \
-        [NSString stringWithFormat:@"%@-%@",                                \
-         @(self.sectionIndexIfSectionIsSameInTableView != -1 ?              \
-         self.sectionIndexIfSectionIsSameInTableView : indexPath.section),  \
-         @(indexPath.row)]
-
 - (NSDictionary *)setupDataFormatCellOptionAtIndexPath:(NSIndexPath *)indexPath {
     NSString *indexPathKeyString = [NSString stringWithFormat:@"%@-%@", @(indexPath.section),
-                                    @(indexPath.row)];
+                                                                        @(indexPath.row)];
     
     NSDictionary *cellConfigurationDictionary = self.dataSourceFormat[indexPathKeyString];
     
@@ -133,9 +123,12 @@
     
     if (![self.configurationsIfRowIsSameInSection[[@(indexPath.section) stringValue]] boolValue] &&
         cellConfigurationDictionary[DFITableViewCellRowIsSameInSectionKey]) {
+        
         NSMutableDictionary *tempMutableDictionary = [self.configurationsIfRowIsSameInSection mutableCopy];
+        
         [tempMutableDictionary setObject:cellConfigurationDictionary[DFITableViewCellRowIsSameInSectionKey]
                                   forKey:@(indexPath.section).stringValue];
+        
         self.configurationsIfRowIsSameInSection = [tempMutableDictionary copy];
         
         self.rowIndexIfRowIsSameInSection = indexPath.row;
@@ -167,16 +160,12 @@
 }
 
 - (NSString *)dataFormatCellIndexPathStringIfRowIsSameInSectionOrNotAtIndexPath:(NSIndexPath *)indexPath {
-    BOOL rowIsSameInSection =
-    [self.configurationsIfRowIsSameInSection[@(indexPath.section).stringValue] boolValue];
-    
-    NSString *indexPathString = rowIsSameInSection ? INDEX_KEY_IF_ROW_IS_SAME_IN_SECTION : INDEX_KEY;
-    
-    return [indexPathString copy];
+    return [self.configurationsIfRowIsSameInSection[@(indexPath.section).stringValue] boolValue] ?
+           [NSString stringWithFormat:@"%@-%@", @(indexPath.section), @(self.rowIndexIfRowIsSameInSection)] :
+           [NSString stringWithFormat:@"%@-%@", @(self.sectionIndexIfSectionIsSameInTableView != -1 ?
+                                                  self.sectionIndexIfSectionIsSameInTableView : indexPath.section),
+                                                @(indexPath.row)];
 }
-
-#undef INDEX_KEY_IF_ROW_IS_SAME_IN_SECTION
-#undef INDEX_KEY
 
 #pragma mark - setter
 
