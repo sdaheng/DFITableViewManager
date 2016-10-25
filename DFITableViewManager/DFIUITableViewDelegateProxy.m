@@ -8,7 +8,7 @@
 
 #import "DFIUITableViewDelegateProxy.h"
 
-#import "DFITableViewConfiguration.h"
+#import "DFITableViewConfigurationInternal.h"
 
 #import <UIKit/UIKit.h>
 
@@ -18,13 +18,13 @@
 
 @interface DFIUITableViewDelegateProxy () <UITableViewDelegate>
 
-@property (nonatomic, weak) DFITableViewConfiguration *tableViewConfiguration;
+@property (nonatomic, weak) id<DFITableViewConfigurationInternal> tableViewConfiguration;
 
 @end
 
 @implementation DFIUITableViewDelegateProxy
 
-- (instancetype)initWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration {
+- (instancetype)initWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration {
     self = [super init];
     
     if (self) {
@@ -32,8 +32,7 @@
         _tableViewConfiguration.tableView.delegate = self;
         
 #if __has_include(<ReactiveCocoa/ReactiveCocoa.h>)
-        [_tableViewConfiguration setValue:[self selectRowSignal]
-                                   forKey:@"selectRowSignal"];
+        _tableViewConfiguration.selectRowSignal = self.selectRowSignal;
 #endif
     }
     

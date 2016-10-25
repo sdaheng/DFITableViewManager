@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class RACSignal;
-@class DFITableViewConfiguration;
-@protocol UITableViewDelegate;
+@protocol DFITableViewConfigurationInternal;
 
 @interface DFITableViewDelegateProxy : NSObject
 
-+ (DFITableViewDelegateProxy *)tableViewDelegateProxyWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration;
++ (DFITableViewDelegateProxy *)tableViewDelegateProxyWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration;
 
 @end

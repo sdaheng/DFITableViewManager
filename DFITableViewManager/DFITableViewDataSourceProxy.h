@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class DFITableViewConfiguration;
+#import "DFITableViewConfigurationInternal.h"
 
 @interface DFITableViewDataSourceProxy : NSObject
 
-+ (instancetype)tableViewDataSourceProxyWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration;
++ (instancetype)tableViewDataSourceProxyWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration;
 
 @end

@@ -10,10 +10,8 @@
 
 #import "DFITableViewDelegateProxy.h"
 
-@class DFITableViewConfiguration;
-
 @interface DFIUITableViewDelegateProxy : DFITableViewDelegateProxy
 
-- (instancetype)initWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration;
+- (instancetype)initWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration;
 
 @end

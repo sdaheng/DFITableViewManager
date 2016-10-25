@@ -79,15 +79,6 @@ typedef __kindof DFITableViewCellOption * _Nullable (^DFITableViewCellOptionBloc
 + (instancetype)configureTableView:(__kindof UITableView *)tableView
               withDataSourceFormat:(NSDictionary * _Nonnull)dataSourceFormat;
 
-/**
- *  根据配置返回相应的Cell
- *
- *  @param indexPath indexPath
- *
- *  @return 配置的Cell
- */
-- (UITableViewCell *)cellForConfigurationAtIndexPath:(NSIndexPath *)indexPath;
-
 @end
 
 /**

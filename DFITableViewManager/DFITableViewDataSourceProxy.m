@@ -8,8 +8,6 @@
 
 #import "DFITableViewDataSourceProxy.h"
 
-#import "DFITableViewConfiguration.h"
-
 #import "DFIUITableViewDataSourceProxy.h"
 
 @interface DFITableViewDataSourceProxy ()
@@ -18,7 +16,7 @@
 
 @implementation DFITableViewDataSourceProxy
 
-+ (instancetype)tableViewDataSourceProxyWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration {
++ (instancetype)tableViewDataSourceProxyWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration {
     return [[DFIUITableViewDataSourceProxy alloc] initWithTableViewConfiguration:tableViewConfiguration];
 }
 

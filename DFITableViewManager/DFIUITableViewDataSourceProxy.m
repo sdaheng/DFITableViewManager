@@ -8,19 +8,21 @@
 
 #import "DFIUITableViewDataSourceProxy.h"
 
-#import "DFITableViewConfiguration.h"
+#import "DFITableViewConfigurationInternal.h"
 
 #import <UIKit/UIKit.h>
 
+NSString * const DFITableViewDataSourceDidChangeNotification = @"DFITableViewDataSourceDidChangeNotification";
+
 @interface DFIUITableViewDataSourceProxy () <UITableViewDataSource>
 
-@property (nonatomic, weak) DFITableViewConfiguration *tableViewConfiguration;
+@property (nonatomic, weak) id<DFITableViewConfigurationInternal> tableViewConfiguration;
 
 @end
 
 @implementation DFIUITableViewDataSourceProxy
 
-- (instancetype)initWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfigruation {
+- (instancetype)initWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfigruation {
     
     self = [super init];
     
@@ -30,8 +32,8 @@
         _tableViewConfiguration.tableView.dataSource = self;
         
         [[NSNotificationCenter defaultCenter]
-         addObserver:self selector:@selector(handleDataSourceDidChangeNotification:)
-         name:DFITableViewDataSourceDidChangeNotification object:nil];
+          addObserver:self selector:@selector(handleDataSourceDidChangeNotification:)
+          name:DFITableViewDataSourceDidChangeNotification object:nil];
     }
     
     return self;
@@ -184,7 +186,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter]
-     removeObserver:self name:DFITableViewDataSourceDidChangeNotification object:nil];
+      removeObserver:self name:DFITableViewDataSourceDidChangeNotification object:nil];
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "DFITableViewConfiguration.h"
 
+#import "DFITableViewConfigurationInternal.h"
+
 #import "UITableView+dequeueTableViewCell.h"
 
 #import "DFITableViewDataSourceProxy.h"
@@ -15,7 +17,7 @@
 
 #import <DFITableViewCells/DFITableViewCells.h>
 
-@interface DFITableViewConfiguration ()
+@interface DFITableViewConfiguration () <DFITableViewConfigurationInternal>
 
 @property (nonatomic, copy) NSDictionary <NSString *, NSNumber *> *configurationsIfRowIsSameInSection;
 
@@ -193,6 +195,12 @@
      postNotificationName:DFITableViewDataSourceDidChangeNotification object:nil];
 }
 
+#if __has_include(<ReactiveCocoa/ReactiveCocoa.h>)
+- (void)setSelectRowSignal:(RACSignal *)selectRowSignal {
+    _selectRowSignal = selectRowSignal;
+}
+#endif
+
 - (void)setRegisterClassCells:(NSDictionary<NSString *, Class> *)registerCells {
     [registerCells
      enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key,
@@ -220,7 +228,6 @@
 #pragma mark - const
 
 NSString * const kTableViewDataSourceFormatDidChangedNotification = @"kTableViewDataSourceFormatDidChangedNotification";
-NSString * const DFITableViewDataSourceDidChangeNotification = @"DFITableViewDataSourceDidChangeNotification";
 
 NSString * const kTableViewCellReuseIdentifierStringKey = @"reuseIdentifier";
 
