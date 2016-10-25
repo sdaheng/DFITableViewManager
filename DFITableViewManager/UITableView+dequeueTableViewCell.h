@@ -13,9 +13,6 @@
 @interface UITableView (dequeueTableViewCell)
 
 - (UITableViewCell *)dequeueTableViewCellAtIndexPath:(NSIndexPath *)indexPath
-                                 withReuseIdentifier:(NSString *)identifier;
-
-- (UITableViewCell *)dequeueTableViewCellAtIndexPath:(NSIndexPath *)indexPath
                                  withReuseIdentifier:(NSString *)identifier
                                                 info:(id)info
                                               option:(id)option;

@@ -12,15 +12,6 @@
 @implementation UITableView (dequeueTableViewCell)
 
 - (UITableViewCell *)dequeueTableViewCellAtIndexPath:(NSIndexPath *)indexPath
-                                   withReuseIdentifier:(NSString *)identifier {
-    
-    return [self dequeueTableViewCellAtIndexPath:indexPath
-                             withReuseIdentifier:identifier
-                                            info:nil
-                                          option:nil];
-}
-
-- (UITableViewCell *)dequeueTableViewCellAtIndexPath:(NSIndexPath *)indexPath
                                  withReuseIdentifier:(NSString *)identifier
                                                 info:(id)info
                                               option:(id)option {
