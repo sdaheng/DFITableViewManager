@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.version      = "0.0.22"
+  s.version      = "0.1.0"
   s.name         = "DFITableViewManager"
   s.summary      = "DFITableViewManager is a part of DFInfrasturcture"
   s.description  = <<-DESC
@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/sdaheng/DFITableViewManager.git"
   
-  s.license      = "MIT"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author       = { "sdaheng" => "shidaheng@gmail.com" }
@@ -20,7 +19,7 @@ Pod::Spec.new do |s|
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
 
-  s.source       = { :git => "https://github.com/sdaheng/DFITableViewManager.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/sdaheng/DFITableViewManager.git", :tag => "0.1.0" }
 
   s.source_files  = "DFITableViewManager/**/*.{h,m}"
 
