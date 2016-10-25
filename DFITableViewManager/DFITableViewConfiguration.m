@@ -127,14 +127,14 @@
     NSDictionary *cellConfigurationDictionary = self.dataSourceFormat[indexPathKeyString];
     
     BOOL sectionIsSameInTableView =
-    self.dataSourceFormat[kTableViewCellSectionIsSameInTableView];
+    self.dataSourceFormat[DFITableViewCellSectionIsSameInTableView];
     
     self.sectionIndexIfSectionIsSameInTableView = sectionIsSameInTableView ? 0 : -1;
     
     if (![self.configurationsIfRowIsSameInSection[[@(indexPath.section) stringValue]] boolValue] &&
-        cellConfigurationDictionary[kTableViewCellRowIsSameInSectionKey]) {
+        cellConfigurationDictionary[DFITableViewCellRowIsSameInSectionKey]) {
         NSMutableDictionary *tempMutableDictionary = [self.configurationsIfRowIsSameInSection mutableCopy];
-        [tempMutableDictionary setObject:cellConfigurationDictionary[kTableViewCellRowIsSameInSectionKey]
+        [tempMutableDictionary setObject:cellConfigurationDictionary[DFITableViewCellRowIsSameInSectionKey]
                                   forKey:@(indexPath.section).stringValue];
         self.configurationsIfRowIsSameInSection = [tempMutableDictionary copy];
         
@@ -145,7 +145,7 @@
     [self dataFormatCellIndexPathStringIfRowIsSameInSectionOrNotAtIndexPath:indexPath];
     
     NSDictionary *cellOptionDictioanry =
-    self.dataSourceFormat[indexPathString][kTableViewCellOptionKey];
+    self.dataSourceFormat[indexPathString][DFITableViewCellOptionKey];
     
     return [cellOptionDictioanry copy];
 }
@@ -158,7 +158,7 @@
     [self dataFormatCellIndexPathStringIfRowIsSameInSectionOrNotAtIndexPath:indexPath];
     
     NSString *cellReuseIdentifierString =
-    self.dataSourceFormat[indexPathString][kTableViewCellReuseIdentifierStringKey];
+    self.dataSourceFormat[indexPathString][DFITableViewCellReuseIdentifierStringKey];
     
     return [self.tableView dequeueTableViewCellAtIndexPath:indexPath
                                        withReuseIdentifier:cellReuseIdentifierString
@@ -185,7 +185,7 @@
     _dataSourceFormat = dataSourceFormat;
     
     [[NSNotificationCenter defaultCenter]
-     postNotificationName:kTableViewDataSourceFormatDidChangedNotification object:self];
+     postNotificationName:DFITableViewDataSourceFormatDidChangedNotification object:self];
 }
 
 - (void)setDataSource:(NSArray *)dataSource {
@@ -227,17 +227,17 @@
 
 #pragma mark - const
 
-NSString * const kTableViewDataSourceFormatDidChangedNotification = @"kTableViewDataSourceFormatDidChangedNotification";
+NSString * const DFITableViewDataSourceFormatDidChangedNotification = @"DFITableViewDataSourceFormatDidChangedNotification";
 
-NSString * const kTableViewCellReuseIdentifierStringKey = @"reuseIdentifier";
+NSString * const DFITableViewCellReuseIdentifierStringKey = @"reuseIdentifier";
 
-NSString * const kTableViewCellRowIsSameInSectionKey = @"rowIsSameInSection";
-NSString * const kTableViewCellSectionIsSameInTableView = @"sectionIsSameInTableView";
+NSString * const DFITableViewCellRowIsSameInSectionKey = @"rowIsSameInSection";
+NSString * const DFITableViewCellSectionIsSameInTableView = @"sectionIsSameInTableView";
 
-NSString * const kTableViewCellOptionKey = @"cellOption";
+NSString * const DFITableViewCellOptionKey = @"cellOption";
 
-NSString * const kTableViewCellStoryboardOptionKey = @"cellStoryboardOption";
-NSString * const kTableViewCellStoryboardIDOptionKey = @"cellStoryboardIDOption";
-NSString * const kTableViewCellNavigationControllerOptionKey = @"navigationControllerOption";
-NSString * const kTableViewCellPresentFromViewControllerOptionKey = @"presentFromViewControllerOption";
+NSString * const DFITableViewCellStoryboardOptionKey = @"cellStoryboardOption";
+NSString * const DFITableViewCellStoryboardIDOptionKey = @"cellStoryboardIDOption";
+NSString * const DFITableViewCellNavigationControllerOptionKey = @"navigationControllerOption";
+NSString * const DFITableViewCellPresentFromViewControllerOptionKey = @"presentFromViewControllerOption";
 

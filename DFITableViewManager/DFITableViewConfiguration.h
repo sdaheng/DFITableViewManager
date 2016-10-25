@@ -84,7 +84,7 @@ typedef __kindof DFITableViewCellOption * _Nullable (^DFITableViewCellOptionBloc
 /**
  *  DataSourceFormat 发生变化后的通知
  */
-extern NSString * const kTableViewDataSourceFormatDidChangedNotification;
+extern NSString * const DFITableViewDataSourceFormatDidChangedNotification;
 
 extern NSString * const DFITableViewDataSourceDidChangeNotification;
 
@@ -95,16 +95,16 @@ extern NSString * const DFITableViewDataSourceDidChangeNotification;
 /**
  *  Example
  *  section-row
- *  @{@"0-0" : @{kTableViewCellReuseIdentifierStringKey : @"cell1",
-                 kTableViewCellOptionKey : @{kTableViewCellStoryboardOptionKey : self.storyboard,
-                                             kTableViewCellNavigationControllerOptionKey : self.navigationController}},
-      @"0-1" : @{kTableViewCellReuseIdentifierStringKey : @"cell2",
-                 kTableViewCellOptionKey : @{kTableViewCellStoryboardOptionKey : self.storyboard,
-                                             kTableViewCellNavigationControllerOptionKey : self.navigationController}},
-      @"0-2" : @{kTableViewCellReuseIdentifierStringKey : @"cell3",
-                 kTableViewCellOptionKey : @{kTableViewCellStoryboardOptionKey : self.storyboard,
-                                             kTableViewCellNavigationControllerOptionKey : self.navigationController}},
-      kTableViewCellSectionIsSameInTableView : @(YES)};
+ *  @{@"0-0" : @{DFITableViewCellReuseIdentifierStringKey : @"cell1",
+                 DFITableViewCellOptionKey : @{DFITableViewCellStoryboardOptionKey : self.storyboard,
+                                             DFITableViewCellNavigationControllerOptionKey : self.navigationController}},
+      @"0-1" : @{DFITableViewCellReuseIdentifierStringKey : @"cell2",
+                 DFITableViewCellOptionKey : @{DFITableViewCellStoryboardOptionKey : self.storyboard,
+                                             DFITableViewCellNavigationControllerOptionKey : self.navigationController}},
+      @"0-2" : @{DFITableViewCellReuseIdentifierStringKey : @"cell3",
+                 DFITableViewCellOptionKey : @{DFITableViewCellStoryboardOptionKey : self.storyboard,
+                                             DFITableViewCellNavigationControllerOptionKey : self.navigationController}},
+      DFITableViewCellSectionIsSameInTableView : @(YES)};
  
     From a plist file.
     xxx.plist
@@ -114,41 +114,41 @@ extern NSString * const DFITableViewDataSourceDidChangeNotification;
 /**
  *  TableViewCell的重用字符串
  */
-extern NSString * const kTableViewCellReuseIdentifierStringKey;
+extern NSString * const DFITableViewCellReuseIdentifierStringKey;
 
 /**
  *  TableView中所有的section里的Cell配置是否相同, 值为 BOOL NSNumber
  */
-extern NSString * const kTableViewCellSectionIsSameInTableView;
+extern NSString * const DFITableViewCellSectionIsSameInTableView;
 
 /**
  *  TableView中section里的row是否相同, 值为 BOOL NSNumber
  */
-extern NSString * const kTableViewCellRowIsSameInSectionKey;
+extern NSString * const DFITableViewCellRowIsSameInSectionKey;
 
 /**
  *  配置Cell选项的key
  */
-extern NSString * const kTableViewCellOptionKey;
+extern NSString * const DFITableViewCellOptionKey;
 
 /**
  *  配置Cell选项里的storyboard的key
  */
-extern NSString * const kTableViewCellStoryboardOptionKey;
+extern NSString * const DFITableViewCellStoryboardOptionKey;
 
 /**
  *  配置Cell选项里的storyboard Identifier的key
  */
-extern NSString * const kTableViewCellStoryboardIDOptionKey;
+extern NSString * const DFITableViewCellStoryboardIDOptionKey;
 
 /**
  *  配置Cell选项里的navigationController的key
  */
-extern NSString * const kTableViewCellNavigationControllerOptionKey;
+extern NSString * const DFITableViewCellNavigationControllerOptionKey;
 
 /**
  *  配置Cell选项里的UIViewController的key
  */
-extern NSString * const kTableViewCellPresentFromViewControllerOptionKey;
+extern NSString * const DFITableViewCellPresentFromViewControllerOptionKey;
 
 NS_ASSUME_NONNULL_END

@@ -32,9 +32,9 @@
 - (DataFormatTableViewControllerViewModel *)viewModel {
     if (!_viewModel) {
         
-        NSDictionary *dataSourceFormat = @{@"0-0" : @{kTableViewCellReuseIdentifierStringKey : @"cell",
-                                                      kTableViewCellRowIsSameInSectionKey : @(YES)},
-                                           kTableViewCellSectionIsSameInTableView : @(YES)};
+        NSDictionary *dataSourceFormat = @{@"0-0" : @{DFITableViewCellReuseIdentifierStringKey : @"cell",
+                                                      DFITableViewCellRowIsSameInSectionKey : @(YES)},
+                                           DFITableViewCellSectionIsSameInTableView : @(YES)};
         
         DFITableViewConfiguration *tableViewConfiguration =
         [DFITableViewConfiguration configureTableView:self.tableView withDataSourceFormat:dataSourceFormat];

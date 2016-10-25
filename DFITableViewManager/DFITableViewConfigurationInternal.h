@@ -13,13 +13,13 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol DFITableViewConfigurationInternal <NSObject>
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (readonly, nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, weak, nullable) id<UITableViewDelegate> tableViewDelegate;
+@property (readonly, nonatomic, weak, nullable) id<UITableViewDelegate> tableViewDelegate;
 
-@property (nonatomic, weak, nullable) id<UITableViewDataSource> tableViewDataSource;
+@property (readonly, nonatomic, weak, nullable) id<UITableViewDataSource> tableViewDataSource;
 
-@property (nonatomic, copy) NSArray *dataSource;
+@property (readonly, nonatomic, copy) NSArray *dataSource;
 
 #if __has_include(<ReactiveCocoa/ReactiveCocoa.h>)
 @property (nonatomic, strong) RACSignal *selectRowSignal;
