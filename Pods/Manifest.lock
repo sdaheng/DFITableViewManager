@@ -1,5 +1,5 @@
 PODS:
-  - DFITableViewCells (0.0.1):
+  - DFITableViewCells (0.0.4):
     - Masonry
   - Masonry (1.0.2)
 
@@ -8,7 +8,7 @@ DEPENDENCIES:
   - Masonry
 
 SPEC CHECKSUMS:
-  DFITableViewCells: 215406b9b0b5dca47d11294e4b3367b077eada71
+  DFITableViewCells: 39128227c941757dacb07b2abcd25cd4df130845
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
 
 PODFILE CHECKSUM: 9483585cbff2d0e1f282f1866c5b49869dd91b79
