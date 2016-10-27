@@ -5,12 +5,11 @@
 ### Usage
 
 ```objective-c
-DFITableViewConfiguration *tableViewConfiguration =
-[DFITableViewConfiguration configureTableView:self.tableView withRowIsSameInSection:nil];
+DFITableViewConfiguration *tableViewConfiguration = [DFITableViewConfiguration configureTableView:self.tableView];
 
 tableViewConfiguration.registerClassCells = @{@"cell" : [DemoCustomCell class]};
 
-self.dataSource = @[[@[ @"CodeDemo", @"DataFormatDemo", @"PlistDemo" ] map:^id(id value) {
+tableViewConfiguration.dataSource = @[[@[ @"CodeDemo", @"DataFormatDemo", @"PlistDemo" ] map:^id(id value) {
     return [[DemoCustomCellViewModel alloc] initWithText:value];
 }]];
 
