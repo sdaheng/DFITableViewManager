@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) RACSignal *selectRowSignal;
 #endif
 
+@property (nonatomic, copy) void(^dataSourceDidChangeBlock)();
+
 - (UITableViewCell *)cellForConfigurationAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

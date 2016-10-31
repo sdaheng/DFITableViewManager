@@ -21,18 +21,8 @@
 @synthesize loadMoreSignal = _loadMoreSignal;
 #endif
 
-- (instancetype)init {
-    self = [super init];
-    
-    if (self) {
-        _dataSource = [NSArray array];
-    }
-    
-    return self;
-}
-
 - (instancetype)initWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration {
-    self = [self init];
+    self = [super init];
     
     if (self) {
         _tableViewConfiguration = tableViewConfiguration;
@@ -44,17 +34,13 @@
 - (void)setDataSource:(NSArray *)dataSource {
     _dataSource = dataSource;
     
-    if (!_tableViewConfiguration.dataSource) {
-        _tableViewConfiguration.dataSource = dataSource;
-    }
+    _tableViewConfiguration.dataSource = dataSource;
 }
 
 - (void)setTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration {
     _tableViewConfiguration = tableViewConfiguration;
     
-    if (!_tableViewConfiguration.dataSource) {
-        _tableViewConfiguration.dataSource = _dataSource;
-    }
+    _tableViewConfiguration.dataSource = _dataSource;
 }
 
 @end

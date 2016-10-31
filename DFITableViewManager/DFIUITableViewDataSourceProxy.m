@@ -12,8 +12,6 @@
 
 #import <UIKit/UIKit.h>
 
-NSString * const DFITableViewDataSourceDidChangeNotification = @"DFITableViewDataSourceDidChangeNotification";
-
 @interface DFIUITableViewDataSourceProxy () <UITableViewDataSource>
 
 @property (nonatomic, weak) id<DFITableViewConfigurationInternal> tableViewConfiguration;
@@ -31,16 +29,12 @@ NSString * const DFITableViewDataSourceDidChangeNotification = @"DFITableViewDat
 
         _tableViewConfiguration.tableView.dataSource = self;
         
-        [[NSNotificationCenter defaultCenter]
-          addObserver:self selector:@selector(handleDataSourceDidChangeNotification:)
-          name:DFITableViewDataSourceDidChangeNotification object:nil];
+        _tableViewConfiguration.dataSourceDidChangeBlock = ^{
+            [_tableViewConfiguration.tableView reloadData];
+        };
     }
     
     return self;
-}
-
-- (void)handleDataSourceDidChangeNotification:(NSNotification *)notification {
-    [self.tableViewConfiguration.tableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -182,11 +176,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
                                                 moveRowAtIndexPath:sourceIndexPath
                                                        toIndexPath:destinationIndexPath];
     }
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter]
-      removeObserver:self name:DFITableViewDataSourceDidChangeNotification object:nil];
 }
 
 @end

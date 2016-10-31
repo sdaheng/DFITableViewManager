@@ -82,13 +82,6 @@ typedef __kindof DFITableViewCellOption * _Nullable (^DFITableViewCellOptionBloc
 @end
 
 /**
- *  DataSourceFormat 发生变化后的通知
- */
-extern NSString * const DFITableViewDataSourceFormatDidChangedNotification;
-
-extern NSString * const DFITableViewDataSourceDidChangeNotification;
-
-/**
  *  以下是 dataSourceFormat 字典中所用的key
  */
 

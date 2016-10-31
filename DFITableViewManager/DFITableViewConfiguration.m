@@ -30,6 +30,7 @@
 @end
 
 @implementation DFITableViewConfiguration
+@synthesize dataSourceDidChangeBlock = _dataSourceDidChangeBlock;
 
 #pragma mark - init
 
@@ -169,19 +170,10 @@
 
 #pragma mark - setter
 
-- (void)setDataSourceFormat:(NSDictionary<NSString *, NSDictionary *> *)dataSourceFormat {
-    
-    _dataSourceFormat = dataSourceFormat;
-    
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:DFITableViewDataSourceFormatDidChangedNotification object:self];
-}
-
 - (void)setDataSource:(NSArray *)dataSource {
     _dataSource = dataSource;
     
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:DFITableViewDataSourceDidChangeNotification object:nil];
+    self.dataSourceDidChangeBlock();
 }
 
 #if __has_include(<ReactiveCocoa/ReactiveCocoa.h>)
@@ -215,8 +207,6 @@
 @end
 
 #pragma mark - const
-
-NSString * const DFITableViewDataSourceFormatDidChangedNotification = @"DFITableViewDataSourceFormatDidChangedNotification";
 
 NSString * const DFITableViewCellReuseIdentifierStringKey = @"reuseIdentifier";
 
