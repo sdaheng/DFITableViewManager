@@ -33,6 +33,8 @@
 
 #pragma mark - init
 
+
+
 + (instancetype)configureTableView:(UITableView *)tableView
               withDataSourceFormat:(NSDictionary *)dataSourceFormat {
     return [[self alloc] initWithTableView:tableView
@@ -62,6 +64,8 @@
         
         _delegateProxy =
         [DFITableViewDelegateProxy tableViewDelegateProxyWithTableViewConfiguration:self];
+        
+        [self registerDFITableViewConcretCells];
     }
     
     return self;
@@ -103,6 +107,10 @@
     if (self.cellOptionAtIndexPath) {
         cellOption = self.cellOptionAtIndexPath([NSIndexPath indexPathForRow:indexPath.row
                                                                    inSection:indexPath.section]);
+    }
+    
+    if (!cellViewModel.cellConfigure) {
+//        cellViewModel.cellConfigure = [[DFITableViewCellConfigure alloc] initWithReuseIdentifier:<#(NSString *)#>]
     }
     
     cellViewModel.cellConfigure.cellOption = cellOption;
@@ -159,6 +167,9 @@
                                                     option:cellOptionDictioanry];
 }
 
+#define stringfy(value) #value
+#define concat(value1, value2, sep) value1##sep##value2
+
 - (NSString *)dataFormatCellIndexPathStringIfRowIsSameInSectionOrNotAtIndexPath:(NSIndexPath *)indexPath {
     return [self.configurationsIfRowIsSameInSection[@(indexPath.section).stringValue] boolValue] ?
            [NSString stringWithFormat:@"%@-%@", @(indexPath.section), @(self.rowIndexIfRowIsSameInSection)] :
@@ -211,6 +222,40 @@
               forCellReuseIdentifier:key];
      }];
 }
+
+- (void)setRegisterCells:(NSArray *)registerCells {
+    
+    NSMutableDictionary *tempMutableClassDictionary =
+    [NSMutableDictionary dictionaryWithCapacity:registerCells.count];
+    NSMutableDictionary *tempMutableNibDictionary =
+    [NSMutableDictionary dictionaryWithCapacity:registerCells.count];
+    
+    NSInteger nibIndex = 0;
+    for (id cell in registerCells) {
+        if ([cell isKindOfClass:[UINib class]]) {
+            [tempMutableNibDictionary setObject:cell
+                                         forKey:[@"Nib Cell" stringByAppendingFormat:@" %ld", nibIndex]];
+        } else {
+            [tempMutableClassDictionary setObject:cell forKey:NSStringFromClass(cell)];
+        }
+    }
+    
+    [self setRegisterClassCells:tempMutableClassDictionary];
+    [self setRegisterNibCells:tempMutableNibDictionary];
+}
+
+#if __has_include(<DFITableViewCells/DFITableViewCells.h>)
+
+- (void)registerDFITableViewConcretCells {
+    self.registerClassCells =
+    @{NSStringFromClass(DFIPlainTableViewCellViewModel.class) : DFIPlainTableViewCell.class,
+      NSStringFromClass(DFITextFieldTableViewCellViewModel.class) : DFITextFieldTableViewCell.class,
+      NSStringFromClass(DFITextViewTableViewCellViewModel.class) : DFITextViewTableViewCell.class,
+      NSStringFromClass(DFIButtonTableViewCellViewModel.class) : DFIButtonTableViewCell.class,
+      NSStringFromClass(DFISegmentedTableViewCell.class) : DFISegmentedTableViewCell.class};
+}
+
+#endif
 
 @end
 

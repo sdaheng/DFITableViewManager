@@ -97,6 +97,7 @@ init(withBar bar: Bar = Bar.defaultBar()) {
 ///
 /// - parameters:
 ///   - bar: Instance of Bar.
+```
 
 - The `precondition`, `parameters` and `return` delimiters should come last in that order in the markup block before the method's signature.
 
@@ -128,4 +129,15 @@ init(count: Int)
 ///
 /// DON'T:
 /// Does something magical and returns pixie dust from `self`.
+```
+
+- Document return value on the same line as `return:` delimiter.
+
+```
+/// DO:
+/// - returns: A signal with mapped value over given function
+///
+/// DON'T:
+/// - returns:
+///   A signal with mapped value over given function   
 ```
