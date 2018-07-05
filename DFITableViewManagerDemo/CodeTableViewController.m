@@ -26,15 +26,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self viewModel];
 #define BLOCK
 #ifdef BLOCK
-    @weakify(self);
-    self.viewModel.confirmButtonCellViewModel.buttonClickBlock = ^(UITableViewCell *cell,
-                                                                   UIButton *button) {
-        @strongify(self);
-        [self showAlert];
-    };
+//    @weakify(self);
+//    self.viewModel.confirmButtonCellViewModel.buttonClickBlock = ^(UITableViewCell *cell,
+//                                                                   UIButton *button) {
+//        @strongify(self);
+//        [self showAlert];
+//    };
 #endif
     
 //#define TARGET_SELECTOR
@@ -58,6 +58,13 @@
     }];
 #endif
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (void)routeThroughCellResponderChainWithEventName:(NSString *)name
+                                           userInfo:(NSDictionary *)userInfo {
+    
+    NSLog(@"view Controller respond");
+    
+    [self showAlert];
 }
 
 - (void)showAlert {

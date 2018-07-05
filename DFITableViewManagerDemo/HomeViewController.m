@@ -36,12 +36,13 @@
      subscribeNext:^(RACTuple * x) {
          @strongify(self)
          NSIndexPath *indexPath = [x second];
-         
+
          [self selectCellAtIndexPath:indexPath];
      }];
 #else
     self.viewModel.tableViewConfiguration.tableViewDelegate = self;
 #endif
+//    self.viewModel.tableViewConfiguration.tableViewDelegate = self;
     // Do any additional setup after loading the view.
 }
 

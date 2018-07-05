@@ -37,6 +37,8 @@ typedef __kindof DFITableViewCellOption * _Nullable (^DFITableViewCellOptionBloc
 @property (nonatomic, copy, nullable) NSDictionary <NSString *, Class>   *registerClassCells;
 @property (nonatomic, copy, nullable) NSDictionary <NSString *, UINib *> *registerNibCells;
 
+@property (nonatomic, copy, nullable) NSArray *registerCells;
+
 /**
  *  转发 UITableViewDelegate 中的方法
  */
@@ -51,6 +53,8 @@ typedef __kindof DFITableViewCellOption * _Nullable (^DFITableViewCellOptionBloc
  *  对应indexPath所在的Cell的配置选项
  */
 @property (nonatomic, copy, nullable) DFITableViewCellOptionBlock cellOptionAtIndexPath;
+
+@property (nonatomic, copy, nullable) NSArray<NSString *> *sectionIndexTitles;
 
 #if __has_include(<ReactiveCocoa/ReactiveCocoa.h>)
 @property (readonly, nonatomic, strong) RACSignal *selectRowSignal;

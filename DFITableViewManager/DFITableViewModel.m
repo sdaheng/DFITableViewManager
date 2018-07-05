@@ -44,9 +44,7 @@
 - (void)setDataSource:(NSArray *)dataSource {
     _dataSource = dataSource;
     
-    if (!_tableViewConfiguration.dataSource) {
-        _tableViewConfiguration.dataSource = dataSource;
-    }
+    _tableViewConfiguration.dataSource = dataSource;
 }
 
 - (void)setTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration {

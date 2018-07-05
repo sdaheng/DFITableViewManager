@@ -1,16 +1,20 @@
 PODS:
   - DFITableViewCells (0.0.1):
     - Masonry
-  - Masonry (1.0.2)
+  - Masonry (1.1.0)
 
 DEPENDENCIES:
-  - DFITableViewCells
+  - DFITableViewCells (from `~/Documents/Documents_MacBookPro/DFIProjects/DFITableViewCells`)
   - Masonry
 
+EXTERNAL SOURCES:
+  DFITableViewCells:
+    :path: ~/Documents/Documents_MacBookPro/DFIProjects/DFITableViewCells
+
 SPEC CHECKSUMS:
-  DFITableViewCells: 215406b9b0b5dca47d11294e4b3367b077eada71
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  DFITableViewCells: 2d7847ddd179f7ac697ba745b0769b7caf9b7ef5
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 9483585cbff2d0e1f282f1866c5b49869dd91b79
+PODFILE CHECKSUM: 5ee374ce2eeec1ed9ad4d579480b41da22106faa
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.4.0.rc.1
