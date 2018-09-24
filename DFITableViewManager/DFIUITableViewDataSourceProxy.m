@@ -50,7 +50,7 @@ NSString * const DFITableViewDataSourceDidChangeNotification = @"DFITableViewDat
             
         return [self.tableViewConfiguration.tableViewDataSource numberOfSectionsInTableView:tableView];
     } else {
-        return self.tableViewConfiguration.dataSource.count;
+        return self.tableViewConfiguration.backingDataSource.count;
     }
 }
 
@@ -64,7 +64,7 @@ NSString * const DFITableViewDataSourceDidChangeNotification = @"DFITableViewDat
         return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
                                                     numberOfRowsInSection:section];
     } else {
-        return [self.tableViewConfiguration.dataSource[section] count];
+        return [self.tableViewConfiguration.backingDataSource[section] count];
     }
 }
 
@@ -78,7 +78,6 @@ NSString * const DFITableViewDataSourceDidChangeNotification = @"DFITableViewDat
         return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
                                                     cellForRowAtIndexPath:indexPath];
     } else {
-//        return [self.tableViewConfiguration cellForConfigurationAtIndexPath:indexPath];
         return [self.tableViewConfiguration.backingDataSource tableView:tableView
                                         dataSourceCellForRowAtIndexPath:indexPath];
     }

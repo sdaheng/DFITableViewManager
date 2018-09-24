@@ -83,37 +83,6 @@
 
 #pragma mark - setup cells
 
-#pragma mark - CellViewModel
-
-- (UITableViewCell *)cellForConfigurationAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (!self.dataSourceFormat) {
-        return [self dataSourceCellForRowAtIndexPath:indexPath];
-    } else {
-        return [self dataFormatCellForRowAtIndexPath:indexPath];
-    }
-}
-
-- (UITableViewCell *)dataSourceCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    DFITableViewCellViewModel *cellViewModel = [self setupDataSourceCellViewModelAtIndexPath:indexPath];
-    
-    return [self.tableView dequeueTableViewCellAtIndexPath:indexPath
-                                       withReuseIdentifier:cellViewModel.cellConfigure.reuseIdentifierString
-                                                      info:cellViewModel
-                                                    option:nil];
-}
-
-- (DFITableViewCellViewModel *)setupDataSourceCellViewModelAtIndexPath:(NSIndexPath *)indexPath {
-    DFITableViewCellViewModel *cellViewModel = self.dataSource[indexPath.section][indexPath.row];
-    
-    if (self.cellOptionAtIndexPath) {
-        cellViewModel.cellConfigure.cellOption = self.cellOptionAtIndexPath(indexPath);
-    }
-    
-    return cellViewModel;
-}
-
 #pragma mark - DataFormat
 
 - (NSDictionary *)setupDataFormatCellOptionAtIndexPath:(NSIndexPath *)indexPath {
@@ -187,7 +156,7 @@
 }
 
 - (void)setDataSource:(NSArray *)dataSource {
-    _dataSource = dataSource; // use for displaying cells at first time
+//    _dataSource = dataSource; // use for displaying cells at first time
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         _backingDataSource = [DFITableViewDataSource dataSourceWithRawSectionsAndRows:dataSource];
@@ -197,13 +166,22 @@
              postNotificationName:DFITableViewDataSourceDidChangeNotification object:nil];
         });
     });
-    
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:DFITableViewDataSourceDidChangeNotification object:nil];
 }
 
 - (DFITableViewDataSource *)backingDataSource {
     return _backingDataSource;
+}
+
+- (NSArray *)dataSource {
+    return [_backingDataSource rawArray];
+}
+
+- (void)setCellOptionAtIndexPath:(DFITableViewCellOptionBlock)cellOptionAtIndexPath {
+    _backingDataSource.optionBlock = cellOptionAtIndexPath;
+}
+
+- (DFITableViewCellOptionBlock)cellOptionAtIndexPath {
+    return _backingDataSource.optionBlock;
 }
 
 #if __has_include(<ReactiveCocoa/ReactiveCocoa.h>)

@@ -44,7 +44,12 @@
 //            }
 //            self.dataSource = tempMutableArray1;
 //        }
-      }
+        self.dataSource = @[ @[ self.textCellViewModel,
+                                self.segmentedCellViewModel ],
+                             @[ self.nameTextFieldCellViewModel,
+                                self.passwordTextFieldCellViewModel ],
+                             @[ self.confirmButtonCellViewModel ] ];
+    }
     
     return self;
 }

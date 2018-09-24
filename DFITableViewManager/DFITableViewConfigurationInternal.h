@@ -20,15 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic, weak, nullable) id<UITableViewDataSource> tableViewDataSource;
 
-@property (readonly, nonatomic, copy) NSArray *dataSource;
-
 @property (readonly, nonatomic, strong) DFITableViewDataSource *backingDataSource;
 
 #if __has_include(<ReactiveCocoa/ReactiveCocoa.h>)
 @property (nonatomic, strong) RACSignal *selectRowSignal;
 #endif
-
-- (UITableViewCell *)cellForConfigurationAtIndexPath:(NSIndexPath *)indexPath __deprecated;
 
 @end
 NS_ASSUME_NONNULL_END

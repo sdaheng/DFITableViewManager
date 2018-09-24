@@ -26,8 +26,7 @@
                                       reuseIdentifier:identifier];
     }
     
-    [cell configureWithInfo:info
-                     option:option];
+    [cell configureWithInfo:info option:option];
     
     return cell;
 }

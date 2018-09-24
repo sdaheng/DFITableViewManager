@@ -217,13 +217,17 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView dataSourceCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    DFITableViewCellViewModel *cellViewModel = [self[indexPath.section][indexPath.row] cellViewModel];
-
-    return [tableView dequeueTableViewCellAtIndexPath:indexPath
-                                  withReuseIdentifier:cellViewModel.cellConfigure.reuseIdentifierString
-                                                 info:cellViewModel
-                                               option:nil];
+    if ([self[indexPath.section][indexPath.row] respondsToSelector:@selector(cellViewModel)]) {
+        DFITableViewCellViewModel *cellViewModel = [self[indexPath.section][indexPath.row] cellViewModel];
+        
+        return [tableView dequeueTableViewCellAtIndexPath:indexPath
+                                      withReuseIdentifier:cellViewModel.cellConfigure.reuseIdentifierString
+                                                     info:cellViewModel
+                                                   option:nil];
+    } else if ([self[indexPath.section][indexPath.row] respondsToSelector:@selector(cellModelDictionary)]) {
+        
+    }
+    return nil;
 }
 
 - (NSArray <NSArray *> *)rawArray {
