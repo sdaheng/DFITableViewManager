@@ -7,7 +7,7 @@
 //
 
 #import "DFIUITableViewDataSourceProxy.h"
-
+#import "DFITableViewViewModelDataSource.h"
 #import "DFITableViewConfigurationInternal.h"
 
 #import <UIKit/UIKit.h>
@@ -78,7 +78,9 @@ NSString * const DFITableViewDataSourceDidChangeNotification = @"DFITableViewDat
         return [self.tableViewConfiguration.tableViewDataSource tableView:tableView
                                                     cellForRowAtIndexPath:indexPath];
     } else {
-        return [self.tableViewConfiguration cellForConfigurationAtIndexPath:indexPath];
+//        return [self.tableViewConfiguration cellForConfigurationAtIndexPath:indexPath];
+        return [self.tableViewConfiguration.backingDataSource tableView:tableView
+                                        dataSourceCellForRowAtIndexPath:indexPath];
     }
 }
 

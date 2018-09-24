@@ -16,6 +16,11 @@ const char * kRightViewKey = "kRightViewKey";
 const char * kLeftViewModeKey = "kLeftViewModeKey";
 const char * kRightViewModeKey = "kRightViewModeKey";
 
+const char * kKeyboardTypeKey = "kKeyboardTypeKey";
+const char * kSecureEntryKey = "kSecureEntryKey";
+
+const char * kTextAlignmentKey = "kTextAlignmentKey";
+
 @implementation DFITableViewCellOption (DFITextFieldTableViewCellOptionAddition)
 
 - (void)setLeftView:(UIView *)leftView {
@@ -60,6 +65,30 @@ const char * kRightViewModeKey = "kRightViewModeKey";
 
 - (UITextFieldViewMode)rightViewMode {
     return [objc_getAssociatedObject(self, kRightViewModeKey) integerValue];
+}
+
+- (void)setKeyboardType:(UIKeyboardType)keyboardType {
+    objc_setAssociatedObject(self, kKeyboardTypeKey, @(keyboardType), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (UIKeyboardType)keyboardType {
+    return [objc_getAssociatedObject(self, kKeyboardTypeKey) integerValue];
+}
+
+- (void)setSecureEntry:(BOOL)secureEntry {
+    objc_setAssociatedObject(self, kSecureEntryKey, @(secureEntry), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (BOOL)secureEntry {
+    return [objc_getAssociatedObject(self, kSecureEntryKey) boolValue];
+}
+
+- (void)setTextAlignment:(NSTextAlignment)textAlignment {
+    objc_setAssociatedObject(self, kTextAlignmentKey, @(textAlignment), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (NSTextAlignment)textAlignment {
+    return [objc_getAssociatedObject(self, kTextAlignmentKey) integerValue];
 }
 
 @end

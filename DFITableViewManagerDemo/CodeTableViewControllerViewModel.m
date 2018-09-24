@@ -29,12 +29,22 @@
 - (instancetype)initWithTableViewConfiguration:(DFITableViewConfiguration *)tableViewConfiguration {
     self = [super initWithTableViewConfiguration:tableViewConfiguration];
     if (self) {
-        self.dataSource = @[ @[ self.textCellViewModel,
-                                self.segmentedCellViewModel ],
-                             @[ self.nameTextFieldCellViewModel,
-                                self.passwordTextFieldCellViewModel ],
-                             @[ self.confirmButtonCellViewModel ] ];
-    }
+//        @autoreleasepool {
+//            NSMutableArray *tempMutableArray1 = [NSMutableArray arrayWithCapacity:1000000];
+//
+//            for (NSUInteger i = 0; i < 10000; i++) {
+//                @autoreleasepool {
+//                    NSMutableArray *tempMutableArray2 = [NSMutableArray arrayWithCapacity:1000000];
+//                    for (NSUInteger j = 0; j < 10000; j++) {
+//                        [tempMutableArray2 addObject:[[DFIPlainTableViewCellViewModel alloc] initWithTitleTextString:@(j).stringValue
+//                                                                                                     imageNameString:nil]];
+//                    }
+//                    [tempMutableArray1 addObject:tempMutableArray2];
+//                }
+//            }
+//            self.dataSource = tempMutableArray1;
+//        }
+      }
     
     return self;
 }

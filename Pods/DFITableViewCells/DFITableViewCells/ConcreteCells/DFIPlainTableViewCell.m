@@ -13,6 +13,8 @@
 
 #import "DFITableViewCells.h"
 
+#import "DFITableViewCellDefines.h"
+
 @interface DFIPlainTableViewCell () <UITableViewCellConfigureProtocol>
 
 @property (nonatomic, strong) DFIPlainTableViewCellViewModel *cellViewModel;
@@ -57,13 +59,18 @@
 
         self.selectionStyle = [option[DFIPlainTableViewCellSelectionStyleOptinoKey] integerValue];
         
-        self.contentView.backgroundColor = option[DFIPlainTableViewCellBackgroundColorOptionKey];
+        self.contentView.backgroundColor =
+        CELL_OPTION_IS_COLOR(option[DFIPlainTableViewCellBackgroundColorOptionKey]);
         
-        self.textLabel.font = option[DFIPlainTableViewCellTitleLabelFontOptionKey];
-        self.detailTextLabel.font = option[DFIPlainTableViewCellDetailTextLabelFontOptionKey];
+        self.textLabel.font =
+        CELL_OPTION_IS_FONT(option[DFIPlainTableViewCellTitleLabelFontOptionKey]);
+        self.detailTextLabel.font =
+        CELL_OPTION_IS_FONT(option[DFIPlainTableViewCellDetailTextLabelFontOptionKey]);
         
-        self.textLabel.textColor = option[DFIPlainTableViewCellTitleLabelTextColorOptionKey];
-        self.detailTextLabel.textColor = option[DFIPlainTableViewCellDetailTextLabeleTxtColorOptionKey];
+        self.textLabel.textColor =
+        CELL_OPTION_IS_TEXT(option[DFIPlainTableViewCellTitleLabelTextColorOptionKey]);
+        self.detailTextLabel.textColor =
+        CELL_OPTION_IS_TEXT(option[DFIPlainTableViewCellDetailTextLabeleTxtColorOptionKey]);
     } else {
         DFIPlainTableViewCellOption *option = (DFIPlainTableViewCellOption *)self.cellViewModel.cellConfigure.cellOption;
         
@@ -71,14 +78,13 @@
         self.textLabel.font = option.textLabelFont;
         self.detailTextLabel.font = option.detailTextLabelFont;
         self.selectionStyle = option.selectionStyle;
-        
+        self.accessoryType = option.cellAccessoryType;
         self.textLabel.textColor = option.titleLabelTextColor;
         self.detailTextLabel.textColor = option.detailLabelTextColor;
+        self.textLabel.textAlignment = option.titleLabelTextAlignment;
+        self.detailTextLabel.textAlignment = option.detailLabelTextAlignment;
+        self.accessoryView = option.cellAccessoryView;
     }
-}
-
-- (void)prepareForReuse {
-    [super prepareForReuse];
 }
 
 @end

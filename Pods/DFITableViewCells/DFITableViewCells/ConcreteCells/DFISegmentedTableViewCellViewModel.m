@@ -27,3 +27,20 @@
 }
 
 @end
+
+const char * segmentedControlTintColorKey = "key";
+
+#import <objc/runtime.h>
+
+@implementation DFITableViewCellOption (SegmentedOption)
+
+- (UIColor *)segmentedControlTintColor {
+    return objc_getAssociatedObject(self, segmentedControlTintColorKey);
+}
+
+- (void)setSegmentedControlTintColor:(UIColor *)segmentedControlTintColor {
+    objc_setAssociatedObject(self, segmentedControlTintColorKey,
+                             segmentedControlTintColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+@end

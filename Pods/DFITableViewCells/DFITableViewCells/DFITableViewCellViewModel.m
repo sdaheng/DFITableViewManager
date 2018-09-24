@@ -8,7 +8,11 @@
 
 #import "DFITableViewCellViewModel.h"
 
-@implementation DFITableViewCellViewModel
+@implementation DFITableViewCellViewModel {
+    id _underlyingModel;
+    
+    NSDictionary <NSString *, DFITableViewFormCheckRule *>* _checkerRulesDictionay;
+}
 
 - (instancetype)initWithCellConfigure:(DFITableViewCellConfigure *)cellConfigure {
     self = [super init];
@@ -18,6 +22,23 @@
     }
     
     return self;
+}
+
+- (id)underlyingModel {
+    return _underlyingModel;
+}
+
+- (void)addCheckers:(NSArray<DFITableViewFormCheckRule *> *)checkerRules forKey:(NSString *)key {
+    NSMutableDictionary *tempMutableDictionay = [_checkerRulesDictionay ?: @{} mutableCopy];
+    
+    [tempMutableDictionay setObject:checkerRules
+                             forKey:key];
+    
+    _checkerRulesDictionay = tempMutableDictionay.copy;
+}
+
+- (NSDictionary *)formCheckerRulesDictionary {
+    return _checkerRulesDictionay;
 }
 
 @end

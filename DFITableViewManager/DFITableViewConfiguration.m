@@ -17,6 +17,8 @@
 
 #import <DFITableViewCells/DFITableViewCells.h>
 
+#import "DFITableViewViewModelDataSource.h"
+
 @interface DFITableViewConfiguration () <DFITableViewConfigurationInternal>
 
 @property (nonatomic, copy) NSDictionary <NSString *, NSNumber *> *configurationsIfRowIsSameInSection;
@@ -29,11 +31,11 @@
 
 @end
 
-@implementation DFITableViewConfiguration
+@implementation DFITableViewConfiguration {
+    DFITableViewDataSource *_backingDataSource;
+}
 
 #pragma mark - init
-
-
 
 + (instancetype)configureTableView:(UITableView *)tableView
               withDataSourceFormat:(NSDictionary *)dataSourceFormat {
@@ -81,6 +83,8 @@
 
 #pragma mark - setup cells
 
+#pragma mark - CellViewModel
+
 - (UITableViewCell *)cellForConfigurationAtIndexPath:(NSIndexPath *)indexPath {
     
     if (!self.dataSourceFormat) {
@@ -102,21 +106,15 @@
 
 - (DFITableViewCellViewModel *)setupDataSourceCellViewModelAtIndexPath:(NSIndexPath *)indexPath {
     DFITableViewCellViewModel *cellViewModel = self.dataSource[indexPath.section][indexPath.row];
-    DFITableViewCellOption *cellOption = nil;
     
     if (self.cellOptionAtIndexPath) {
-        cellOption = self.cellOptionAtIndexPath([NSIndexPath indexPathForRow:indexPath.row
-                                                                   inSection:indexPath.section]);
+        cellViewModel.cellConfigure.cellOption = self.cellOptionAtIndexPath(indexPath);
     }
-    
-    if (!cellViewModel.cellConfigure) {
-//        cellViewModel.cellConfigure = [[DFITableViewCellConfigure alloc] initWithReuseIdentifier:<#(NSString *)#>]
-    }
-    
-    cellViewModel.cellConfigure.cellOption = cellOption;
     
     return cellViewModel;
 }
+
+#pragma mark - DataFormat
 
 - (NSDictionary *)setupDataFormatCellOptionAtIndexPath:(NSIndexPath *)indexPath {
     NSString *indexPathKeyString = [NSString stringWithFormat:@"%@-%@", @(indexPath.section),
@@ -189,10 +187,23 @@
 }
 
 - (void)setDataSource:(NSArray *)dataSource {
-    _dataSource = dataSource;
+    _dataSource = dataSource; // use for displaying cells at first time
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        _backingDataSource = [DFITableViewDataSource dataSourceWithRawSectionsAndRows:dataSource];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:DFITableViewDataSourceDidChangeNotification object:nil];
+        });
+    });
     
     [[NSNotificationCenter defaultCenter]
      postNotificationName:DFITableViewDataSourceDidChangeNotification object:nil];
+}
+
+- (DFITableViewDataSource *)backingDataSource {
+    return _backingDataSource;
 }
 
 #if __has_include(<ReactiveCocoa/ReactiveCocoa.h>)

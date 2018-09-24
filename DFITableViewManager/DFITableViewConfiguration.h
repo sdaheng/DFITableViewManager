@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "DFITableViewManagerDefines.h"
+
 @protocol UITableViewDelegate;
 @protocol UITableViewDataSource;
 
@@ -21,7 +23,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef __kindof DFITableViewCellOption * _Nullable (^DFITableViewCellOptionBlock)(NSIndexPath * indexPath);
 
 @interface DFITableViewConfiguration : NSObject
 

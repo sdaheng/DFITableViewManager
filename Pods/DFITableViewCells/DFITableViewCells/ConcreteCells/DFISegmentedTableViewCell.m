@@ -9,6 +9,7 @@
 #import "DFISegmentedTableViewCell.h"
 
 #import "DFISegmentedTableViewCellViewModel.h"
+@import Masonry;
 
 @interface DFISegmentedTableViewCell () <UITableViewCellConfigureProtocol>
 
@@ -39,23 +40,14 @@
 
 - (void)setupViews {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-}
-
-- (void)registerObserver {
-    [self.cellViewModel addObserver:self
-                         forKeyPath:@"selectedIndex"
-                            options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                            context:NULL];
-}
-
-- (void)removeObserver {
-    [self.cellViewModel removeObserver:self
-                            forKeyPath:@"selectedIndex"];
+//    self.segmentedControl.tintColor = [UIColor colorWithRed:1.f
+//                                                      green:155 / 255.f
+//                                                       blue:66 / 255.f
+//                                                      alpha:1];
 }
 
 - (void)configureCellWithInfo:(id)info option:(NSDictionary *)option {
     self.cellViewModel = info;
-    [self registerObserver];
     
     self.textLabel.text = self.cellViewModel.titleString;
     
@@ -75,6 +67,10 @@
      }];
     
     self.segmentedControl.selectedSegmentIndex = self.cellViewModel.selectedIndex;
+    
+    if ([self.cellViewModel.cellConfigure.cellOption respondsToSelector:@selector(segmentedControlTintColor)]) {
+        self.segmentedControl.tintColor = self.cellViewModel.cellConfigure.cellOption.segmentedControlTintColor;
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -90,9 +86,17 @@
 
 - (UISegmentedControl *)segmentedControl {
     if (!_segmentedControl) {
-        _segmentedControl = [[UISegmentedControl alloc] initWithItems:nil];
-        self.accessoryView = self.segmentedControl;
-
+        _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[]];
+        
+        [self addSubview:_segmentedControl];
+        
+        [_segmentedControl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.mas_top).offset(10);
+            make.bottom.equalTo(self.mas_bottom).offset(-10);
+            make.trailing.equalTo(self.mas_trailing).offset(-15);
+            make.width.equalTo(@(100));
+        }];
+        
         [_segmentedControl addTarget:self
                               action:@selector(handleSegmentedControlDidChange:)
                     forControlEvents:UIControlEventValueChanged];
@@ -109,12 +113,23 @@
     [super prepareForReuse];
     
     [self.segmentedControl removeAllSegments];
+}
 
-    [self removeObserver];
+- (void)setCellViewModel:(DFISegmentedTableViewCellViewModel *)cellViewModel {
+    if (!_cellViewModel) {
+        _cellViewModel = cellViewModel;
+        [_cellViewModel addObserver:self
+                         forKeyPath:@"selectedIndex"
+                            options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                            context:NULL];
+    }
+    
+    _cellViewModel = cellViewModel;
 }
 
 - (void)dealloc {
-    [self removeObserver];
+    [self.cellViewModel removeObserver:self
+                            forKeyPath:@"selectedIndex"];
 }
 
 @end

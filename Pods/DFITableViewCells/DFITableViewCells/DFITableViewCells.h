@@ -1,6 +1,6 @@
 //
 //  DFITableViewCells.h
-//  DFITableViewCells
+//  DFITableViewCell
 //
 //  Created by SDH on 1/27/16.
 //  Copyright © 2016 com.dazhongcun. All rights reserved.
@@ -25,8 +25,13 @@ FOUNDATION_EXPORT const unsigned char DFITableViewCellsVersionString[];
 
 #import "DFITableViewCellViewModel.h"
 
+#import "UITableViewCell+Separator.h"
+
 #import "UITableViewCellConfigureProtocol.h"
 #import "UITableViewCellActionDelegate.h"
+#import "UIResponder+UITableViewCellResponderChain.h"
+
+#import "DFITableViewFormChecker.h"
 
 #import "DFIConcreteTableViewCells.h"
 

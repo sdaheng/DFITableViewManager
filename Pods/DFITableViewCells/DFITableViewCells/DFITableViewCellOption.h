@@ -9,13 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol UITableViewCellActionProtocol;
+@protocol UITableViewCellActionDelegate;
 
 @protocol DFITableViewCellOption <NSObject>
-
-@end
-
-@interface DFITableViewCellOption : NSObject <DFITableViewCellOption>
 
 @property (nonatomic, strong) UIStoryboard *storyboard;
 @property (nonatomic, strong) UINavigationController *navigationController;
@@ -25,10 +21,18 @@
 
 @property (nonatomic, strong) id needTransferViewModel;
 
-@property (nonatomic, assign) id<UITableViewCellActionProtocol> cellActionDelegate;
+@property (nonatomic, weak) id<UITableViewCellActionDelegate> cellActionDelegate;
 
 @property (nonatomic, assign) UITableViewCellSelectionStyle cellSelectionStyle;
 @property (nonatomic, assign) UITableViewCellAccessoryType  cellAccessoryType;
 @property (nonatomic, strong) UIView *cellAccessoryView;
+
+@property (nonatomic, assign) BOOL hideNativeSeparator;
+@property (nonatomic, strong) UIColor *separatorColor;
+@property (nonatomic, assign) UIEdgeInsets separatorInsets;
+
+@end
+
+@interface DFITableViewCellOption : NSObject <DFITableViewCellOption>
 
 @end

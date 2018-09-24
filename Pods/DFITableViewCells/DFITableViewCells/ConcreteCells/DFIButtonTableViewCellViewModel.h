@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) id target;
 @property (nonatomic, assign, readonly) SEL selector;
 
+@property (nonatomic, assign) UIControlState state;
+
 - (instancetype)initWithButtonTitleString:(NSString *)buttonTitleString;
 
 - (void)addTarget:(id)target action:(SEL)selector;

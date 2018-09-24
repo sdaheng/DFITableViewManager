@@ -20,3 +20,9 @@
             defaulSelectIndex:(NSUInteger)selectIndex;
 
 @end
+
+@interface DFITableViewCellOption (SegmentedOption)
+
+@property (nonatomic, strong) UIColor *segmentedControlTintColor;
+
+@end

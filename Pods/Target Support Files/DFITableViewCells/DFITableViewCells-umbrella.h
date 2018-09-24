@@ -17,7 +17,9 @@
 #import "UITableViewCell+configure.h"
 #import "UITableViewCellConfigureProtocol.h"
 #import "UITableViewCellActionDelegate.h"
+#import "DFITableViewFormChecker.h"
 #import "UIResponder+UITableViewCellResponderChain.h"
+#import "UITableViewCell+Separator.h"
 #import "DFIConcreteTableViewCells.h"
 #import "DFIPlainTableViewCell.h"
 #import "DFIPlainTableViewCellViewModel.h"
@@ -29,6 +31,7 @@
 #import "DFITextViewTableViewCellViewModel.h"
 #import "DFIButtonTableViewCell.h"
 #import "DFIButtonTableViewCellViewModel.h"
+#import "DFIButtonTableViewCellOption.h"
 #import "DFISegmentedTableViewCell.h"
 #import "DFISegmentedTableViewCellViewModel.h"
 

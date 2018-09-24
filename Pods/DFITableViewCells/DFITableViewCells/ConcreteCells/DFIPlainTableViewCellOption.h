@@ -20,4 +20,7 @@
 
 @property (nonatomic, assign) UITableViewCellSelectionStyle selectionStyle;
 
+@property (nonatomic, assign) NSTextAlignment titleLabelTextAlignment;
+@property (nonatomic, assign) NSTextAlignment detailLabelTextAlignment;
+
 @end

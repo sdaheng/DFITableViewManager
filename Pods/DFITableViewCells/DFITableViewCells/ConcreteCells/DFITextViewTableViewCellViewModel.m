@@ -13,7 +13,7 @@
 - (instancetype)initWithTitleString:(NSString *)titleString
                         valueString:(NSString *)valueString {
     
-    self = [super init];
+    self = [super initWithCellConfigure:[[DFITableViewCellConfigure alloc] initWithReuseIdentifier:NSStringFromClass(self.class)]];
     
     if (self) {
         _titleString = titleString;

@@ -9,6 +9,7 @@
 @import UIKit;
 
 @class RACSignal;
+@class DFITableViewDataSource;
 
 NS_ASSUME_NONNULL_BEGIN
 @protocol DFITableViewConfigurationInternal <NSObject>
@@ -21,11 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic, copy) NSArray *dataSource;
 
+@property (readonly, nonatomic, strong) DFITableViewDataSource *backingDataSource;
+
 #if __has_include(<ReactiveCocoa/ReactiveCocoa.h>)
 @property (nonatomic, strong) RACSignal *selectRowSignal;
 #endif
 
-- (UITableViewCell *)cellForConfigurationAtIndexPath:(NSIndexPath *)indexPath;
+- (UITableViewCell *)cellForConfigurationAtIndexPath:(NSIndexPath *)indexPath __deprecated;
 
 @end
 NS_ASSUME_NONNULL_END

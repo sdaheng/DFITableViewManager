@@ -7,13 +7,22 @@
 //
 
 #import "DFITableViewCellConfigure.h"
+#import "DFITableViewFormChecker.h"
 
 @interface DFITableViewCellViewModel : NSObject
+
+@property (nonatomic, assign) UITableViewCellStyle cellStyle;
 
 @property (nonatomic, copy) NSString *tagString;
 
 @property (nonatomic, strong) DFITableViewCellConfigure *cellConfigure;
 
+@property (readonly, nonatomic, strong) id underlyingModel;
+
+@property (readonly, nonatomic, copy) NSDictionary *formCheckerRulesDictionary;
+
 - (instancetype)initWithCellConfigure:(DFITableViewCellConfigure *)cellConfigure;
 
+- (void)addCheckers:(NSArray <DFITableViewFormCheckRule *> *)checkerRules
+             forKey:(NSString *)key;
 @end
