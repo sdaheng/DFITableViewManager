@@ -57,6 +57,10 @@
         return signal;
     }];
 #endif
+    
+    [self.viewModel.dataSource[0][0] makeOption:^(DFITableViewCellOption *option) {
+        option.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

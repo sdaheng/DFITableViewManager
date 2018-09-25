@@ -41,4 +41,12 @@
     return _checkerRulesDictionay;
 }
 
+- (void)makeOption:(void (^)(DFITableViewCellOption *))option {
+    DFITableViewCellOption *_option = [DFITableViewCellOption new];
+    
+    option ? option(_option) : nil;
+    
+    self.cellConfigure.cellOption = _option;
+}
+
 @end

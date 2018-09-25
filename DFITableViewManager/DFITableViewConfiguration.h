@@ -23,7 +23,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 @interface DFITableViewConfiguration : NSObject
 
 @property (readonly, nonatomic, strong) UITableView *tableView;
@@ -33,11 +32,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy) NSArray *dataSource;
 
+// use for describe cell style or options
 @property (nonatomic, copy, nullable) NSDictionary <NSString *, NSDictionary *> *dataSourceFormat;
 
 @property (nonatomic, copy, nullable) NSDictionary <NSString *, Class>   *registerClassCells;
 @property (nonatomic, copy, nullable) NSDictionary <NSString *, UINib *> *registerNibCells;
-
 @property (nonatomic, copy, nullable) NSArray *registerCells;
 
 /**
@@ -49,11 +48,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  转发 UITableViewDataSource 中的方法
  */
 @property (nonatomic, weak, nullable) id<UITableViewDataSource> tableViewDataSource;
-
-/**
- *  对应indexPath所在的Cell的配置选项
- */
-@property (nonatomic, copy, nullable) DFITableViewCellOptionBlock cellOptionAtIndexPath;
 
 @property (nonatomic, copy, nullable) NSArray<NSString *> *sectionIndexTitles;
 

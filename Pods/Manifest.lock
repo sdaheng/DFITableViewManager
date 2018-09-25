@@ -40,7 +40,7 @@ PODS:
   - Masonry (1.1.0)
 
 DEPENDENCIES:
-  - DFITableViewCells (from `https://gitee.com/axe/DFITableViewCells.git`, branch `dev`)
+  - DFITableViewCells (from `https://gitee.com/axe/DFITableViewCells.git`, branch `dev_option`)
   - Masonry
 
 SPEC REPOS:
@@ -50,12 +50,12 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   DFITableViewCells:
-    :branch: dev
+    :branch: dev_option
     :git: https://gitee.com/axe/DFITableViewCells.git
 
 CHECKOUT OPTIONS:
   DFITableViewCells:
-    :commit: cf0ac550f86d16d2fdafc6c5f441eb33b5c08bbc
+    :commit: 31249903f9d8ba101f91b849dca16dd4fcfe6aa8
     :git: https://gitee.com/axe/DFITableViewCells.git
 
 SPEC CHECKSUMS:
@@ -63,6 +63,6 @@ SPEC CHECKSUMS:
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 425ccca172bc6529e40da3ce9b8c388ac72d6c1a
+PODFILE CHECKSUM: ce705ede43c1ac70cb1d204e8f67d95df7435e9b
 
 COCOAPODS: 1.5.3

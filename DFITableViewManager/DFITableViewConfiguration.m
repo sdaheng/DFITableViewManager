@@ -73,10 +73,6 @@
     return nil;
 }
 
-#pragma mark - setup cells
-
-
-
 #pragma mark - setter
 
 - (void)setDataSourceFormat:(NSDictionary<NSString *, NSDictionary *> *)dataSourceFormat {
@@ -96,7 +92,6 @@
 }
 
 - (void)setDataSource:(NSArray *)dataSource {
-//    _dataSource = dataSource; // use for displaying cells at first time
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __strong typeof(weakSelf) strongSelf = weakSelf;

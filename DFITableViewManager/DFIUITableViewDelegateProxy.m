@@ -112,12 +112,6 @@
         [self.tableViewConfiguration.tableViewDelegate tableView:tableView
                                                  willDisplayCell:cell
                                                forRowAtIndexPath:indexPath];
-    } else {
-        DFITableViewCellOptionBlock optionBlock = self.tableViewConfiguration.backingDataSource.optionBlock;
-        
-        DFITableViewCellOption *option = optionBlock ? optionBlock(indexPath) : nil;
-        
-        [[[self.tableViewConfiguration.backingDataSource[indexPath.section][indexPath.row] info] cellConfigure] setCellOption:option];
     }
 }
 
