@@ -21,11 +21,6 @@
 
 @interface DFITableViewConfiguration () <DFITableViewConfigurationInternal>
 
-@property (nonatomic, copy) NSDictionary <NSString *, NSNumber *> *configurationsIfRowIsSameInSection;
-
-@property (nonatomic, assign) NSInteger sectionIndexIfSectionIsSameInTableView;
-@property (nonatomic, assign) NSInteger rowIndexIfRowIsSameInSection;
-
 @property (nonatomic, strong) DFITableViewDelegateProxy *delegateProxy;
 @property (nonatomic, strong) DFITableViewDataSourceProxy *dataSourceProxy;
 
@@ -55,11 +50,8 @@
 
     if (self) {
         _tableView = tableView;
-        _dataSourceFormat = dataSourceFormat;
         
-        _configurationsIfRowIsSameInSection = [NSDictionary dictionary];
-        
-        _sectionIndexIfSectionIsSameInTableView = -1;
+        _backingDataSource = [DFITableViewDataSource dataSourceWithFormat:dataSourceFormat];
         
         _dataSourceProxy =
         [DFITableViewDataSourceProxy tableViewDataSourceProxyWithTableViewConfiguration:self];
@@ -83,83 +75,33 @@
 
 #pragma mark - setup cells
 
-#pragma mark - DataFormat
 
-- (NSDictionary *)setupDataFormatCellOptionAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *indexPathKeyString = [NSString stringWithFormat:@"%@-%@", @(indexPath.section),
-                                                                        @(indexPath.row)];
-    
-    NSDictionary *cellConfigurationDictionary = self.dataSourceFormat[indexPathKeyString];
-    
-    BOOL sectionIsSameInTableView =
-    self.dataSourceFormat[DFITableViewCellSectionIsSameInTableView];
-    
-    self.sectionIndexIfSectionIsSameInTableView = sectionIsSameInTableView ? 0 : -1;
-    
-    if (![self.configurationsIfRowIsSameInSection[[@(indexPath.section) stringValue]] boolValue] &&
-        cellConfigurationDictionary[DFITableViewCellRowIsSameInSectionKey]) {
-        
-        NSMutableDictionary *tempMutableDictionary = [self.configurationsIfRowIsSameInSection mutableCopy];
-        
-        [tempMutableDictionary setObject:cellConfigurationDictionary[DFITableViewCellRowIsSameInSectionKey]
-                                  forKey:@(indexPath.section).stringValue];
-        
-        self.configurationsIfRowIsSameInSection = [tempMutableDictionary copy];
-        
-        self.rowIndexIfRowIsSameInSection = indexPath.row;
-    }
-    
-    NSString *indexPathString =
-    [self dataFormatCellIndexPathStringIfRowIsSameInSectionOrNotAtIndexPath:indexPath];
-    
-    NSDictionary *cellOptionDictioanry =
-    self.dataSourceFormat[indexPathString][DFITableViewCellOptionKey];
-    
-    return [cellOptionDictioanry copy];
-}
-
-- (UITableViewCell *)dataFormatCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSDictionary *cellOptionDictioanry = [self setupDataFormatCellOptionAtIndexPath:indexPath];
-    
-    NSString *indexPathString =
-    [self dataFormatCellIndexPathStringIfRowIsSameInSectionOrNotAtIndexPath:indexPath];
-    
-    NSString *cellReuseIdentifierString =
-    self.dataSourceFormat[indexPathString][DFITableViewCellReuseIdentifierStringKey];
-    
-    return [self.tableView dequeueTableViewCellAtIndexPath:indexPath
-                                       withReuseIdentifier:cellReuseIdentifierString
-                                                      info:self.dataSource[indexPath.section][indexPath.row]
-                                                    option:cellOptionDictioanry];
-}
-
-#define stringfy(value) #value
-#define concat(value1, value2, sep) value1##sep##value2
-
-- (NSString *)dataFormatCellIndexPathStringIfRowIsSameInSectionOrNotAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.configurationsIfRowIsSameInSection[@(indexPath.section).stringValue] boolValue] ?
-           [NSString stringWithFormat:@"%@-%@", @(indexPath.section), @(self.rowIndexIfRowIsSameInSection)] :
-           [NSString stringWithFormat:@"%@-%@", @(self.sectionIndexIfSectionIsSameInTableView != -1 ?
-                                                  self.sectionIndexIfSectionIsSameInTableView : indexPath.section),
-                                                @(indexPath.row)];
-}
 
 #pragma mark - setter
 
 - (void)setDataSourceFormat:(NSDictionary<NSString *, NSDictionary *> *)dataSourceFormat {
     
-    _dataSourceFormat = dataSourceFormat;
+    if (!_backingDataSource) {
+        _backingDataSource = [DFITableViewDataSource dataSourceWithFormat:dataSourceFormat];
+    } else {
+        _backingDataSource.dataSourceFormat = dataSourceFormat;
+    }
     
     [[NSNotificationCenter defaultCenter]
      postNotificationName:DFITableViewDataSourceFormatDidChangedNotification object:self];
 }
 
+- (NSDictionary<NSString *,NSDictionary *> *)dataSourceFormat {
+    return _backingDataSource.dataSourceFormat;
+}
+
 - (void)setDataSource:(NSArray *)dataSource {
 //    _dataSource = dataSource; // use for displaying cells at first time
-    
+    __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        _backingDataSource = [DFITableViewDataSource dataSourceWithRawSectionsAndRows:dataSource];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        strongSelf->_backingDataSource =
+        [DFITableViewDataSource dataSourceWithRawSectionsAndRows:dataSource];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [[NSNotificationCenter defaultCenter]

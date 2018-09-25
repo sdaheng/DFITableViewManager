@@ -27,12 +27,14 @@
 }
 
 - (void)addRows:(NSArray<id<DFITableViewRow>> *)rows {
+    __weak typeof(self) weakSelf = self;
     dispatch_barrier_async(_queue, ^{
-        NSMutableArray *tempMutableArray = [_sectionArray mutableCopy];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        NSMutableArray *tempMutableArray = [strongSelf->_sectionArray mutableCopy];
         
         [tempMutableArray addObjectsFromArray:rows];
         
-        _sectionArray = [tempMutableArray copy];
+        strongSelf->_sectionArray = [tempMutableArray copy];
     });
 }
 
@@ -43,6 +45,10 @@
                                        NULL);
     }
     return self;
+}
+
+- (void)setIndex:(NSUInteger)index {
+    _index = index;
 }
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
@@ -86,12 +92,14 @@
 }
 
 - (void)addRows:(NSArray<id<DFITableViewRow>> *)rows {
+    __weak typeof(self) weakSelf = self;
     dispatch_barrier_async(_queue, ^{
-        NSMutableArray *tempMutableArray = [_sectionArray mutableCopy];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        NSMutableArray *tempMutableArray = [strongSelf->_sectionArray mutableCopy];
         
         [tempMutableArray addObjectsFromArray:rows];
         
-        _sectionArray = [tempMutableArray copy];
+        strongSelf->_sectionArray = [tempMutableArray copy];
     });
 }
 
@@ -112,6 +120,10 @@
                                                 count:len];
 }
 
+- (void)setIndex:(NSUInteger)index {
+    _index = index;
+}
+
 - (NSUInteger)count {
     return _sectionArray.count;
 }
@@ -129,59 +141,49 @@
 
 @end
 
-@implementation DFITableViewCellViewModelRow
+@implementation DFITableViewRow {
+    id<DFITableViewRowInfo> _rowInfo;
+}
+
 @synthesize indexPath = _indexPath;
 
-+ (id<DFITableViewRow>)rowWithInfo:(id)info {
-    if ([info isKindOfClass:DFITableViewCellViewModel.class]) {
-        return [self rowWithCellViewModel:info];
-    } else if ([info isKindOfClass:NSDictionary.class]) {
-        return [DFITableViewDictionaryRow rowWithInfo:info];
-    }
-    return nil;
++ (instancetype)rowWithInfo:(id<DFITableViewRowInfo>)rowInfo {
+    return [[self alloc] initWithInfo:rowInfo];
 }
 
-+ (instancetype)rowWithCellViewModel:(DFITableViewCellViewModel *)cellViewModel {
-    return [[self alloc] initWithCellViewModel:cellViewModel];
-}
-
-- (instancetype)initWithCellViewModel:(DFITableViewCellViewModel *)cellViewModel {
+- (instancetype)initWithInfo:(id<DFITableViewRowInfo>)rowInfo {
     if (self = [super init]) {
-        _cellViewModel = cellViewModel;
+        _rowInfo = rowInfo;
     }
     return self;
+}
+
+- (id<DFITableViewRowInfo>)info {
+    return _rowInfo;
+}
+
+- (void)setIndexPath:(NSIndexPath *)indexPath {
+    _indexPath = indexPath;
 }
 
 @end
 
-@implementation DFITableViewDictionaryRow
-@synthesize indexPath = _indexPath;
+@interface DFITableViewDataSource()
 
-+ (id<DFITableViewRow>)rowWithInfo:(id)info {
-    if ([info isKindOfClass:DFITableViewCellViewModel.class]) {
-        return [DFITableViewCellViewModelRow rowWithInfo:info];
-    } else if ([info isKindOfClass:NSDictionary.class]) {
-        return [self rowWithInfo:info];
-    }
-    return nil;
-}
+@property (nonatomic, copy) NSDictionary <NSString *, NSNumber *> *configurationsIfRowIsSameInSection;
 
-+ (instancetype)rowWithDictionary:(NSDictionary *)dictionary {
-    return [[self alloc] initWithDictionary:dictionary];
-}
-
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-    if (self = [super init]) {
-        _cellModelDictionary = dictionary;
-    }
-    return self;
-}
+@property (nonatomic, assign) NSInteger sectionIndexIfSectionIsSameInTableView;
+@property (nonatomic, assign) NSInteger rowIndexIfRowIsSameInSection;
 
 @end
 
 @implementation DFITableViewDataSource {
     NSArray <id<DFITableViewSection>> *_backingDataSource;
     dispatch_queue_t _queue;
+}
+
++ (instancetype)dataSourceWithFormat:(NSDictionary<NSString *,NSDictionary *> *)dataSourceFormat {
+    return [[self alloc] initWithSections:[self mapDataSourceFormatToBackingDataSource:dataSourceFormat]];
 }
 
 + (instancetype)dataSourceWithRawSectionsAndRows:(NSArray<NSArray *> *)dataSource {
@@ -196,6 +198,9 @@
     if (self = [super init]) {
         _backingDataSource = sections;
         _queue = dispatch_queue_create("com.DFIFoundation.TableViewManager.dataSourceQueue", NULL);
+        _configurationsIfRowIsSameInSection = [NSDictionary dictionary];
+        
+        _sectionIndexIfSectionIsSameInTableView = -1;
     }
     return self;
 }
@@ -209,29 +214,103 @@
         [section enumerateObjectsUsingBlock:^(id  _Nonnull row,
                                               NSUInteger idx,
                                               BOOL * _Nonnull stop) {
-            [tempRowArray addObject:[DFITableViewCellViewModelRow rowWithInfo:row]];
+            [tempRowArray addObject:[DFITableViewRow rowWithInfo:row]];
         }];
         [tempDataSourceArray addObject:[DFITableViewViewModelSection sectionWithRows:tempRowArray]];
     }];
     return tempDataSourceArray;
 }
 
++ (NSArray <id<DFITableViewSection>> *)mapDataSourceFormatToBackingDataSource:(NSDictionary *)dataSourceFormat {
+    return @[];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView dataSourceCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self[indexPath.section][indexPath.row] respondsToSelector:@selector(cellViewModel)]) {
-        DFITableViewCellViewModel *cellViewModel = [self[indexPath.section][indexPath.row] cellViewModel];
+    if ([[self[indexPath.section][indexPath.row] info] isKindOfClass:[DFITableViewCellViewModel class]]) {
+        DFITableViewCellViewModel *cellViewModel = [self[indexPath.section][indexPath.row] info];
         
         return [tableView dequeueTableViewCellAtIndexPath:indexPath
                                       withReuseIdentifier:cellViewModel.cellConfigure.reuseIdentifierString
                                                      info:cellViewModel
                                                    option:nil];
-    } else if ([self[indexPath.section][indexPath.row] respondsToSelector:@selector(cellModelDictionary)]) {
-        
+    } else if ([[self[indexPath.section][indexPath.row] info] isKindOfClass:NSDictionary.class]) {
+        return [self tableView:tableView dataFormatCellForRowAtIndexPath:indexPath];
     }
     return nil;
 }
 
+#pragma mark - DataFormat
+
+- (NSDictionary *)setupDataFormatCellOptionAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *indexPathKeyString = [NSString stringWithFormat:@"%@-%@", @(indexPath.section),
+                                    @(indexPath.row)];
+    
+    NSDictionary *cellConfigurationDictionary = self.dataSourceFormat[indexPathKeyString];
+    
+    BOOL sectionIsSameInTableView =
+    self.dataSourceFormat[DFITableViewCellSectionIsSameInTableView];
+    
+    self.sectionIndexIfSectionIsSameInTableView = sectionIsSameInTableView ? 0 : -1;
+    
+    if (![self.configurationsIfRowIsSameInSection[[@(indexPath.section) stringValue]] boolValue] &&
+        cellConfigurationDictionary[DFITableViewCellRowIsSameInSectionKey]) {
+        
+        NSMutableDictionary *tempMutableDictionary = [self.configurationsIfRowIsSameInSection mutableCopy];
+        
+        [tempMutableDictionary setObject:cellConfigurationDictionary[DFITableViewCellRowIsSameInSectionKey]
+                                  forKey:@(indexPath.section).stringValue];
+        
+        self.configurationsIfRowIsSameInSection = [tempMutableDictionary copy];
+        
+        self.rowIndexIfRowIsSameInSection = indexPath.row;
+    }
+    
+    NSString *indexPathString =
+    [self dataFormatCellIndexPathStringIfRowIsSameInSectionOrNotAtIndexPath:indexPath];
+    
+    NSDictionary *cellOptionDictioanry =
+    self.dataSourceFormat[indexPathString][DFITableViewCellOptionKey];
+    
+    return [cellOptionDictioanry copy];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView dataFormatCellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSDictionary *cellOptionDictioanry = [self setupDataFormatCellOptionAtIndexPath:indexPath];
+    
+    NSString *indexPathString =
+    [self dataFormatCellIndexPathStringIfRowIsSameInSectionOrNotAtIndexPath:indexPath];
+    
+    NSString *cellReuseIdentifierString =
+    self.dataSourceFormat[indexPathString][DFITableViewCellReuseIdentifierStringKey];
+    
+    return [tableView dequeueTableViewCellAtIndexPath:indexPath
+                                  withReuseIdentifier:cellReuseIdentifierString
+                                                 info:[self[indexPath.section][indexPath.row] info]
+                                               option:cellOptionDictioanry];
+}
+
+#define stringfy(value) #value
+#define concat(value1, value2, sep) value1##sep##value2
+
+- (NSString *)dataFormatCellIndexPathStringIfRowIsSameInSectionOrNotAtIndexPath:(NSIndexPath *)indexPath {
+    return [self.configurationsIfRowIsSameInSection[@(indexPath.section).stringValue] boolValue] ?
+    [NSString stringWithFormat:@"%@-%@", @(indexPath.section), @(self.rowIndexIfRowIsSameInSection)] :
+    [NSString stringWithFormat:@"%@-%@", @(self.sectionIndexIfSectionIsSameInTableView != -1 ?
+     self.sectionIndexIfSectionIsSameInTableView : indexPath.section),
+     @(indexPath.row)];
+}
+
 - (NSArray <NSArray *> *)rawArray {
-    return @[@[]];
+    NSMutableArray *tempMutableSectionArray = [NSMutableArray array];
+    for (id <DFITableViewSection> section in self) {
+        NSMutableArray *tempMutableRowArray = [NSMutableArray array];
+        for (id <DFITableViewRow> row in self[section.index]) {
+            [tempMutableRowArray addObject:[row info]];
+        }
+        [tempMutableSectionArray addObject:tempMutableRowArray];
+    }
+    return tempMutableSectionArray;
 }
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
@@ -240,6 +319,10 @@
     return [_backingDataSource countByEnumeratingWithState:state
                                                    objects:buffer
                                                      count:len];
+}
+
+- (NSArray<id<DFITableViewSection>> *)allSections {
+    return _backingDataSource;
 }
 
 - (NSUInteger)count {
@@ -266,17 +349,35 @@
 @implementation DFITableViewDataSource (Operations)
 
 - (void)addSections:(NSArray<id<DFITableViewSection>> *)sections {
+    __weak typeof(self) weakSelf = self;
     dispatch_barrier_async(_queue, ^{
-        NSMutableArray *tempArray = [NSMutableArray arrayWithArray:_backingDataSource];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        NSMutableArray *tempArray = [NSMutableArray arrayWithArray:strongSelf->_backingDataSource];
         
         [tempArray addObjectsFromArray:sections];
         
-        _backingDataSource = [tempArray copy];
+        strongSelf->_backingDataSource = [tempArray copy];
     });
 }
 
 - (void)addSection:(id<DFITableViewSection>)section {
     [self addSections:@[section]];
+}
+
+@end
+
+@implementation DFITableViewCellViewModel (RowInfo)
+
+- (id)info {
+    return self;
+}
+
+@end
+
+@implementation NSDictionary (RowInfo)
+
+- (id)info {
+    return self;
 }
 
 @end

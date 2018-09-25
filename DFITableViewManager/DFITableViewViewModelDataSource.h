@@ -12,17 +12,25 @@
 
 #import <DFITableViewCells/DFITableViewCells.h>
 
+@protocol DFITableViewRowInfo <NSObject>
+
+- (id)info;
+
+@end
+
 @protocol DFITableViewRow <NSObject>
 
 @property (readonly, nonatomic, strong) NSIndexPath *indexPath;
 
 + (id<DFITableViewRow>)rowWithInfo:(id)info;
 
+- (id<DFITableViewRowInfo>)info;
+
 @end
 
 @protocol DFITableViewSection <NSObject, NSFastEnumeration>
 
-@property (readonly, nonatomic, assign) NSUInteger *index;
+@property (readonly, nonatomic, assign) NSUInteger index;
 
 + (instancetype)sectionWithRows:(NSArray<id<DFITableViewRow>>*)rows;
 
@@ -36,19 +44,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DFITableViewDictionaryRow : NSObject <DFITableViewRow>
-
-@property (readonly, nonatomic, copy) NSDictionary *cellModelDictionary;
-
-+ (instancetype)rowWithDictionary:(NSDictionary *)dictionary;
-
-@end
-
-@interface DFITableViewCellViewModelRow : NSObject <DFITableViewRow>
-
-@property (readonly, nonatomic, strong) DFITableViewCellViewModel *cellViewModel;
-
-+ (instancetype)rowWithCellViewModel:(DFITableViewCellViewModel *)cellViewModel;
+@interface DFITableViewRow : NSObject <DFITableViewRow>
 
 @end
 
@@ -64,12 +60,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DFITableViewDataSource : NSObject <NSFastEnumeration>
 
+@property (nonatomic, copy, nullable) NSDictionary <NSString *, NSDictionary *> *dataSourceFormat;
+
 @property (nonatomic, copy) DFITableViewCellOptionBlock optionBlock;
 
 + (instancetype)dataSourceWithRawSectionsAndRows:(NSArray <NSArray *> *)dataSource;
++ (instancetype)dataSourceWithFormat:(NSDictionary <NSString *, NSDictionary *>*)dataSourceFormat;
+
 + (instancetype)dataSourceWithSections:(NSArray <id<DFITableViewSection>> *)sections;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView dataSourceCellForRowAtIndexPath:(NSIndexPath *)indexPath;
+
+- (NSArray <id<DFITableViewSection>> *)allSections;
 
 - (NSUInteger)count;
 
@@ -88,6 +90,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addSection:(id<DFITableViewSection>)section;
 - (void)addSections:(NSArray <id<DFITableViewSection>> *)sections;
 
+@end
+
+@interface DFITableViewCellViewModel (RowInfo) <DFITableViewRowInfo>
+@end
+
+@interface NSDictionary (RowInfo) <DFITableViewRowInfo>
 @end
 
 NS_ASSUME_NONNULL_END

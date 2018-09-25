@@ -117,7 +117,7 @@
         
         DFITableViewCellOption *option = optionBlock ? optionBlock(indexPath) : nil;
         
-        [[[self.tableViewConfiguration.backingDataSource[indexPath.section][indexPath.row] cellViewModel] cellConfigure] setCellOption:option];
+        [[[self.tableViewConfiguration.backingDataSource[indexPath.section][indexPath.row] info] cellConfigure] setCellOption:option];
     }
 }
 
