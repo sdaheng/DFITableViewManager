@@ -18,6 +18,7 @@ FOUNDATION_EXPORT const unsigned char DFITableViewManagerVersionString[];
 #import "DFITableViewModel.h"
 #import "DFITableViewPaging.h"
 #import "DFITableViewConfiguration.h"
+#import "DFITableViewManagerDefines.h"
 #endif
 
 // In this header, you should import all the public headers of your framework using statements like #import <DFITableViewManager/PublicHeader.h>

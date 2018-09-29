@@ -26,7 +26,8 @@ Pod::Spec.new do |s|
   s.public_header_files = ["DFITableViewManager/DFITableViewManager.h",
 			   "DFITableViewManager/DFITableViewModel.h",
 			   "DFITableViewManager/DFITableViewPaging.h",
-			   "DFITableViewManager/DFITableViewConfiguration.h"] 
+			   "DFITableViewManager/DFITableViewConfiguration.h",
+         "DFITableViewManager/DFITableViewManagerDefines.h"] 
 
   s.requires_arc = true
   s.dependency 'DFITableViewCells'
