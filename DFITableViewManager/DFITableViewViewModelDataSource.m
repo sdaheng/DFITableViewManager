@@ -303,13 +303,17 @@
 
 - (NSArray <NSArray *> *)rawArray {
     NSMutableArray *tempMutableSectionArray = [NSMutableArray array];
-    for (id <DFITableViewSection> section in self) {
+    [_backingDataSource enumerateObjectsUsingBlock:^(id<DFITableViewSection>  _Nonnull section,
+                                                     NSUInteger idx,
+                                                     BOOL * _Nonnull stop) {
         NSMutableArray *tempMutableRowArray = [NSMutableArray array];
-        for (id <DFITableViewRow> row in self[section.index]) {
+        [section.rows enumerateObjectsUsingBlock:^(id<DFITableViewRow>  _Nonnull row,
+                                                   NSUInteger idx,
+                                                   BOOL * _Nonnull stop) {
             [tempMutableRowArray addObject:[row info]];
-        }
+        }];
         [tempMutableSectionArray addObject:tempMutableRowArray];
-    }
+    }];
     return tempMutableSectionArray;
 }
 
