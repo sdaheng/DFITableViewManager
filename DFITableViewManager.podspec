@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.name         = "DFITableViewManager"
   s.summary      = "DFITableViewManager is a part of DFInfrasturcture"
   s.description  = <<-DESC
