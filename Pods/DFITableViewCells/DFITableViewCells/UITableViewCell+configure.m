@@ -24,11 +24,6 @@
     
     if (interface &&
         [interface respondsToSelector:@selector(configureCellWithInfo:option:)]) {
-        DFITableViewCellOption *option = [[info cellConfigure] cellOption];
-        if (option.hideNativeSeparator) {
-            [self showSeparatorWithColor:option.separatorColor
-                                  insets:option.separatorInsets];
-        }
         [interface configureCellWithInfo:info option:option];
     }
 }

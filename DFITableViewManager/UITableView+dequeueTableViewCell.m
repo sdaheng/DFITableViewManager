@@ -7,7 +7,8 @@
 //
 
 #import "UITableView+dequeueTableViewCell.h"
-#import "UITableViewCell+configure.h"
+
+@import DFITableViewCells;
 
 @implementation UITableView (dequeueTableViewCell)
 
@@ -24,6 +25,14 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:identifier];
+    }
+    
+    if ([info isKindOfClass:[DFITableViewCellViewModel class]]) {
+        DFITableViewCellOption *_option = [[info cellConfigure] cellOption];
+        if (_option.hideNativeSeparator) {
+            [self showSeparatorWithColor:_option.separatorColor
+                                  insets:_option.separatorInsets];
+        }
     }
     
     [cell configureWithInfo:info option:option];
