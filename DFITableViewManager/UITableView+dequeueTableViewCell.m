@@ -30,7 +30,7 @@
     if ([info isKindOfClass:[DFITableViewCellViewModel class]]) {
         DFITableViewCellOption *_option = [[info cellConfigure] cellOption];
         if (_option.hideNativeSeparator) {
-            [self showSeparatorWithColor:_option.separatorColor
+            [cell showSeparatorWithColor:_option.separatorColor
                                   insets:_option.separatorInsets];
         }
     }
