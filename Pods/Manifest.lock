@@ -55,7 +55,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   DFITableViewCells:
-    :commit: 5cf3f13fd581eeb1bec29dcbcf5ffcb9ff45f448
+    :commit: c33561e6ac7f71b9f9b385a61d7e76157b2827b9
     :git: https://gitee.com/axe/DFITableViewCells.git
 
 SPEC CHECKSUMS:
