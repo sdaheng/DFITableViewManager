@@ -9,6 +9,9 @@
 #import "DFITableViewCellConfigure.h"
 #import "DFITableViewFormChecker.h"
 
+#define DFI_TABLEVIEWCELL_RESIGN_FIRST_RESPONDER \
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"DFITableViewCellResignFirstResponder" object:nil];
+
 @interface DFITableViewCellViewModel : NSObject
 
 @property (nonatomic, assign) UITableViewCellStyle cellStyle;

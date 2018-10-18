@@ -8,6 +8,7 @@
 
 #import "DFITableViewViewModelDataSource.h"
 #import "UITableView+dequeueTableViewCell.h"
+#import "UITableViewCell+Separator.h"
 
 @import Dispatch;
 
@@ -225,14 +226,25 @@
     return @[];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView dataSourceCellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([[self[indexPath.section][indexPath.row] info] isKindOfClass:[DFITableViewCellViewModel class]]) {
+- (UITableViewCell *)tableView:(UITableView *)tableView
+dataSourceCellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([[self[indexPath.section][indexPath.row] info]
+         isKindOfClass:[DFITableViewCellViewModel class]]) {
         DFITableViewCellViewModel *cellViewModel = [self[indexPath.section][indexPath.row] info];
         
-        return [tableView dequeueTableViewCellAtIndexPath:indexPath
+        UITableViewCell *cell = [tableView dequeueTableViewCellAtIndexPath:indexPath
                                       withReuseIdentifier:cellViewModel.cellConfigure.reuseIdentifierString
                                                      info:cellViewModel
                                                    option:nil];
+        
+        DFITableViewCellOption *_option = [[cellViewModel cellConfigure] cellOption];
+        if (_option.hideNativeSeparator &&
+            ((indexPath.section != _backingDataSource.count -1) &&
+             (indexPath.row != _backingDataSource[indexPath.section].count - 1))) {
+            [cell showSeparatorWithColor:_option.separatorColor
+                                  insets:_option.separatorInsets
+                                  height:_option.separatorHeight];
+        }
     } else if ([[self[indexPath.section][indexPath.row] info] isKindOfClass:NSDictionary.class]) {
         return [self tableView:tableView dataFormatCellForRowAtIndexPath:indexPath];
     }

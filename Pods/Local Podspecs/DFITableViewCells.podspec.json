@@ -1,6 +1,6 @@
 {
   "name": "DFITableViewCells",
-  "version": "0.2.8",
+  "version": "0.3.3",
   "summary": "DFITableViewCells.",
   "description": "A description of DFITableViewCells.",
   "homepage": "https://github.com/sdaheng/DFITableViewCells.git",
@@ -43,7 +43,10 @@
     "DFITableViewCells/ConcreteCells/DFIButtonTableViewCellViewModel.h",
     "DFITableViewCells/ConcreteCells/DFIButtonTableViewCellOption.h",
     "DFITableViewCells/ConcreteCells/DFISegmentedTableViewCell.h",
-    "DFITableViewCells/ConcreteCells/DFISegmentedTableViewCellViewModel.h"
+    "DFITableViewCells/ConcreteCells/DFISegmentedTableViewCellViewModel.h",
+    "DFITableViewCells/DFITableViewFormChecker.h",
+    "DFITableViewCells/DFICellViewModelGenerator.h",
+    "DFITableViewCells/DFITuple.h"
   ],
   "requires_arc": true,
   "dependencies": {

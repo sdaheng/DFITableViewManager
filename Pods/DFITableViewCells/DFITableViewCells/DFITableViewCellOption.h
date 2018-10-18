@@ -30,6 +30,7 @@
 @property (nonatomic, assign) BOOL hideNativeSeparator;
 @property (nonatomic, strong) UIColor *separatorColor;
 @property (nonatomic, assign) UIEdgeInsets separatorInsets;
+@property (nonatomic, assign) CGFloat separatorHeight;
 
 @end
 

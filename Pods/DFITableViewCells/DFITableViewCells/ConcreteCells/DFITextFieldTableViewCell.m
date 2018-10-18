@@ -48,6 +48,11 @@
 
 - (void)commonInit {
     [self setupViews];
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:@"DFITableViewCellResignFirstResponder"
+     object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+         [self.textField resignFirstResponder];
+     }];
 }
 
 - (void)setupViews {
@@ -155,6 +160,12 @@
         }];
     }
     return _textField;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"DFITableVeiwCellResignFirstResponder"
+                                                  object:nil];
 }
 
 @end

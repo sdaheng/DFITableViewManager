@@ -1,5 +1,5 @@
 PODS:
-  - DFITableViewCells (0.2.8):
+  - DFITableViewCells (0.3.3):
     - libextobjc
     - Masonry
   - libextobjc (0.4.1):
@@ -55,11 +55,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   DFITableViewCells:
-    :commit: 31249903f9d8ba101f91b849dca16dd4fcfe6aa8
+    :commit: 5cf3f13fd581eeb1bec29dcbcf5ffcb9ff45f448
     :git: https://gitee.com/axe/DFITableViewCells.git
 
 SPEC CHECKSUMS:
-  DFITableViewCells: afb3f1ff5dc3cca5bec4c68571e0f2896f691a9f
+  DFITableViewCells: 25735377a567e2a21c8f8aeb9b1d73dec35c249a
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 

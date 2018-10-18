@@ -34,6 +34,8 @@
 #import "DFIButtonTableViewCellOption.h"
 #import "DFISegmentedTableViewCell.h"
 #import "DFISegmentedTableViewCellViewModel.h"
+#import "DFICellViewModelGenerator.h"
+#import "DFITuple.h"
 
 FOUNDATION_EXPORT double DFITableViewCellsVersionNumber;
 FOUNDATION_EXPORT const unsigned char DFITableViewCellsVersionString[];
