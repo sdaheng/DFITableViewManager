@@ -27,15 +27,6 @@
                                       reuseIdentifier:identifier];
     }
     
-    if ([info isKindOfClass:[DFITableViewCellViewModel class]]) {
-        DFITableViewCellOption *_option = [[info cellConfigure] cellOption];
-        if (_option.hideNativeSeparator) {
-            [cell showSeparatorWithColor:_option.separatorColor
-                                  insets:_option.separatorInsets
-                                  height:_option.separatorHeight];
-        }
-    }
-    
     [cell configureWithInfo:info option:option];
     
     return cell;
