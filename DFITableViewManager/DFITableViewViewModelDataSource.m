@@ -238,9 +238,7 @@ dataSourceCellForRowAtIndexPath:(NSIndexPath *)indexPath {
                                                    option:nil];
         
         DFITableViewCellOption *_option = [[cellViewModel cellConfigure] cellOption];
-        if (_option.hideNativeSeparator &&
-            ((indexPath.section != _backingDataSource.count -1) &&
-             (indexPath.row != _backingDataSource[indexPath.section].count - 1))) {
+        if (_option.hideNativeSeparator) {
             [cell showSeparatorWithColor:_option.separatorColor
                                   insets:_option.separatorInsets
                                   height:_option.separatorHeight];
