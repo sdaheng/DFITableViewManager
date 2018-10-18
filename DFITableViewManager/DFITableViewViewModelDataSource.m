@@ -245,6 +245,7 @@ dataSourceCellForRowAtIndexPath:(NSIndexPath *)indexPath {
                                   insets:_option.separatorInsets
                                   height:_option.separatorHeight];
         }
+        return cell;
     } else if ([[self[indexPath.section][indexPath.row] info] isKindOfClass:NSDictionary.class]) {
         return [self tableView:tableView dataFormatCellForRowAtIndexPath:indexPath];
     }
