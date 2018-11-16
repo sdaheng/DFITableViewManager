@@ -21,5 +21,7 @@
 @synthesize hideNativeSeparator = _hideNativeSeparator;
 @synthesize separatorInsets = _separatorInsets;
 @synthesize separatorColor = _separatorColor;
+@synthesize separatorHeight = _separatorHeight;
+@synthesize backgroundColor = _backgroundColor;
 
 @end

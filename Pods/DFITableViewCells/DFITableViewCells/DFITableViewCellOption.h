@@ -32,6 +32,8 @@
 @property (nonatomic, assign) UIEdgeInsets separatorInsets;
 @property (nonatomic, assign) CGFloat separatorHeight;
 
+@property (nonatomic, strong) UIColor *backgroundColor;
+
 @end
 
 @interface DFITableViewCellOption : NSObject <DFITableViewCellOption>

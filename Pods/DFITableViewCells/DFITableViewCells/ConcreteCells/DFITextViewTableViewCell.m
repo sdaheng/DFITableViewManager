@@ -42,7 +42,20 @@
     self.cellViewModel = info;
     
     self.titleLabel.text = self.cellViewModel.titleString;
-    self.textView.text   = self.cellViewModel.valueString;
+    self.textView.text   = self.cellViewModel.valueString ?: self.cellViewModel.placeholderString;
+    
+    self.backgroundColor = [self.cellViewModel.cellConfigure.cellOption backgroundColor];
+    self.contentView.backgroundColor = [self.cellViewModel.cellConfigure.cellOption backgroundColor];
+    
+    self.textView.backgroundColor = [self.cellViewModel.cellConfigure.cellOption textViewBackgroundColor];
+    self.textView.textColor = [self.cellViewModel.cellConfigure.cellOption textViewTextColor];
+    self.titleLabel.textColor = [self.cellViewModel.cellConfigure.cellOption titleTextColor];
+    self.textView.font = [self.cellViewModel.cellConfigure.cellOption textViewTextFont];
+    self.titleLabel.font = [self.cellViewModel.cellConfigure.cellOption textViewTitleFont];
+    
+    if (self.cellViewModel.valueString.length == 0) {
+        self.textView.textColor = [self.cellViewModel.cellConfigure.cellOption placeholderTextColor];
+    }
     
     if (self.cellViewModel.becomeFirstResponder) {
         [self.textLabel becomeFirstResponder];
@@ -86,8 +99,9 @@
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-    if ([textView.text isEqualToString:@"说点什么吧"]) {
+    if ([textView.text isEqualToString:self.cellViewModel.placeholderString]) {
         textView.text = @"";
+        self.textView.textColor = [self.cellViewModel.cellConfigure.cellOption textViewTextColor];
     }
 }
 

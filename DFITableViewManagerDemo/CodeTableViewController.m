@@ -15,7 +15,7 @@
 #import "DemoCustomCell.h"
 #import <DFITableViewCells/DFITableViewCells.h>
 
-@interface CodeTableViewController ()
+@interface CodeTableViewController () <UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) CodeTableViewControllerViewModel *viewModel;
@@ -102,10 +102,36 @@
     return _tableView;
 }
 
+- (void)tableView:(UITableView *)tableView
+  willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
+    
+    animation.fromValue = @(0);
+    animation.toValue = @(100);
+    animation.duration = 1;
+    animation.repeatCount = NSUIntegerMax;
+    
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        [cell.layer addAnimation:animation forKey:@""];
+    }
+//    CASpringAnimation *sprintAnimation = [CASpringAnimation animationWithKeyPath:@"transform.scale"];
+//
+//    sprintAnimation.fromValue = @(0.1 * indexPath.row);
+//    sprintAnimation.toValue = @(1);
+//
+//    sprintAnimation.duration = 2;
+//    sprintAnimation.repeatCount = 10;
+//
+//    [cell.layer addAnimation:sprintAnimation forKey:@"cellSpringAnimation"];
+}
+
 - (CodeTableViewControllerViewModel *)viewModel {
     if (!_viewModel) {
         DFITableViewConfiguration  *tableViewConfiguration =
         [DFITableViewConfiguration configureTableView:self.tableView];
+        tableViewConfiguration.tableViewDelegate = self;
         _viewModel = [[CodeTableViewControllerViewModel alloc] initWithTableViewConfiguration:tableViewConfiguration];
         _viewModel.tableViewConfiguration.registerClassCells =
         @{NSStringFromClass([DFITextFieldTableViewCellViewModel class]) : [DFITextFieldTableViewCell class],

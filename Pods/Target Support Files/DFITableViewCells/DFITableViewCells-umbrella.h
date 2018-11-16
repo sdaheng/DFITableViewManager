@@ -36,6 +36,10 @@
 #import "DFISegmentedTableViewCellViewModel.h"
 #import "DFICellViewModelGenerator.h"
 #import "DFITuple.h"
+#import "DFIFunctional.h"
+#import "DFIBlockTrampoline.h"
+#import "NSArray+DFIFunctionalUtils.h"
+#import "NSString+Funtional.h"
 
 FOUNDATION_EXPORT double DFITableViewCellsVersionNumber;
 FOUNDATION_EXPORT const unsigned char DFITableViewCellsVersionString[];

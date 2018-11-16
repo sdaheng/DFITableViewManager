@@ -29,6 +29,6 @@
 - (void)addCheckers:(NSArray <DFITableViewFormCheckRule *> *)checkerRules
              forKey:(NSString *)key;
 
-- (void)makeOption:(void(^)(DFITableViewCellOption *))option;
+- (void)makeOption:(void(^)(__kindof DFITableViewCellOption *))option;
 
 @end

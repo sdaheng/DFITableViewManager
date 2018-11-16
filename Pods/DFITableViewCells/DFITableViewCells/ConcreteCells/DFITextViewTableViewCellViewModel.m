@@ -23,4 +23,17 @@
     return self;
 }
 
+- (void)makeOption:(void (^)(__kindof DFITableViewCellOption *))option {
+    
+    DFITextViewTableViewCellOption *_option = [DFITextViewTableViewCellOption new];
+    
+    option ? option(_option) : nil;
+    
+    self.cellConfigure.cellOption = _option;
+}
+
+@end
+
+@implementation DFITextViewTableViewCellOption
+
 @end

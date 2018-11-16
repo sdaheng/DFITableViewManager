@@ -46,7 +46,11 @@
     "DFITableViewCells/ConcreteCells/DFISegmentedTableViewCellViewModel.h",
     "DFITableViewCells/DFITableViewFormChecker.h",
     "DFITableViewCells/DFICellViewModelGenerator.h",
-    "DFITableViewCells/DFITuple.h"
+    "DFITableViewCells/DFITuple.h",
+    "DFITableViewCells/DFIFunctional.h",
+    "DFITableViewCells/DFIBlockTrampoline.h",
+    "DFITableViewCells/NSArray+DFIFunctionalUtils.h",
+    "DFITableViewCells/NSString+Funtional.h"
   ],
   "requires_arc": true,
   "dependencies": {

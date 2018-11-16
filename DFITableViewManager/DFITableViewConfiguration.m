@@ -99,6 +99,7 @@
         [DFITableViewDataSource dataSourceWithRawSectionsAndRows:dataSource];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
             [[NSNotificationCenter defaultCenter]
              postNotificationName:DFITableViewDataSourceDidChangeNotification object:nil];
         });

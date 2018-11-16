@@ -23,13 +23,13 @@
 		290089C493AC40E59DDD494F55379EFD /* EXTNil.h in Headers */ = {isa = PBXBuildFile; fileRef = 200E4FCD0F52504F72114595CD964061 /* EXTNil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		291CB0EA77E355CD79060918700AA7F4 /* DFISegmentedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD860D8CEA3D04505D3DC7349E6606B /* DFISegmentedTableViewCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2E2ECCB2F19329E533FEB3FB8660AAD9 /* DFITableViewCells.h in Headers */ = {isa = PBXBuildFile; fileRef = D201DE1F629ADC7214C66772F4E554C7 /* DFITableViewCells.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2E34D0EADFF262660070462320629500 /* DFIFunctional.h in Headers */ = {isa = PBXBuildFile; fileRef = E79B95F3B8494DD9F4CAE4DB8434E023 /* DFIFunctional.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2E860CB05ABAC45AE995097E664C5BCE /* NSInvocation+EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = CB42876036ABA7D690DEE34966D37117 /* NSInvocation+EXT.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		30714F08678859680C77D73159D1C871 /* DFITableViewCellOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EE62B133436CF61D95960A75B3804EF /* DFITableViewCellOption.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B998754C58639BB62640BE36DC1229E /* EXTSelectorChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8ED6B29B97E7CC13870EAF49F6A4E /* EXTSelectorChecking.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3C0C5F65234D140522C3365F4F085B26 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CBF4A0E5EBE9D57D88046A45B378F7 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F50EF8C6CB865C94798E3DCFEDCA6C7 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E9773BB2600AE5B681B75D8DD504D76 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4211A9CF1F19B564DA8F127E019203E9 /* DFIPlainTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D69AB9889754BBCD0CC3B118F76C57AC /* DFIPlainTableViewCellViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		4272536D1F3DD9C429383BCAB011CE68 /* DFIBlockTrampoline.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE3F17BDEFBB94108C885B6B1DEC9E9 /* DFIBlockTrampoline.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45115BBBC4BB271821F8D403FF343106 /* Pods-DFITableViewManagerDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28D225C68EEC4521835BC6088BA3C449 /* Pods-DFITableViewManagerDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		456DEFA1B7473E0B34F93B7D7845478B /* DFITableViewCellConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = D8202835E8023CCE5F30F4F0BEE80F76 /* DFITableViewCellConfigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45A105DD128230A8D5EB8726644B619D /* UIResponder+UITableViewCellResponderChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F81E18EA5EB951F1338E501E154E78C /* UIResponder+UITableViewCellResponderChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,15 +39,16 @@
 		4FE96F91802135357175F8C927845E25 /* DFIPlainTableViewCellOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B82318D7550A44C1EC9E766A2018A3D /* DFIPlainTableViewCellOption.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5256E666AE5DA234B4C8DCBF79BC2DC6 /* DFITextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B216E05B81AF27108A534BBE48BCCFB5 /* DFITextFieldTableViewCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		525A0EF171B5550D638AB554C7DF3215 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A131FAD9C7F4F369F3DB37D162F714 /* Foundation.framework */; };
-		539F74701D57AD06B689CDE0D7E56F33 /* DFIBlockTrampoline.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE3F17BDEFBB94108C885B6B1DEC9E9 /* DFIBlockTrampoline.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		54EC8B6CBCBEFB9646FA284FA3A9D76F /* DFITableViewCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D521DEB2EF5DBEFC510D083EF02A911E /* DFITableViewCellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56025B5AB2A3C0C9BC8CA10ACA88679F /* DFIButtonTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B7D8436D033EBD26CBCEA8BFF77F43 /* DFIButtonTableViewCellViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		56086071B3935B5304F15863DE5A7C8E /* libextobjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B380048C52E4CFFA531CFE0A678E8 /* libextobjc.framework */; };
 		58ACB4636E8DE052FC8B7023E3FA7446 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = E87E4EE53AF94D0140C9B357B9443A1E /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C3030A76B5D28F5BBDCF23B4729EF34 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 48145ABA296AA184AE9DF90C6371DC58 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6018EB7C154522EDDDC8767416D5DF2D /* DFIFunctional.h in Headers */ = {isa = PBXBuildFile; fileRef = E79B95F3B8494DD9F4CAE4DB8434E023 /* DFIFunctional.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		602C51E3F8F6A02E99B862C33178707C /* DFITableViewFormChecker.h in Headers */ = {isa = PBXBuildFile; fileRef = E94AB2CDA491470A957B8D0CC9B4AF31 /* DFITableViewFormChecker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60ABC8F3D24956F02BD5AE0433053886 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F123D626A85F26EA2E54D04A7EE5E854 /* MASConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6172CD0DA8780CE281AEC84ED31CA1A8 /* DFITableViewCellOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4EEED00E3BAA7C04BBBFBB5D6DA8AE /* DFITableViewCellOption.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		65A4C3A934BD58D4A10B0C30FDA536E0 /* NSString+Funtional.h in Headers */ = {isa = PBXBuildFile; fileRef = BCDEE3B4D991A3CC99FFBF9796E33DCB /* NSString+Funtional.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6810CFCBA4E3B35EC98E50D1D9BB118F /* EXTRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F21481CEEC96E2AF6725FAD15B183DA /* EXTRuntimeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6BB6E824CE515809DA992BDEEA1BF583 /* DFIButtonTableViewCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB19B606EC1453D940FD1A949043740 /* DFIButtonTableViewCellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D6C27C9C5A48489F468FFC478936FC8 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D81777033D1A29AEB25D4DDC2B0C475 /* NSArray+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -65,6 +66,7 @@
 		7BAD712999FBFA63B68C838F8F90CE41 /* EXTSafeCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = F58D0B7944A57E2624B749DF73FE65EA /* EXTSafeCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C2F082A7185D84FC72D00815E7E584E /* DFITextFieldTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4584429D2029BE82E445968A04705F8 /* DFITextFieldTableViewCellViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		82EF89C42689B94BA78D4F554B44EE29 /* DFITextViewTableViewCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 932F413B9C64FAC659DF1CA2EE3D4B4E /* DFITextViewTableViewCellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		849BD7F416C25147F49D743E52D9CDDF /* NSArray+DFIFunctionalUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B648548721747C1BB2C568F2566F37A /* NSArray+DFIFunctionalUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		851330070F6782C58799CB99E46C2854 /* UIViewSelectActionInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F7305C6E011CCEFAB4DACE56D3254A8 /* UIViewSelectActionInterface.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		878717A22455BE308C41C475ACDB233E /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525686A905BCD76D1400B78905C9168B /* Masonry.framework */; };
 		8971089514B22CB5251E1EF9C82C9843 /* EXTSynthesize.h in Headers */ = {isa = PBXBuildFile; fileRef = 087238A6015D37CCAEC184A4399FB5E7 /* EXTSynthesize.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -84,7 +86,6 @@
 		AC042E11791D5B2E144141E7353FD22A /* EXTNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2923A2CEA02D239F65A00CFEB82A284D /* EXTNil.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B00E4E3A8A437D298FB2FF97DC43D0B1 /* EXTADT.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D21D04765FFF729003515321FC4B357 /* EXTADT.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B1C98077620345518E2DA50894AA590C /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F58D4141D32B5612616217787C27CEAD /* MASCompositeConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B25C883399FEB4FBAF352DC7361F7CF2 /* NSString+Funtional.h in Headers */ = {isa = PBXBuildFile; fileRef = BCDEE3B4D991A3CC99FFBF9796E33DCB /* NSString+Funtional.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B592AB497101498240AA94714D4FFC6F /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C80AA6F2E07B308EC70F8A9A5A8064 /* ViewController+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C409D0388E9BC0450CA8289949538B65 /* DFITableViewCells-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 268CFC9BED568B25A57D7C8FE36E9076 /* DFITableViewCells-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C5BFA109EE6341026D36C55FC378C7CA /* DFITextFieldTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = ACE49ED673D5B9D8E46DE5F5C248C0B6 /* DFITextFieldTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -124,7 +125,6 @@
 		FC041202740D25198B75707E6076B44A /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C1CEB25B91360FEF81CB4E9DEC60E17 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC15C8CD988FB27B7B570D09252B2031 /* libextobjc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ED1A13360781EE67840DC8E4865587F0 /* libextobjc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC835CB0AB919D6AF3E6A4F153DB9369 /* DFIButtonTableViewCellOption.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0EA916AB2F565AF25DCA2F23100CBE /* DFIButtonTableViewCellOption.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		FC98DF0F3BB98F33BF7AA290D273093B /* NSArray+DFIFunctionalUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B648548721747C1BB2C568F2566F37A /* NSArray+DFIFunctionalUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FE6CD0D7C5AA6A3CC674CBD5FBBAB3D9 /* DFITableViewCellDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = AA4C44B7A0486DD65A297CA7FE67044A /* DFITableViewCellDefines.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
@@ -710,13 +710,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				539F74701D57AD06B689CDE0D7E56F33 /* DFIBlockTrampoline.h in Headers */,
+				4272536D1F3DD9C429383BCAB011CE68 /* DFIBlockTrampoline.h in Headers */,
 				A1C56E1233F0B87C57A9E5F6684E30D6 /* DFIButtonTableViewCell.h in Headers */,
 				73217157C34F1684A27BD61588AB1B21 /* DFIButtonTableViewCellOption.h in Headers */,
 				6BB6E824CE515809DA992BDEEA1BF583 /* DFIButtonTableViewCellViewModel.h in Headers */,
 				CA982C01B201D4EBA1E7655E931F4741 /* DFICellViewModelGenerator.h in Headers */,
 				28F5F69F182B5260E3F62AB1925DDAAC /* DFIConcreteTableViewCells.h in Headers */,
-				2E34D0EADFF262660070462320629500 /* DFIFunctional.h in Headers */,
+				6018EB7C154522EDDDC8767416D5DF2D /* DFIFunctional.h in Headers */,
 				8E1AD18884D4AAC8F374D1B6A2145966 /* DFIPlainTableViewCell.h in Headers */,
 				02602D27E1F3C3F92F00041775F3E9C2 /* DFIPlainTableViewCellOption.h in Headers */,
 				E7F270AE5F48F59A92EF645E14B5D811 /* DFIPlainTableViewCellViewModel.h in Headers */,
@@ -735,8 +735,8 @@
 				13AA2C91143B4166EAA8237221399C39 /* DFITextViewTableViewCell.h in Headers */,
 				82EF89C42689B94BA78D4F554B44EE29 /* DFITextViewTableViewCellViewModel.h in Headers */,
 				8C3C8473F05202B8C257A700636A92C2 /* DFITuple.h in Headers */,
-				FC98DF0F3BB98F33BF7AA290D273093B /* NSArray+DFIFunctionalUtils.h in Headers */,
-				B25C883399FEB4FBAF352DC7361F7CF2 /* NSString+Funtional.h in Headers */,
+				849BD7F416C25147F49D743E52D9CDDF /* NSArray+DFIFunctionalUtils.h in Headers */,
+				65A4C3A934BD58D4A10B0C30FDA536E0 /* NSString+Funtional.h in Headers */,
 				45A105DD128230A8D5EB8726644B619D /* UIResponder+UITableViewCellResponderChain.h in Headers */,
 				DFA7D6694900F9594C4E2691F2D121B4 /* UITableViewCell+configure.h in Headers */,
 				E6EC8DA865DB2B7A72F41196F4169405 /* UITableViewCell+Separator.h in Headers */,

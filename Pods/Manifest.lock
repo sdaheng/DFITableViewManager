@@ -55,11 +55,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   DFITableViewCells:
-    :commit: c33561e6ac7f71b9f9b385a61d7e76157b2827b9
+    :commit: a8b09abea16950c4a3ce9379fd119b2320cf9b0c
     :git: https://gitee.com/axe/DFITableViewCells.git
 
 SPEC CHECKSUMS:
-  DFITableViewCells: 25735377a567e2a21c8f8aeb9b1d73dec35c249a
+  DFITableViewCells: e7678e2d51c9cee93333db16fcaca1bef1cff9d1
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
