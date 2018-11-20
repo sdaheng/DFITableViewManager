@@ -103,6 +103,8 @@
         
         self.textField.textAlignment = [self.cellViewModel.cellConfigure.cellOption textAlignment];
         
+        self.textField.enabled = [self.cellViewModel.cellConfigure.cellOption textFieldEnable];
+        
         if (self.cellViewModel.cellConfigure.cellOption.cellAccessoryView) {
             self.accessoryView =
             self.cellViewModel.cellConfigure.cellOption.cellAccessoryView;

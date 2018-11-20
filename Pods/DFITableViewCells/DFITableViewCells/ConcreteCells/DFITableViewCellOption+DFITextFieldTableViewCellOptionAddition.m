@@ -20,6 +20,7 @@ const char * kKeyboardTypeKey = "kKeyboardTypeKey";
 const char * kSecureEntryKey = "kSecureEntryKey";
 
 const char * kTextAlignmentKey = "kTextAlignmentKey";
+const char * kTextFieldEnableKey = "kTextFieldEnableKey";
 
 @implementation DFITableViewCellOption (DFITextFieldTableViewCellOptionAddition)
 
@@ -83,6 +84,13 @@ const char * kTextAlignmentKey = "kTextAlignmentKey";
     return [objc_getAssociatedObject(self, kSecureEntryKey) boolValue];
 }
 
+- (void)setTextFieldEnable:(BOOL)textFieldEnable {
+    objc_setAssociatedObject(self, kTextFieldEnableKey, @(textFieldEnable), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (BOOL)textFieldEnable {
+    return [objc_getAssociatedObject(self, kTextFieldEnableKey) boolValue];
+}
 - (void)setTextAlignment:(NSTextAlignment)textAlignment {
     objc_setAssociatedObject(self, kTextAlignmentKey, @(textAlignment), OBJC_ASSOCIATION_ASSIGN);
 }

@@ -239,6 +239,7 @@ dataSourceCellForRowAtIndexPath:(NSIndexPath *)indexPath {
         
         DFITableViewCellOption *_option = [[cellViewModel cellConfigure] cellOption];
         if (_option.hideNativeSeparator) {
+            [cell clearSeparator];
             [cell showSeparatorWithColor:_option.separatorColor
                                   insets:_option.separatorInsets
                                   height:_option.separatorHeight];

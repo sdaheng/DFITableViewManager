@@ -21,4 +21,6 @@
 
 @property (nonatomic, assign) NSTextAlignment textAlignment;
 
+@property (nonatomic, assign) BOOL textFieldEnable;
+
 @end
