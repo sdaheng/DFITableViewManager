@@ -24,6 +24,7 @@
 
 #import "DFIButtonTableViewCell.h"
 #import "DFIButtonTableViewCellViewModel.h"
+#import "DFIButtonTableViewCellOption.h"
 
 #import "DFISegmentedTableViewCell.h"
 #import "DFISegmentedTableViewCellViewModel.h"

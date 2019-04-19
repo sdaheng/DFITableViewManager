@@ -36,12 +36,21 @@
      subscribeNext:^(RACTuple * x) {
          @strongify(self)
          NSIndexPath *indexPath = [x second];
-         
+
          [self selectCellAtIndexPath:indexPath];
      }];
 #else
     self.viewModel.tableViewConfiguration.tableViewDelegate = self;
 #endif
+    
+    for (NSArray *section in self.viewModel.dataSource) {
+        for (DFITableViewCellViewModel *cellViewModel in section) {
+            [cellViewModel makeOption:^(DFITableViewCellOption *option) {
+                option.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            }];
+        }
+    }
+//    self.viewModel.tableViewConfiguration.tableViewDelegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -76,14 +85,6 @@
         _viewModel = [[HomeViewControllerViewModel alloc] initWithTableViewConfiguration:tableViewConfiguration];
         
         _viewModel.tableViewConfiguration.registerClassCells = @{@"cell" : [DemoCustomCell class]};
-        
-        _viewModel.tableViewConfiguration.cellOptionAtIndexPath = ^(NSIndexPath *indexPath) {
-            DFITableViewCellOption *option = [DFITableViewCellOption new];
-            
-            option.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            
-            return option;
-        };
     }
     
     return _viewModel;

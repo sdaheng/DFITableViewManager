@@ -8,6 +8,8 @@
 
 #import "UITableViewCell+configure.h"
 #import "UITableViewCellConfigureProtocol.h"
+#import "DFITableViewCellViewModel.h"
+#import "UITableViewCell+Separator.h"
 
 @implementation UITableViewCell (configure)
 

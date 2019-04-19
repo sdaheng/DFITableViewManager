@@ -33,11 +33,9 @@
 		2A68820F1D89522E0036B5CB /* DataFormatTableViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A68820E1D89522E0036B5CB /* DataFormatTableViewControllerViewModel.m */; };
 		2A6882121D89523E0036B5CB /* PlistTableViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6882111D89523E0036B5CB /* PlistTableViewControllerViewModel.m */; };
 		2A6882141D8958020036B5CB /* PlistDemo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A6882131D8958020036B5CB /* PlistDemo.plist */; };
-		2AD223FC1D84135A00FB0B7A /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EB1D83B8E700B5738E /* ReactiveCocoa.framework */; };
-		2AD223FD1D84135A00FB0B7A /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EB1D83B8E700B5738E /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2AD223FE1D84135A00FB0B7A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EC1D83B8E700B5738E /* Result.framework */; };
-		2AD223FF1D84135A00FB0B7A /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A22A9EC1D83B8E700B5738E /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34A64BC73CC14D4ED32D6D04 /* Pods_DFITableViewManagerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */; };
+		6E6280822155F02B008A4D25 /* DFITableViewViewModelDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6280812155F02A008A4D25 /* DFITableViewViewModelDataSource.m */; };
+		6EC59C5A215922FD003AACD9 /* NSArray+dataSourceOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC59C58215922FC003AACD9 /* NSArray+dataSourceOperations.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,25 +55,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		2AD224001D84135A00FB0B7A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2AD223FD1D84135A00FB0B7A /* ReactiveCocoa.framework in Embed Frameworks */,
-				2AD223FF1D84135A00FB0B7A /* Result.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		24F7BC59D6CEE35CCAD80064 /* Pods-DFITableViewManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFITableViewManagerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		2A22A9EB1D83B8E700B5738E /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
-		2A22A9EC1D83B8E700B5738E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		2A22AA011D83E4D400B5738E /* CodeTableViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeTableViewControllerViewModel.h; sourceTree = "<group>"; };
 		2A22AA021D83E4D400B5738E /* CodeTableViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeTableViewControllerViewModel.m; sourceTree = "<group>"; };
 		2A22AA041D84108300B5738E /* NSArray+funtional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+funtional.h"; sourceTree = "<group>"; };
@@ -130,7 +111,12 @@
 		2A6882111D89523E0036B5CB /* PlistTableViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistTableViewControllerViewModel.m; sourceTree = "<group>"; };
 		2A6882131D8958020036B5CB /* PlistDemo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlistDemo.plist; sourceTree = "<group>"; };
 		4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DFITableViewManagerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E6280812155F02A008A4D25 /* DFITableViewViewModelDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFITableViewViewModelDataSource.m; sourceTree = "<group>"; };
+		6E678E8C2155484C00042EEF /* DFITableViewViewModelDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFITableViewViewModelDataSource.h; sourceTree = "<group>"; };
+		6E69B77D2158AA4D00BB923E /* DFITableViewManagerDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFITableViewManagerDefines.h; sourceTree = "<group>"; };
 		6E7798481DBE5E7300006993 /* DFITableViewConfigurationInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFITableViewConfigurationInternal.h; sourceTree = "<group>"; };
+		6EC59C58215922FC003AACD9 /* NSArray+dataSourceOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+dataSourceOperations.m"; sourceTree = "<group>"; };
+		6EC59C59215922FD003AACD9 /* NSArray+dataSourceOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+dataSourceOperations.h"; sourceTree = "<group>"; };
 		8067B5009AA1BAE55BE2CFBF /* Pods-DFITableViewManagerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFITableViewManagerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,9 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AD223FE1D84135A00FB0B7A /* Result.framework in Frameworks */,
 				34A64BC73CC14D4ED32D6D04 /* Pods_DFITableViewManagerDemo.framework in Frameworks */,
-				2AD223FC1D84135A00FB0B7A /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				2A63C8501D8143D2001A7530 /* DFITableViewManager.h */,
+				6E69B77D2158AA4D00BB923E /* DFITableViewManagerDefines.h */,
 				2A63C84A1D8143D2001A7530 /* DFITableViewConfiguration.h */,
 				2A63C84B1D8143D2001A7530 /* DFITableViewConfiguration.m */,
 				6E7798481DBE5E7300006993 /* DFITableViewConfigurationInternal.h */,
@@ -267,12 +252,16 @@
 				2A63C8511D8143D2001A7530 /* DFITableViewModel.h */,
 				2A63C8521D8143D2001A7530 /* DFITableViewModel.m */,
 				2A63C8531D8143D2001A7530 /* DFITableViewPaging.h */,
+				6E678E8C2155484C00042EEF /* DFITableViewViewModelDataSource.h */,
+				6E6280812155F02A008A4D25 /* DFITableViewViewModelDataSource.m */,
 				2A63C8541D8143D2001A7530 /* DFIUITableViewDataSourceProxy.h */,
 				2A63C8551D8143D2001A7530 /* DFIUITableViewDataSourceProxy.m */,
 				2A63C8561D8143D2001A7530 /* DFIUITableViewDelegateProxy.h */,
 				2A63C8571D8143D2001A7530 /* DFIUITableViewDelegateProxy.m */,
 				2A63C8591D8143D2001A7530 /* UITableView+dequeueTableViewCell.h */,
 				2A63C85A1D8143D2001A7530 /* UITableView+dequeueTableViewCell.m */,
+				6EC59C59215922FD003AACD9 /* NSArray+dataSourceOperations.h */,
+				6EC59C58215922FC003AACD9 /* NSArray+dataSourceOperations.m */,
 			);
 			path = DFITableViewManager;
 			sourceTree = "<group>";
@@ -300,8 +289,6 @@
 		F2D2B6F81BE19868CDC51243 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2A22A9EB1D83B8E700B5738E /* ReactiveCocoa.framework */,
-				2A22A9EC1D83B8E700B5738E /* Result.framework */,
 				4633D689CCD1A0C361EFAD2E /* Pods_DFITableViewManagerDemo.framework */,
 			);
 			name = Frameworks;
@@ -319,9 +306,6 @@
 				2A63C7F21D8143A3001A7530 /* Frameworks */,
 				2A63C7F31D8143A3001A7530 /* Resources */,
 				808CEB9676E6818779E8C7E0 /* [CP] Embed Pods Frameworks */,
-				A0F567F8491483ED012BAF69 /* [CP] Copy Pods Resources */,
-				2AD224001D84135A00FB0B7A /* Embed Frameworks */,
-				2AD224011D8413DE00FB0B7A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -374,11 +358,12 @@
 		2A63C7ED1D8143A3001A7530 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = sdaheng;
 				TargetAttributes = {
 					2A63C7F41D8143A3001A7530 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = H9ZR26FJWG;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -449,29 +434,17 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DFITableViewManagerDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		2AD224011D8413DE00FB0B7A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		808CEB9676E6818779E8C7E0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -479,28 +452,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DFITableViewCells/DFITableViewCells.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DFITableViewCells.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A0F567F8491483ED012BAF69 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DFITableViewManagerDemo/Pods-DFITableViewManagerDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -527,9 +492,11 @@
 				2A6882091D89514C0036B5CB /* DataFormatTableViewController.m in Sources */,
 				2A6882061D894B690036B5CB /* HomeViewControllerViewModel.m in Sources */,
 				2A22AA031D83E4D400B5738E /* CodeTableViewControllerViewModel.m in Sources */,
+				6EC59C5A215922FD003AACD9 /* NSArray+dataSourceOperations.m in Sources */,
 				2A63C7FA1D8143A3001A7530 /* main.m in Sources */,
 				2A63C86C1D8143D2001A7530 /* DFIUITableViewDataSourceProxy.m in Sources */,
 				2A6882031D894AAC0036B5CB /* HomeViewController.m in Sources */,
+				6E6280822155F02B008A4D25 /* DFITableViewViewModelDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,15 +560,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -642,15 +617,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -680,16 +663,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24F7BC59D6CEE35CCAD80064 /* Pods-DFITableViewManagerDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = H9ZR26FJWG;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = DFITableViewManagerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kibey.TestKBAD.DFITableViewManagerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibey.DFITableViewManagerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
@@ -699,16 +679,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8067B5009AA1BAE55BE2CFBF /* Pods-DFITableViewManagerDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = H9ZR26FJWG;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = DFITableViewManagerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kibey.TestKBAD.DFITableViewManagerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibey.DFITableViewManagerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};

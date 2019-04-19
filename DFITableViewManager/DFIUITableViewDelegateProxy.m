@@ -7,7 +7,7 @@
 //
 
 #import "DFIUITableViewDelegateProxy.h"
-
+#import "DFITableViewViewModelDataSource.h"
 #import "DFITableViewConfigurationInternal.h"
 
 #import <UIKit/UIKit.h>
@@ -216,7 +216,10 @@
     }
 }
 
-- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale {
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView
+                       withView:(nullable UIView *)view
+                        atScale:(CGFloat)scale {
+    
     if (self.tableViewConfiguration.tableViewDelegate &&
         [self.tableViewConfiguration.tableViewDelegate
          respondsToSelector:@selector(scrollViewDidEndZooming:withView:atScale:)]) {
@@ -257,3 +260,37 @@
 #endif
 
 @end
+
+//#import <objc/runtime.h>
+//
+//@interface UITableView (DFIHeightCache)
+//
+//@end
+//
+//@implementation UITableView (DFIHeightCache)
+//
+//+ (void)load {
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+////        [self swizzle];
+//    });
+//}
+//
+//+ (void)swizzle {
+//    Method m1 = class_getInstanceMethod([self class], @selector(layoutSubviews));
+//    Method m2 = class_getInstanceMethod([self class], @selector(dfi_layoutSubviews));
+//    method_exchangeImplementations(m1, m2);
+//}
+//
+//- (void)dfi_layoutSubviews {
+//    [self dfi_layoutSubviews];
+//    if (self.visibleCells.count > 0) {
+////        NSLog(@"dfi_layoutSubviews");
+////        NSLog(@"visible cells: %@ indexPathes: %@", self.visibleCells, self.indexPathsForVisibleRows);
+//        
+//        // send notification of updating cell`s height
+//        
+//    }
+//}
+//
+//@end

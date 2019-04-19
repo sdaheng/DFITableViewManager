@@ -21,6 +21,7 @@
     self = [super initWithCellConfigure:[[DFITableViewCellConfigure alloc] initWithReuseIdentifier:NSStringFromClass([self class])]];
     if (self) {
         _buttonTitleString = buttonTitleString;
+        _state = UIControlStateNormal;
     }
     
     return self;

@@ -48,13 +48,18 @@
 
 - (void)commonInit {
     [self setupViews];
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:@"DFITableViewCellResignFirstResponder"
+     object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+         [self.textField resignFirstResponder];
+     }];
 }
 
 - (void)setupViews {
-    _textField.delegate = self;
+    self.textField.delegate = self;
     
-    _textField.borderStyle = UITextBorderStyleNone;
-    _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.textField.borderStyle = UITextBorderStyleNone;
+    self.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -65,31 +70,45 @@
 
 - (void)configureCellWithInfo:(id)info option:(id)option {
     self.cellViewModel = info;
+    if ([self.cellViewModel.titleString length] > 0) {
+        self.titleLabel.text = self.cellViewModel.titleString;
+    } else {
+        [self.textField mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(self.contentView.mas_leading).with.offset(15);
+        }];
+    }
     self.textField.text = self.cellViewModel.textValue;
     self.textField.placeholder = self.cellViewModel.placeholderString;
-    self.textLabel.text = self.cellViewModel.titleString;
     
     self.textField.keyboardType = self.cellViewModel.keyboardType;
-    
-    self.textField.leftView =
-    self.cellViewModel.cellConfigure.cellOption.leftView;
-    
-    self.textField.rightView =
-    self.cellViewModel.cellConfigure.cellOption.rightView;
-    
-    self.textField.rightViewMode =
-    self.cellViewModel.cellConfigure.cellOption.rightViewMode;
-    
-    self.textField.leftViewMode =
-    self.cellViewModel.cellConfigure.cellOption.leftViewMode;
-    
     self.textField.secureTextEntry = self.cellViewModel.secureTextEntry;
-    
+
     self.textField.textAlignment = self.cellViewModel.textAlignment;
-    
-    if (self.cellViewModel.cellConfigure.cellOption.cellAccessoryView) {
-        self.accessoryView =
-        self.cellViewModel.cellConfigure.cellOption.cellAccessoryView;
+
+    if ([self.cellViewModel.cellConfigure.cellOption isKindOfClass:[DFITableViewCellOption class]]) {
+        self.textField.leftView =
+        self.cellViewModel.cellConfigure.cellOption.leftView;
+        
+        self.textField.rightView =
+        self.cellViewModel.cellConfigure.cellOption.rightView;
+        
+        self.textField.rightViewMode =
+        self.cellViewModel.cellConfigure.cellOption.rightViewMode;
+        
+        self.textField.leftViewMode =
+        self.cellViewModel.cellConfigure.cellOption.leftViewMode;
+        
+        self.textField.keyboardType = [self.cellViewModel.cellConfigure.cellOption keyboardType];
+        self.textField.secureTextEntry = [self.cellViewModel.cellConfigure.cellOption secureEntry];
+        
+        self.textField.textAlignment = [self.cellViewModel.cellConfigure.cellOption textAlignment];
+        
+        self.textField.enabled = [self.cellViewModel.cellConfigure.cellOption textFieldEnable];
+        
+        if (self.cellViewModel.cellConfigure.cellOption.cellAccessoryView) {
+            self.accessoryView =
+            self.cellViewModel.cellConfigure.cellOption.cellAccessoryView;
+        }
     }
 }
 
@@ -135,14 +154,20 @@
         [self.contentView addSubview:_textField];
         
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.titleLabel.mas_centerY);
+            make.centerY.equalTo(self.contentView.mas_centerY);
             make.leading.equalTo(self.titleLabel.mas_trailing).with.offset(8).with.priorityHigh();
             make.trailing.equalTo(self.contentView.mas_trailing).with.offset(-8);
-            make.top.equalTo(self.contentView.mas_top).with.offset(8);
-            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-8);
+//            make.top.equalTo(self.contentView.mas_top).with.offset(8);
+//            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-8);
         }];
     }
     return _textField;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"DFITableVeiwCellResignFirstResponder"
+                                                  object:nil];
 }
 
 @end

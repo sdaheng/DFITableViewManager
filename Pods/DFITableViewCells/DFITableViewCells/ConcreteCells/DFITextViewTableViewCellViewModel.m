@@ -13,7 +13,7 @@
 - (instancetype)initWithTitleString:(NSString *)titleString
                         valueString:(NSString *)valueString {
     
-    self = [super init];
+    self = [super initWithCellConfigure:[[DFITableViewCellConfigure alloc] initWithReuseIdentifier:NSStringFromClass(self.class)]];
     
     if (self) {
         _titleString = titleString;
@@ -22,5 +22,18 @@
     
     return self;
 }
+
+- (void)makeOption:(void (^)(__kindof DFITableViewCellOption *))option {
+    
+    DFITextViewTableViewCellOption *_option = [DFITextViewTableViewCellOption new];
+    
+    option ? option(_option) : nil;
+    
+    self.cellConfigure.cellOption = _option;
+}
+
+@end
+
+@implementation DFITextViewTableViewCellOption
 
 @end

@@ -1,5 +1,9 @@
 Pod::Spec.new do |s|
+<<<<<<< HEAD
   s.version      = "0.1.1"
+=======
+  s.version      = "0.1.6"
+>>>>>>> dev
   s.name         = "DFITableViewManager"
   s.summary      = "DFITableViewManager is a part of DFInfrasturcture"
   s.description  = <<-DESC
@@ -26,7 +30,8 @@ Pod::Spec.new do |s|
   s.public_header_files = ["DFITableViewManager/DFITableViewManager.h",
 			   "DFITableViewManager/DFITableViewModel.h",
 			   "DFITableViewManager/DFITableViewPaging.h",
-			   "DFITableViewManager/DFITableViewConfiguration.h"] 
+			   "DFITableViewManager/DFITableViewConfiguration.h",
+         "DFITableViewManager/DFITableViewManagerDefines.h"] 
 
   s.requires_arc = true
   s.dependency 'DFITableViewCells'

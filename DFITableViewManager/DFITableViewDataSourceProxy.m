@@ -16,7 +16,7 @@
 
 @implementation DFITableViewDataSourceProxy
 
-+ (instancetype)tableViewDataSourceProxyWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration {
++ (instancetype)proxyWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration {
     return [[DFIUITableViewDataSourceProxy alloc] initWithTableViewConfiguration:tableViewConfiguration];
 }
 

@@ -18,8 +18,8 @@
 @property (nonatomic, assign) NSInteger pageNumber;
 
 #if __has_include(<ReactiveCocoa/ReactiveCocoa.h>)
-@property (nonatomic, strong) RACSignal *refreshSignal;
-@property (nonatomic, strong) RACSignal *loadMoreSignal;
+//@property (nonatomic, strong) RACSignal *refreshSignal;
+//@property (nonatomic, strong) RACSignal *loadMoreSignal;
 #endif
 
 

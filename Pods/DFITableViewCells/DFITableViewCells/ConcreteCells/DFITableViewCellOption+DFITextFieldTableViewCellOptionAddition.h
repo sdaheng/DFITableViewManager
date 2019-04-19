@@ -16,4 +16,11 @@
 @property (nonatomic, assign) UITextFieldViewMode leftViewMode;
 @property (nonatomic, assign) UITextFieldViewMode rightViewMode;
 
+@property (nonatomic, assign) UIKeyboardType keyboardType;
+@property (nonatomic, assign) BOOL secureEntry;
+
+@property (nonatomic, assign) NSTextAlignment textAlignment;
+
+@property (nonatomic, assign) BOOL textFieldEnable;
+
 @end

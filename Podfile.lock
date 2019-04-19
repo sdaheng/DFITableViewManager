@@ -1,16 +1,77 @@
 PODS:
+<<<<<<< HEAD
   - DFITableViewCells (0.0.4):
+=======
+  - DFITableViewCells (0.3.5):
+    - libextobjc
+>>>>>>> dev
     - Masonry
-  - Masonry (1.0.2)
+  - libextobjc (0.4.1):
+    - libextobjc/EXTADT (= 0.4.1)
+    - libextobjc/EXTConcreteProtocol (= 0.4.1)
+    - libextobjc/EXTKeyPathCoding (= 0.4.1)
+    - libextobjc/EXTNil (= 0.4.1)
+    - libextobjc/EXTSafeCategory (= 0.4.1)
+    - libextobjc/EXTScope (= 0.4.1)
+    - libextobjc/EXTSelectorChecking (= 0.4.1)
+    - libextobjc/EXTSynthesize (= 0.4.1)
+    - "libextobjc/NSInvocation+EXT (= 0.4.1)"
+    - "libextobjc/NSMethodSignature+EXT (= 0.4.1)"
+    - libextobjc/RuntimeExtensions (= 0.4.1)
+    - libextobjc/UmbrellaHeader (= 0.4.1)
+  - libextobjc/EXTADT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - "libextobjc/NSInvocation+EXT (0.4.1)":
+    - libextobjc/RuntimeExtensions
+  - "libextobjc/NSMethodSignature+EXT (0.4.1)":
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - libextobjc/UmbrellaHeader (0.4.1)
+  - Masonry (1.1.0)
 
 DEPENDENCIES:
-  - DFITableViewCells
+  - DFITableViewCells (from `https://gitee.com/axe/DFITableViewCells.git`, branch `dev_option`)
   - Masonry
 
+SPEC REPOS:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - libextobjc
+    - Masonry
+
+EXTERNAL SOURCES:
+  DFITableViewCells:
+    :branch: dev_option
+    :git: https://gitee.com/axe/DFITableViewCells.git
+
+CHECKOUT OPTIONS:
+  DFITableViewCells:
+    :commit: 1b06e9d8a65eebe1ed175bb1e6bfa5dc0aff930f
+    :git: https://gitee.com/axe/DFITableViewCells.git
+
 SPEC CHECKSUMS:
+<<<<<<< HEAD
   DFITableViewCells: 39128227c941757dacb07b2abcd25cd4df130845
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+=======
+  DFITableViewCells: 920c0118e0eb8e44b3b4456d2d82279ea58048c6
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+>>>>>>> dev
 
-PODFILE CHECKSUM: 9483585cbff2d0e1f282f1866c5b49869dd91b79
+PODFILE CHECKSUM: ce705ede43c1ac70cb1d204e8f67d95df7435e9b
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.5.3

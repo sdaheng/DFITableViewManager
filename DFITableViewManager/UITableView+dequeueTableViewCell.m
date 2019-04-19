@@ -7,23 +7,15 @@
 //
 
 #import "UITableView+dequeueTableViewCell.h"
-#import "UITableViewCell+configure.h"
+
+@import DFITableViewCells;
 
 @implementation UITableView (dequeueTableViewCell)
 
-- (UITableViewCell *)dequeueTableViewCellAtIndexPath:(NSIndexPath *)indexPath
-                                   withReuseIdentifier:(NSString *)identifier {
-    
-    return [self dequeueTableViewCellAtIndexPath:indexPath
-                             withReuseIdentifier:identifier
-                                            info:nil
-                                          option:nil];
-}
-
-- (UITableViewCell *)dequeueTableViewCellAtIndexPath:(NSIndexPath *)indexPath
-                                 withReuseIdentifier:(NSString *)identifier
-                                                info:(id)info
-                                              option:(id)option {
+- (UITableViewCell *)configureTableViewCellAtIndexPath:(NSIndexPath *)indexPath
+                                   withReuseIdentifier:(NSString *)identifier
+                                                  info:(id)info
+                                                option:(id)option {
     
     if (!identifier) return nil;
 
@@ -35,8 +27,7 @@
                                       reuseIdentifier:identifier];
     }
     
-    [cell configureWithInfo:info
-                     option:option];
+    [cell configureWithInfo:info option:option];
     
     return cell;
 }

@@ -14,6 +14,9 @@
 
 #import "DFIButtonTableViewCellViewModel.h"
 
+#import "UIResponder+UITableViewCellResponderChain.h"
+#import "DFIButtonTableViewCellOption.h"
+
 NSString * const kButtonTitleStringKey = @"kButtonTitleStringKey";
 NSString * const kButtonTitleColorKey = @"kButtonTitleColorKey";
 NSString * const kButtonBackgroundColorKey = @"kButtonBackgroundColorKey";
@@ -48,7 +51,7 @@ NSString * const kButtonEnableKey = @"kButtonEnableKey";
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        [self commonInit];
+        //        [self commonInit];
     }
     
     return self;
@@ -56,41 +59,43 @@ NSString * const kButtonEnableKey = @"kButtonEnableKey";
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self commonInit];
+    //    [self commonInit];
 }
 
 - (void)commonInit {
     [self initViews];
     [self addViews];
     [self setupViewConstraints];
-    [self setupViews];
+    //    [self setupViews];
     [self bindingViews];
 }
 
 - (void)initViews {
-    _button = [UIButton buttonWithType:UIButtonTypeSystem];
 }
 
 - (void)addViews {
-    [self.contentView addSubview:_button];
 }
 
 - (void)setupViewConstraints {
-    [_button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsZero);
-    }];
+    
 }
 
 - (void)setupViews {
-    [_button setTitle:self.buttonTitleString
-             forState:UIControlStateNormal];
-    [_button setTitleColor:self.buttonTitleColor
-                  forState:UIControlStateNormal];
+    [self.button setTitle:self.self.buttonTitleString
+                 forState:self.cellViewModel.state];
+    [self.button setTitleColor:self.buttonTitleColor
+                      forState:UIControlStateNormal];
     
-    _button.titleLabel.font = self.buttonTitleFont;
+    self.button.titleLabel.font = self.buttonTitleFont;
     
-    [_button setBackgroundColor:self.buttonBackgroundColor];
+    [self.button setBackgroundColor:self.buttonBackgroundColor];
     
+    if (self.buttonCornerRadius > 0) {
+        self.button.layer.cornerRadius = self.buttonCornerRadius;
+        self.button.layer.masksToBounds = YES;
+    }
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)bindingViews {
@@ -101,6 +106,16 @@ NSString * const kButtonEnableKey = @"kButtonEnableKey";
     if (self.cellViewModel.buttonClickBlock) {
         self.cellViewModel.buttonClickBlock(self, button);
     }
+    
+    UIResponder *responder = self;
+    
+    while (responder) {
+        //        NSLog(@"responder: %@", [responder description]);
+        responder = responder.nextResponder;
+    }
+    
+    [self routeThroughCellResponderChainWithEventName:@"DFIButtonTableViewCellClickEvent"
+                                             userInfo:nil];
 }
 
 - (void)configureCellWithInfo:(id)info option:(NSDictionary *)option {
@@ -108,18 +123,40 @@ NSString * const kButtonEnableKey = @"kButtonEnableKey";
     
     self.buttonTitleString = self.cellViewModel.buttonTitleString;
     
-    self.buttonTitleColor = option[kButtonTitleColorKey];
-    self.buttonBackgroundColor = option[kButtonBackgroundColorKey];
-    self.buttonTitleFont = option[kButtonTitleFontKey];
-    self.buttonCornerRadius = [option[kButtonCornerRadiusKey] floatValue];
-    self.buttonEdgeInsets = UIEdgeInsetsFromString(option[kButtonEdgeInsetsStringKey]);
+    [self.button setTitle:self.cellViewModel.buttonTitleString
+                 forState:UIControlStateNormal];
     
-    if ([option[kButtonHideCellBackgroundColorKey] boolValue]) {
-        self.contentView.backgroundColor = [UIColor clearColor];
-        self.backgroundColor = [UIColor clearColor];
+    if (self.cellViewModel.cellConfigure.cellOption) {
+        DFIButtonTableViewCellOption *option = (DFIButtonTableViewCellOption *)self.cellViewModel.cellConfigure.cellOption;
+        
+        self.buttonCornerRadius = option.cornerRadius;
+        self.buttonEdgeInsets = [option buttonInsects];
+        self.buttonBackgroundColor = option.backgroundColor;
+        self.buttonTitleColor = option.titleTextColor;
+        [self.button setTitleColor:self.buttonTitleColor
+                          forState:UIControlStateNormal];
+        self.buttonTitleFont = option.buttonFont;
+        if (option.hideBackground) {
+            self.contentView.backgroundColor = [UIColor clearColor];
+            self.backgroundColor = [UIColor clearColor];
+        } else {
+            self.contentView.backgroundColor = [UIColor whiteColor];
+            self.backgroundColor = [UIColor clearColor];
+        }
     } else {
-        self.contentView.backgroundColor = [UIColor whiteColor];
-        self.backgroundColor = [UIColor clearColor];
+        self.buttonTitleColor = option[kButtonTitleColorKey];
+        self.buttonBackgroundColor = option[kButtonBackgroundColorKey];
+        self.buttonTitleFont = option[kButtonTitleFontKey];
+        self.buttonCornerRadius = [option[kButtonCornerRadiusKey] floatValue];
+        self.buttonEdgeInsets = UIEdgeInsetsFromString(option[kButtonEdgeInsetsStringKey]);
+        
+        if ([option[kButtonHideCellBackgroundColorKey] boolValue]) {
+            self.contentView.backgroundColor = [UIColor clearColor];
+            self.backgroundColor = [UIColor clearColor];
+        } else {
+            self.contentView.backgroundColor = [UIColor whiteColor];
+            self.backgroundColor = [UIColor clearColor];
+        }
     }
     
     if (self.cellViewModel.target &&
@@ -135,9 +172,9 @@ NSString * const kButtonEnableKey = @"kButtonEnableKey";
     }
 #endif
     else {
-        [_button addTarget:self
-                    action:@selector(handleTapButton:)
-          forControlEvents:UIControlEventTouchUpInside];
+        [self.button addTarget:self
+                        action:@selector(handleTapButton:)
+              forControlEvents:UIControlEventTouchUpInside];
     }
     
     [self setupViews];
@@ -146,9 +183,22 @@ NSString * const kButtonEnableKey = @"kButtonEnableKey";
 - (void)setButtonEdgeInsets:(UIEdgeInsets)buttonEdgeInsets {
     _buttonEdgeInsets = buttonEdgeInsets;
     
-    [_button mas_updateConstraints:^(MASConstraintMaker *make) {
+    [self.button mas_updateConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.contentView).with.insets(buttonEdgeInsets);
     }];
+}
+
+- (UIButton *)button {
+    if (!_button) {
+        _button = [UIButton buttonWithType:UIButtonTypeSystem];
+        
+        [self.contentView addSubview:_button];
+        
+        [_button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsZero);
+        }];
+    }
+    return _button;
 }
 
 @end
