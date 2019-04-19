@@ -18,7 +18,7 @@
 
 @implementation DFITableViewDelegateProxy
 
-+ (DFITableViewDelegateProxy *)tableViewDelegateProxyWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration {
++ (DFITableViewDelegateProxy *)proxyWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration {
     return [[DFIUITableViewDelegateProxy alloc] initWithTableViewConfiguration:tableViewConfiguration];
 }
 

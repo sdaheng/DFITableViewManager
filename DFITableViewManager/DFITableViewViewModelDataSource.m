@@ -296,7 +296,7 @@ dataSourceCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellReuseIdentifierString =
     self.dataSourceFormat[indexPathString][DFITableViewCellReuseIdentifierStringKey];
     
-    return [tableView dequeueTableViewCellAtIndexPath:indexPath
+    return [tableView configureTableViewCellAtIndexPath:indexPath
                                   withReuseIdentifier:cellReuseIdentifierString
                                                  info:[self[indexPath.section][indexPath.row] info]
                                                option:cellOptionDictioanry];

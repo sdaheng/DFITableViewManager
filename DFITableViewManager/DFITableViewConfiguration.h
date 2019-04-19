@@ -21,6 +21,8 @@
 
 @class RACSignal;
 
+typedef void(^DFITableViewDataSourceCompletion)();
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DFITableViewConfiguration : NSObject
@@ -77,6 +79,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)configureTableView:(__kindof UITableView *)tableView
               withDataSourceFormat:(NSDictionary * _Nonnull)dataSourceFormat;
+
+- (void)setDataSource:(NSArray * _Nonnull)dataSource
+           completion:(__nullable DFITableViewDataSourceCompletion)completion;
 
 @end
 

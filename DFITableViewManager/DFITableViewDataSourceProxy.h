@@ -12,6 +12,6 @@
 
 @interface DFITableViewDataSourceProxy : NSObject
 
-+ (instancetype)tableViewDataSourceProxyWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration;
++ (instancetype)proxyWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration;
 
 @end

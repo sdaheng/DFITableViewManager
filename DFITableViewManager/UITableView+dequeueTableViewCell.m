@@ -12,10 +12,10 @@
 
 @implementation UITableView (dequeueTableViewCell)
 
-- (UITableViewCell *)dequeueTableViewCellAtIndexPath:(NSIndexPath *)indexPath
-                                 withReuseIdentifier:(NSString *)identifier
-                                                info:(id)info
-                                              option:(id)option {
+- (UITableViewCell *)configureTableViewCellAtIndexPath:(NSIndexPath *)indexPath
+                                   withReuseIdentifier:(NSString *)identifier
+                                                  info:(id)info
+                                                option:(id)option {
     
     if (!identifier) return nil;
 

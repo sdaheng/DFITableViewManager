@@ -53,13 +53,13 @@
         
         _backingDataSource = [DFITableViewDataSource dataSourceWithFormat:dataSourceFormat];
         
-        _dataSourceProxy =
-        [DFITableViewDataSourceProxy tableViewDataSourceProxyWithTableViewConfiguration:self];
+        _dataSourceProxy = [DFITableViewDataSourceProxy proxyWithTableViewConfiguration:self];
         
-        _delegateProxy =
-        [DFITableViewDelegateProxy tableViewDelegateProxyWithTableViewConfiguration:self];
+        _delegateProxy = [DFITableViewDelegateProxy proxyWithTableViewConfiguration:self];
         
+#if __has_include(<DFITableViewCells/DFITableViewCells.h>)
         [self registerDFITableViewConcretCells];
+#endif
     }
     
     return self;
@@ -92,13 +92,17 @@
 }
 
 - (void)setDataSource:(NSArray *)dataSource {
+    [self setDataSource:dataSource completion:nil];
+}
+
+- (void)setDataSource:(NSArray *)dataSource completion:(DFITableViewDataSourceCompletion)completion {
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        strongSelf->_backingDataSource =
-        [DFITableViewDataSource dataSourceWithRawSectionsAndRows:dataSource];
+        strongSelf->_backingDataSource = [DFITableViewDataSource dataSourceWithRawSectionsAndRows:dataSource];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            completion ? completion() : nil;
             [self.tableView reloadData];
             [[NSNotificationCenter defaultCenter]
              postNotificationName:DFITableViewDataSourceDidChangeNotification object:nil];

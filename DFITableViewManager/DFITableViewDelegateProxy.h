@@ -12,6 +12,6 @@
 
 @interface DFITableViewDelegateProxy : NSObject
 
-+ (DFITableViewDelegateProxy *)tableViewDelegateProxyWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration;
++ (DFITableViewDelegateProxy *)proxyWithTableViewConfiguration:(id<DFITableViewConfigurationInternal>)tableViewConfiguration;
 
 @end
